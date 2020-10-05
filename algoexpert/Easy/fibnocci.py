@@ -36,7 +36,5 @@ def getNthFib(n):
         counter += 1
     return lastTwo[1] if n > 1 else lastTwo[0]
 
-
-
 getNthFib(n)
 print(getNthFib(n))
