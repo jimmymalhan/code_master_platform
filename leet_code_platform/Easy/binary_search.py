@@ -37,5 +37,4 @@ class Solution(object):
     
 if __name__ == '__main__':
     s = Solution()
-    # s.twoSum()
-    print (s.search(nums, target))
+    print(s.search(nums, target))
