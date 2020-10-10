@@ -12,4 +12,4 @@ a = 4
 b = 3
 
 if __name__ == "__main__":
-    print("{0}\n{1}".format(a//b, a/b))
+    print("{0} \n{1}".format(a//b, a/b))
