@@ -2,8 +2,10 @@
 
 ## Platforms
 ```bash
-* algoexpert
-* leet_Code
+* Hacker Rank - Introduction
+* Hacker Rank - 30 Days of Code
+* Hacker Rank - Problem Solving
+* Leet Code - Problem Solving
 ```
 
 ## Contributing
