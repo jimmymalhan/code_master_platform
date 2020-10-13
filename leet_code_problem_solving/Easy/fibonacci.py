@@ -1,3 +1,4 @@
+#test cases starting from 0
 class Solution:
     def fib(self, N):
       if N==0: return 0
@@ -9,5 +10,3 @@ class Solution:
         lastTwo[1] = nextFib
         counter += 1
       return lastTwo[1] if N > 1 else lastTwo[0]
-
-#test cases starting from 0
