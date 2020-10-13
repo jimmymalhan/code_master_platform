@@ -11,6 +11,4 @@ a = int(input())
 b = float(input())
 c = str(input())
 # Print the sum of both integer variables on a new line.
-print(a+i)
-print(b+d)
-print(s+c)
+print('{0} \n{1} \n{2}'.format(i+a, d+b, s+c))
