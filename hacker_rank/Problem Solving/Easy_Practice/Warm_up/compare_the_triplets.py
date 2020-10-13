@@ -9,5 +9,5 @@ def compareTriplets(a, b):
     a_score, b_score = 0, 0
     for i in range(3):
         a_score += a[i] > b[i]
-        b_score += b[i] > a[i]
+        b_score += a[i] < b[i]
     return [a_score, b_score]
