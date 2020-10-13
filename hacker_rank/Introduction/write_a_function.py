@@ -32,5 +32,6 @@
 def is_leap(year):
     return year % 4 == 0 and (year % 400 == 0 or year % 100 != 0)
 
+
 year = 1900 # returns false
 print(is_leap(year))
