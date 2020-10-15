@@ -19,8 +19,6 @@
 # n = 3
 # sample Output = 123
 
-from __future__ import print_function
-
 n = 3
 
 if __name__ == "__main__":
