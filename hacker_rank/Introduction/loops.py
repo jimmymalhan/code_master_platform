@@ -9,8 +9,4 @@ n = 3
 # 4
 
 if __name__ == '__main__':
-    # for i in range(n):
-    #     print(i**2)
-
-#or
     [print (i**2) for i in range (n)]
