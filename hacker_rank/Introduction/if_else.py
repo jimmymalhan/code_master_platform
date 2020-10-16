@@ -19,7 +19,7 @@ import sys
 n = 24
 
 if __name__ == '__main__':
-    if (n % 2 != 0 or n in range(6, 21)):
+    if n % 2 != 0 or n in (range(6, 21)):
         print("Weird")
     else:
         print('Not weird')  
