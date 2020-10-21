@@ -24,8 +24,8 @@ dict = {} # empty dictionary
 for _ in range(int(input())): # range of number of students
     name = input() # accepting the name of the students
     grade = float(input()) # accepting accepting the grade of the students
-    dict[name] = grade # assigning name as key and grade as value for the dict
-values = dict.values() #obtaining the values of dictionary 
+    dict[name] = grade # assigning name as KEY and grade as VALUE for the dict
+values = dict.values() #obtaining the values of dictionary
 
 second = sorted(list(set(values)))[1] # removing duplicate grades by using set data type, changing it to list, sorting in ascending order 
 #and taking the second lowest grade
@@ -39,6 +39,7 @@ second_lowest.sort() #sorting the name of students in ascending order
 
 for name in second_lowest: #going through the name of each students who got the second lowest grade
     print(name) # printing each name of students in seperate line
+
 
 #concise
 dict = [[input(), float(input())] for i in range(int(input()))] # returns the k,v in dict
