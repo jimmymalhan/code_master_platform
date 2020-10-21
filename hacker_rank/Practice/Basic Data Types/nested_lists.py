@@ -37,6 +37,6 @@ for name in second_lowest: #going through the name of each students who got the 
 
 #concise
 a = [[input(), float(input())] for i in range(int(input()))] # returns the k,v in dict
-s = sorted(set([x[1] for x in a])) # returns the values from dict
+s = sorted(set([x[1] for x in a])) # returns the sorted values from dict
 for name in sorted(x[0] for x in a if x[1] == s[1]):
-    print (name)
+    print(name)
