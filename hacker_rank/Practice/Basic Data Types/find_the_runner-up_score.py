@@ -1,6 +1,6 @@
-if __name__ == '__main__':
-    n = int(input())
-    arr = list(set(map(int, input().split())))
-    arr.sort()
-    print (arr[-2])
-    
+i = int(input())
+lis = list(map(int,input().strip().split())) #generates the list
+z = max(lis) # find the maximum value in the list
+while z == max(lis):
+    lis.remove(max(lis)) # removing the maximum number in the list
+print(max(lis)) # printing the 2nd biggest number (Runner-up) in the list
