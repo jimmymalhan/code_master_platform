@@ -1,5 +1,3 @@
-#!/bin/python
-
 import sys
 from math import gcd
 from functools import reduce
