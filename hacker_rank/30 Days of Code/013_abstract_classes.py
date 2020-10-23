@@ -6,13 +6,16 @@ class Book(object, metaclass=ABCMeta):
     @abstractmethod
     def display(): pass
 
-#Write MyBook clas:
+class MyBook(Book):
+    price = 0
+    def __init__(self, title, author, price):
+        super(Book, self).__init__()
+        self.price = price
 
-def __init__(self, title, author, price):
-    self.title = title
-    self.author = author
-    self.price = price
-
+    def display(self):
+        print('Title: ' + title)
+        print('Author: ' + author)
+        print('Price: ' + str(price))
 
 title=input()
 author=input()
