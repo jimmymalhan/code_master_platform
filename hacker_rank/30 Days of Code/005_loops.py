@@ -1,5 +1,10 @@
-n = 2
-for i in range(1, 11):
-    print(n, "x", i, "=", n*i)
+# FOR n * i = result 
+# print in this format:
+# n x i = result 
 
-# [print(n, "x", i, "=", n*i)for i in range(1, 11)]
+# Constraints 
+# (where 1<= i <= 10)
+
+n = int(input().strip())
+for i in range(1, 11):
+    print('{} x {}'.format(n, i, n * i))
