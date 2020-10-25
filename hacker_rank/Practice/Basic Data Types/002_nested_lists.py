@@ -20,6 +20,25 @@
 # Berry
 # Harry
 
+dict = {}
+for _ in range(int(input())):
+    name = str(input())
+    grade = float(input())
+    dict[name] = grade
+values = dict.values()
+
+second = sorted(list(set(values)))[1]
+second_lowest = []
+
+for key, value in dict.items():
+    if value == second:
+        second_lowest.append(key)
+
+second_lowest.sort()
+
+for name in second_lowest:
+    print(name)
+
 dict = {} # empty dictionary
 for _ in range(int(input())): # range of number of students
     name = input() # accepting the name of the students
@@ -39,10 +58,3 @@ second_lowest.sort() #sorting the name of students in ascending order
 
 for name in second_lowest: #going through the name of each students who got the second lowest grade
     print(name) # printing each name of students in seperate line
-
-
-#concise
-dict = [[input(), float(input())] for i in range(int(input()))] # returns the k,v in dict
-s = sorted(set([v[1] for v in dict])) # returns the sorted values from dict
-for name in sorted(v[0] for v in dict if v[1] == s[1]):
-    print(name)
