@@ -1,12 +1,8 @@
-#!/bin/python3
+# Recursive method for calculating factorial
+# takes N as a parameter and prints the result N!
 
-import math
 import os
-import random
-import re
-import sys
 
-# Complete the factorial function below.
 def factorial(n):
     if n == 1:
         return 1
