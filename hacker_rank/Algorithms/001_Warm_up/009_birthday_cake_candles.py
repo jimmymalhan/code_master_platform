@@ -1,4 +1,13 @@
-#!/bin/python3
+# Count how many candles are tallest
+# candles = [4, 4, 1, 3]
+# The maximum height candles are 4 units high.
+# There are 2 of them so return 2
+
+# Constraints
+# 1 <= n < 10^5
+# 1 <= candles[i] <= 10^7
+
+
 
 import math
 import os
@@ -6,25 +15,14 @@ import random
 import re
 import sys
 
-#
-# Complete the 'birthdayCakeCandles' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts INTEGER_ARRAY candles as parameter.
-#
 
 def birthdayCakeCandles(candles):
     return candles.count(max(candles))
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
     candles_count = int(input().strip())
-
     candles = list(map(int, input().rstrip().split()))
-
     result = birthdayCakeCandles(candles)
-
     fptr.write(str(result) + '\n')
-
     fptr.close()
