@@ -1,5 +1,6 @@
 # ar = [ar[0],ar[1]....,ar[n-1], and positive int = k]
-# print (i, j) where, i < j  & ar[i] + ar[j] is divisible by k
+# print (i, j) where, i < j  
+# & ar[i] + ar[j] is divisible by k
 
 # For example ar = [1,2,3,4,5,6] and k = 5
 # Output as 3pairs  = [1,4], [2,3] and [4,6]
@@ -22,14 +23,13 @@ import re
 import sys
 
 # Complete the divisibleSumPairs function below.
-def divisibleSumPairs(n, k, ar):
+
+def divisibleSumPairs(n , k, ar):
     count = 0
-    for i in range(n-1): #n-1 is used of the list to not run error 'index out of range'
-        j = i+1
-        while j < n:
-            if ((ar[i] + ar[j]) % k) == 0:
+    for i in range(n):
+        for j in range(i + 1, n):
+            if (ar[i]+ar[j]) % k == 0:
                 count += 1
-            j += 1
     return count
 
 if __name__ == '__main__':
