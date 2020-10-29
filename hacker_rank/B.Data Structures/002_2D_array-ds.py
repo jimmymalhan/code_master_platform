@@ -1,16 +1,15 @@
-import math
-import os
-import random
-import re
-import sys
+
+# hourglass
+# a b c
+#   d    
+# e f g
 
 # Complete the hourglassSum function below.
 def hourglassSum(arr):
     sum = []
-
-
-    for i in range(len(arr)-2):
-        for j in range(len(arr)-2):
+    for i in range(len(arr)-2): #-2 because (from hour glass), if the pointer is at 'a' it can go to 'b' and then 'c' by adding 1 and then 1 again
+        # - 2 is basically done for indexing coz defined by hourglass
+        for j in range(len(arr)-2): # -2 because if the pointer is at 'a' it can go go 'e' 'f' 'g' by adding 1 and then 1 again
             sum.append(
                     arr[i][j]
                     +arr[i][j+1]
