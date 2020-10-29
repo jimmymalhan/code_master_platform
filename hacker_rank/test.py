@@ -20,8 +20,6 @@
 #     if(a[i].isalpha()):
 #         print(a[i+1])
 
-a = [1,3, 2, 6, 1, 2]
-
-
-for i in range(0, len(a)):
-    print(i)
+arr = [1,3, 2, 6, 1, 2]
+for i in range(len(arr)):
+    if current = new
