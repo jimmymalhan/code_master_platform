@@ -23,5 +23,5 @@
 a = [1,3, 2, 6, 1, 2]
 
 
-for i in range(len(a)):
-    print(i-1)
+for i in range(0, len(a)):
+    print(i)
