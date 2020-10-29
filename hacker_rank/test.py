@@ -14,8 +14,13 @@
 #         print(i, j)
 
 
-a=[1,2,3,h,7,4,9]
+# a=[1,2,3,h,7,4,9]
 
-for i in range(O, len(a)):
-    if(a[i].isalpha()):
-        print(a[i+1])
+# for i in range(O, len(a)):
+#     if(a[i].isalpha()):
+#         print(a[i+1])
+
+a = [1,3, 2, 6, 1, 2]
+
+for i in range(0 , len(a)):
+    print(i-1)
