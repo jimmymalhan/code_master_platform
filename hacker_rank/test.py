@@ -1,8 +1,3 @@
-# can someone please explain - Nested loop concept with an example for below
-#     for i in range(n):
-#         for j in range(i + 1, n):
-
-
 # lets say n = 7 
 # range(7) is an iterator that produces 0, 1, 2, 3, 4, 5, 6 in that order.
 # range(3, 7) is an iterator that produces 3, 4, 5, 6
@@ -23,3 +18,5 @@
 arr = [1,3, 2, 6, 1, 2]
 for i in range(len(arr)):
     if current = new
+
+n-1, n-2, n-3 = O(n^2)
