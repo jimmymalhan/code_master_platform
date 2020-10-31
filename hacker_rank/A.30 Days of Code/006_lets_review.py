@@ -1,6 +1,6 @@
-# S = string of length N > INDEXED 0 to N-1
-#print even-INDEXED and odd-INDEXED characters 
-# as 2 space-separated strings on a single line
+# S = str of length N > idx 0 to N-1
+#print even-idx and odd-idx char 
+# as 2 space-separated strs on a single line
 
 # Constraints
 # 1 <= T <= 10
@@ -18,14 +18,14 @@
 num_test_cases = int(input())
 
 for i in range(num_test_cases):
-    test_string = input()
-    even_indexed_characters = ''
-    odd_indexed_characters = ''
+    test_str = input()
+    even_idx_char = ''
+    odd_idx_char = ''
 
-    for j in range(len(test_string)):
+    for j in range(len(test_str)):
         if j % 2 == 0:
-            even_indexed_characters += test_string[j]
+            even_idx_char += test_str[j]
         else:
-            odd_indexed_characters += test_string[j]
+            odd_idx_char += test_str[j]
     
-    print('{} {}'.format(even_indexed_characters, odd_indexed_characters))
+    print('{} {}'.format(even_idx_char, odd_idx_char))
