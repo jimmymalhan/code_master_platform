@@ -18,7 +18,7 @@ class Book(object, metaclass=ABCMeta):
     def display(): pass
 
 #Write MyBook class
-class MyBook(Book):
+class MyBook(Book): # inherits from Book- class (see above)
     price = 0
     def __init__(self, title, author, price):
         super(Book, self).__init__()
