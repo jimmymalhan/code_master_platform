@@ -20,7 +20,7 @@ class Difference:
         for element in self.__elements:
             if element < min_element:
                 min_element = element
-            elif element > max_element:
+            if element > max_element:
                 max_element = element
 
         self.maximumDifference = abs(min_element - max_element)
