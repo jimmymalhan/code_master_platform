@@ -1,6 +1,6 @@
 # Task:
 # class constructor to takes integer as parameter and saves it to the elements instance variable
-# compute difference method that finnds the maximum absolute difference between any 2 numbers in N and stores it i maximumDifference instance variable
+# compute difference method that finds the maximum absolute difference between any 2 numbers in N and stores it i maximumDifference instance variable
 
 # constraints
 # 1 <= N <= 10
@@ -20,7 +20,7 @@ class Difference:
         for element in self.__elements:
             if element < min_element:
                 min_element = element
-            if element > max_element:
+            elif element > max_element:
                 max_element = element
 
         self.maximumDifference = abs(min_element - max_element)
