@@ -1,4 +1,4 @@
-
+import os
 # hourglass
 # a b c
 #   d    
