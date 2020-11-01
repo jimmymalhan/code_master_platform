@@ -19,8 +19,7 @@ class Person:
 class Student(Person):
     #   Class Constructor
     def __init__(self, firstName, lastName, idNumber, scores):
-        # Person.__init__(self, firstName, lastName, idNumber)
-        super(scores, self).__init__()
+        Person.__init__(self, firstName, lastName, idNumber)
         self.scores = scores
     # Write your function here
     def calculate(self):
