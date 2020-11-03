@@ -27,17 +27,18 @@ class Solution:
             print(current.data,end=' ')
             current = current.next
 
-    def insert(self,head,data): 
-    #Complete this method
-        newNode = Node(data)
-        if not head:
-            return newNode
-        current = head
-        while current.next:
-            current = current.next
-        current.next = newNode
-        return head
-
+    def insert(self,head,data):
+            p = Node(data)           
+            if head==None:
+                head=p
+            elif head.next==None:
+                head.next=p
+            else:
+                start=head
+                while(start.next!=None):
+                    start=start.next
+                start.next=p
+            return head  
 mylist= Solution()
 T=int(input())
 head=None
