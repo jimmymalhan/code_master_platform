@@ -23,7 +23,7 @@
 # n and p should be non-negative
 
 class Calculator:
-    @staticmethod
+    @staticmethod # knows nothing about class, deals with parameters only
     def power(n, p):
         if n < 0 or p < 0:
             raise ValueError('n and p should be non-negative')
