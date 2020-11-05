@@ -1,4 +1,5 @@
-# The idea here is to not actually access every element the query would modify as it takes up too much time. First we build an array of n+1 0's.
+# The idea here is to not actually access every element the query would modify as it takes up too much time.
+# First we build an array of n+1 0's.
 # For each query, we will add k to the value at index a - 1 (to convert to 0 indexed array), 
 # and subtract the value of k from the value at index b (this is the same as b + 1 if the array were 0 indexed which is what we want.
 # Thus the non-zero values of the array represent how the 0s between them differ from what comes before and after.
