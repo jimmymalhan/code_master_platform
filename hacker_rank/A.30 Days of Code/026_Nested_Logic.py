@@ -1,4 +1,4 @@
-return_day, return_month, return_year = [int(e) for e in input().strip().split(' ')] # creating a list is easier to do as list comprehension
+return_day, return_month, return_year = [int(e) for e in input().strip().split(' ')]
 due_day, due_month, due_year = [int(e) for e in input().strip().split(' ')]
 
 #check the biggest category first: year
