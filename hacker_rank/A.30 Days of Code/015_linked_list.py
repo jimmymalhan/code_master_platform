@@ -26,23 +26,13 @@ class Solution:
         while current:
             print(current.data,end=' ')
             current = current.next
+    def insert(self,head,data): 
+        print(data, end=' ')
 
-    def insert(self,head,data):
-            p = Node(data)           
-            if head==None:
-                head=p
-            elif head.next==None:
-                head.next=p
-            else:
-                start=head
-                while(start.next!=None):
-                    start=start.next
-                start.next=p
-            return head  
 mylist= Solution()
 T=int(input())
 head=None
 for i in range(T):
     data=int(input())
     head=mylist.insert(head,data)    
-mylist.display(head)	  
+mylist.display(head); 	  
