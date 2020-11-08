@@ -1,8 +1,4 @@
-# Singly linked list
-# Complete the insert function -> increases the new Node
-# (pass data as the Node constructor argument)
-# and insert it to the tail of the linked list reference by the head parameter.
-# Once the new node is added, return the reference to the head node
+# Singly linked list - Insert Node
 
 # Note: If the head argument passed to the insert function is null, then the inital list is empty
 
