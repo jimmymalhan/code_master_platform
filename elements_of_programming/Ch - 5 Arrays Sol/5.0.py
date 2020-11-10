@@ -16,18 +16,3 @@ if __name__ == "__main__":
     
 # Space Complexity - O(1) # couple of variable to hold indices, and temporary variable to perform swap
 # Time Complexity  - O(n) # constant amount of processing per entry
-
-
-# # List Comprehension
-# [print(x**2) for x in range(6)]
-
-# [print(x**2) for x in range(6) if x % 2 == 0]
-
-# # Product of sets 
-# A = [1, 3, 5]
-# B = ['a', 'b']
-# print = [print(x, y) for x in A for y in B]
-
-# # # Ques - Covert a 2D list to 1D list as list comprehension
-# M = [['a', 'b', 'c'], ['d', 'e', 'f']]
-# [print(x) for row in M for x in row]
