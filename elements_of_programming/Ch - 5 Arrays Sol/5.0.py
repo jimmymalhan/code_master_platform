@@ -14,6 +14,10 @@ def even_odd(A):
 if __name__ == "__main__":
     print(even_odd(A))
     
+# Space Complexity - O(1) # couple of variable to hold indices, and temporary variable to perform swap
+# Time Complexity  - O(n) # constant amount of processing per entry
+
+
 # # List Comprehension
 # [print(x**2) for x in range(6)]
 
