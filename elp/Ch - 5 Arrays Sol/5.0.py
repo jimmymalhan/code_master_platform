@@ -10,7 +10,6 @@ def even_odd(A):
             A[next_even], A[next_odd] = A[next_odd], A[next_even]
             next_odd -= 1
     return A
-
 if __name__ == "__main__":
     print(even_odd(A))
     
