@@ -23,5 +23,5 @@ def plus_one(A):
     return A
 
 print(plus_one(A))
-# Time complexity = O(n)
+# Time complexity = O(n), where n is the length of A
 
