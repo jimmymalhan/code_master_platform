@@ -1,11 +1,11 @@
-# Algorithms
+# Data Structure and Algorithms at it's best
 
 ## Platforms
 ```bash
-* Hacker Rank - Introduction
-* Hacker Rank - 30 Days of Code
-* Hacker Rank - Problem Solving
-* Leet Code - Problem Solving
+* Hacker Rank
+* Leet Code
+* Algo Expert
+* ELP
 ```
 
 ## Contributing
