@@ -10,7 +10,7 @@
 A = [1,2,9]
 
 def plus_one(A):
-    A[-1] += 1
+    A[-1] += 1 # non-negative 
     for i in reversed(range(1, len(A))):
         if A[i] != 10:
             break
