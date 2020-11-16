@@ -6,7 +6,7 @@
 # Hint: Analyse each location, starting from the begining
 # non- negative integers are included
 def can_reach_end(A):
-    furthest_reach_so_far, last_index = 1, len(A) - 1
+    furthest_reach_so_far, last_index = 0, len(A) - 1
     i = 0
     while i <= furthest_reach_so_far and furthest_reach_so_far < last_index:
         furthest_reach_so_far = max(furthest_reach_so_far, A[i] + i)
@@ -14,4 +14,4 @@ def can_reach_end(A):
     return furthest_reach_so_far >= last_index
 
 # time complexity is O(n)
-# space complexxity O(1)
+# space complexity O(1)
