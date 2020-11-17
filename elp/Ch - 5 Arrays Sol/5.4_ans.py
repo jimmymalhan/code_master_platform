@@ -16,4 +16,4 @@ def can_reach_end(A):
 # time complexity is O(n)
 # space complexity O(1)
 
-# LC = 055_jump_game
+# LC = 0055_jump_game
