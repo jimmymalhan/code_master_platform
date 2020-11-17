@@ -18,3 +18,5 @@ def delete_duplicates(A):
             A[write_index] = A[i]
             write_index += 1
     return write_index
+
+# LC = 0026 Remove Duplicates from Sorted Array
