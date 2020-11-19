@@ -25,3 +25,5 @@ def buy_and_sell_stock_once(prices):
 # max method takes two or more argument or at iterable,
 # For 2 arguments i.e max_profit and max_profit_sell_today,
 # it returns the variable which would have maximum value
+
+# LC = 0121.best_time_to_buy_and_sell_stock.py
