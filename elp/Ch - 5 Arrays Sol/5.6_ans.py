@@ -9,7 +9,6 @@
 # array of the minimum values seen so far 
 # maximum profit that can be made by selling on each specific day
 # is the difference of the current price and minimum seen so far. 
-# i.e [0,5,0,20,0,10,30,0,25,20]. hence, 30 is the maximum profit.
 
 def buy_and_sell_stock_once(prices):
     min_price_so_far, max_profit = float('inf'), 0.0
