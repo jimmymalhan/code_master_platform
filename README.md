@@ -2,10 +2,10 @@
 
 ## Platforms
 ```bash
-* Hacker Rank
+* ELP
 * Leet Code
 * Algo Expert
-* ELP
+* Hacker Rank
 ```
 
 ## Contributing
