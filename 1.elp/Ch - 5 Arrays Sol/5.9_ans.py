@@ -29,7 +29,7 @@ def generate_primes(n):
 def generate_primes(n):
     if n < 2:
         return []
-    size = (n-3) // 2+1
+    size = (n-3) // 2+1 # size = ( (n - 3) // 2 ) + 1
     primes = [2] # stores the primes from 1 to n
     # is_prime[i] represents (2i +3) is prime or not.
     # Intially set each to true. Then use sieving to eliminate nonprimes.
