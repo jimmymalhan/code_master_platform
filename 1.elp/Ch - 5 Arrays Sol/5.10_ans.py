@@ -75,7 +75,7 @@ def apply_permutation(A,P):
 # Approach: Every permutation can be represented by a collection of independent permutations, each of which is cyclic i.e. 
 # it moves all the elements by a fixed offset wrapping around. To find and apply the cycle that indicates entry i, 
 # just keep going forward (from i to P[i]) till we get back at i. After completing the current cycle, find another cycle
-# that has not yet been applied. To check this, subtract n from P[i] after applying it. This means that if an entry in 
+# that has not yet been applied. To check this, subtract len(A) from P[i] after applying it. This means that if an entry in 
 # P[i] is negative, we have performed the corresponding move.
 
 def apply_permutation(A,P):
@@ -84,14 +84,13 @@ def apply_permutation(A,P):
         while P[next] >=0:
             A[next], A[P[next]] = A[P[next]], A[next]
             next = P[next]
-            # make P[next] negative once it is used
             P[next] -= len(A)
     return A
 
 if __name__ == '__main__': 
-    A = [5, 6, 7, 8] 
+    A = [8, 7, 6, 5] 
     P = [3, 2, 1, 0] 
-  
     print(apply_permutation(A, P))
+
 # Time Complexity is O(n).
 # The space complexity is O(1), ASSUMING we can temporarily modify the sign bit from entries in the permutation array.
