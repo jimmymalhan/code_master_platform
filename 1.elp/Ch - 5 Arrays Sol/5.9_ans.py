@@ -79,4 +79,4 @@ if __name__=='__main__':
     print ("than or equal to", n)
     print(SieveOfEratosthenes(n))
 
-Time complexity : O(n*log(log(n)))
+# Time complexity : O(n*log(log(n)))
