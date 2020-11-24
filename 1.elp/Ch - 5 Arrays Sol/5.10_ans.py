@@ -1,7 +1,7 @@
 # Permute the elements of an array
 
 # What is permutation?
-# A permutation can speciffied by an array P, where P[i] represents the location 
+# A permutation can specified by an array P, where P[i] represents the location 
 # of the element at i in the permutation. For example, the array[2,0,1,3] represents
 # the permutation that maps the element at location 0 to location 2, the element at
 # location 1 to 0, the element at location 2 to location 1 and keep the element at 
