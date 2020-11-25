@@ -1,5 +1,41 @@
 # Enumerate all primes to n
 
+# https://www.geeksforgeeks.org/prime-numbers/
+# Interesting facts about prime number
+    # Two is the only even Prime number 
+    # Every Prime number can be represented in form of 6n+1 or 6n-1 except 2 and 3, where n is
+        # natural number.
+    # Two and Three are only two consecutive natural numbers which are prime too.
+
+# Naive Solution
+    # A naive solution is to iterate through all numbers from 2 to n-1 and for every number check
+    # if it divides n. If we find any number that divides, we return false. 
+# function check whether a number
+# is prime or not
+ 
+ 
+def isPrime(n):
+ 
+    # Corner case
+    if (n <= 1):
+        return False
+ 
+    # Check from 2 to n-1
+    for i in range(2, n):
+        if (n % i == 0):
+            return False
+ 
+    return True
+ 
+ 
+# Driver Code
+if isPrime(11):
+    print("true")
+else:
+    print("false")
+
+
+
 # A natural number is called a prime if it is bigger than 1 and has no divisors other than 1 and itself.
 
 # Write a program that takes an integer argument and returns all the primes between 1 and that 
@@ -69,6 +105,7 @@ def generate_primes(n):
     return primes
 
 # The asymptotic time and space complexity are the same as that for the basic sieving approach.
+
 
 # https://www.geeksforgeeks.org/sieve-of-eratosthenes/ 
 def SieveOfEratosthenes(n): 
