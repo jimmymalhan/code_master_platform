@@ -21,7 +21,7 @@ def isPrime(n):
         return False
  
     # Check from 2 to n-1
-    for i in range(2, n):
+    for i in range(2, n-1):
         if (n % i == 0):
             return False
  
@@ -133,7 +133,7 @@ def SieveOfEratosthenes(n):
 # driver program 
 if __name__=='__main__': 
     n = 30
-    print ("Following are the prime numbers smaller",) 
+    print ("Following are the prime numbers smaller") 
     print ("than or equal to", n)
     print(SieveOfEratosthenes(n))
 
