@@ -17,6 +17,8 @@ if __name__ == "__main__":
 # Time Complexity  - O(n) # constant amount of processing per entry
 
 # iterating
+A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 def reoder(A):
     i, j = 0, len(A) - 1
     for i in range(len(A)):
