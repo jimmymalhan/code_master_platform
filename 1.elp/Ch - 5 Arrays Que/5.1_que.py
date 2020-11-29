@@ -4,3 +4,4 @@
 # such that all elements less than A[i] (the 'pivot') appears first,
 # followed by elements equal to the pivot, followed by elements greater than the pivot.
 
+# Write pseudo code here

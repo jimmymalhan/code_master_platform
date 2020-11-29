@@ -2,6 +2,8 @@
 # integer. For example, if the input is 18, you should return
 # [2,3,5,6,7,11,13,17]
 
+# Write pseudo code here
+
 def SieveofEratosthenes(n):
 
 
