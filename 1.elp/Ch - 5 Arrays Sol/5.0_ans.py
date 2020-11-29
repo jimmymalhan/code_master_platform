@@ -1,5 +1,11 @@
 # Array - Reorder entries that even entries appears first
 
+# Write pseudo code 
+# define odd and even variables 
+# if even variable form the list is divisible by 2
+# move to next to element
+# else swap the variables 
+
 A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 def even_odd(A):
     next_even, next_odd = 0, len(A) - 1
@@ -19,7 +25,7 @@ if __name__ == "__main__":
 # iterating
 A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-def reoder(A):
+def even_odd(A):
     i, j = 0, len(A) - 1
     for i in range(len(A)):
         for j in range(i + 1, len(A)):
@@ -29,5 +35,6 @@ def reoder(A):
                 A[i], A[j] = A[j], A[i]
                 j += 1
     return A
-
-print(reoder(A))
+if __name__ == "__main__":
+    A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(even_odd(A))
