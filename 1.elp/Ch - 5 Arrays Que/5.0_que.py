@@ -3,7 +3,7 @@
 # Also, add space and time complexity
 
 def even_odd(A):
-
+    
 
 
 if __name__ == "__main__":
