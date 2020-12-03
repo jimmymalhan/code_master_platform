@@ -1,6 +1,4 @@
-
-
-def insetionsort(array):
+def insetion_sort(array):
     for i in range(1, len(array)):
         j = i # insertion
         while j > 0 and array[j] < array[j - 1]: # indices
@@ -13,4 +11,4 @@ def swap(i, j, array):
 
 if __name__ == "__main__":
     array = [9,8,4,2,5,3]
-    print(insetionsort(array))
+    print(insetion_sort(array))
