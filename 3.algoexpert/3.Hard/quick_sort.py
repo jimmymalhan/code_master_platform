@@ -1,8 +1,10 @@
-#			S, 				  E
-# array = [ 8, 5, 2, 9, 5, 6, 3]
-#			P, L              R
-# L > P and  R < P
-# O(nlog(n)), O(log(n))
+#		   S				 E
+# array = [8, 5, 2, 8, 5, 6, 3]
+#		   P  L				 R
+# L > P and R < P
+# start >= end
+# right >= left
+# time - O(nlog(n)),Space- O(log(n))
 def quickSort(array):
 	quickSortHelper(array, 0, len(array) - 1)
 	return array
@@ -21,8 +23,8 @@ def quickSortHelper(array, startIdx, endIdx):
 		if array[rightIdx] >= array[pivotIdx]:
 			rightIdx -= 1
 	swap(pivotIdx, rightIdx, array)
-	# leftSubarray = rightIdx - 1 = endIdx ( rightIdx - 1 - startIdx)
-	# rightSubarray = endIdx - right(rightIdx + 1)
+	# leftSubarray = rightIdx - 1 = 'ending index - endIdx' ( rightIdx - 1 - startIdx)
+	# rightSubarray = endIdx - (rightIdx + 1)
 	leftSubarrayIsSmaller = rightIdx - 1 - startIdx < endIdx - (rightIdx + 1)
 	if leftSubarrayIsSmaller:
 		quickSortHelper(array, startIdx, rightIdx - 1)
