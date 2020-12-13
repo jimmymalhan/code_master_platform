@@ -1,6 +1,3 @@
-# Do not edit the class below except for the buildHeap,
-# siftDown, siftUp, peek, remove, and insert methods.
-# Feel free to add new properties and methods to the class.
 class MinHeap:
     def __init__(self, array):
         self.heap = self.buildHeap(array)
@@ -13,18 +10,18 @@ class MinHeap:
 		return array
 	
 	# O(log(n) time, O(1) space)
-    def siftDown(self, currentIdx, endIdx, heap):
+    def siftDown(self, currentIdx, endIdx, heap): # compare both childs
 		childOneIdx = currentIdx * 2 + 1 # formula
-		while childOneIdx <= endIdx:
-			childTwoIdx = currentIdx * 2 + 2 if currentIdx * 2 + 2 <= endIdx else -1
+		while childOneIdx <= endIdx: # To check - if node doesn't have leaf or doesn't have anymore child
+			childTwoIdx = currentIdx * 2 + 2 if currentIdx * 2 + 2 <= endIdx else -1 # -1 is coz if childIdx doesn't have leaf
 			if childTwoIdx != -1 and heap[childTwoIdx] < heap[childOneIdx]:
 				idxToSwap = childTwoIdx
 			else:
-				idxToSwap = childOneIdx
+				idxToSwap = childOneIdx # if childIdx is smaller rhan child two idx
 			if heap[idxToSwap] < heap[currentIdx]:
 				self.swap(currentIdx, idxToSwap, heap)
-				currentIdx = idxToSwap
-				childOneIdx = currentIdx * 2 + 1
+				currentIdx = idxToSwap # siftDown
+				childOneIdx = currentIdx * 2 + 1 # recalculate 
 			else:
 				return	
 
@@ -41,8 +38,8 @@ class MinHeap:
     def remove(self):
 		self.swap(0, len(self.heap) - 1, self.heap)#swapping the two value
 		valueToRemove = self.heap.pop()
-		self.siftDown(0, len(self.heap) -1, self.heap)
-		return valueToRemove
+		self.siftDown(0, len(self.heap) - 1, self.heap)
+		return valueToRemove # returning minimum value
 		
     def insert(self, value):
 		self.heap.append(value) # add the value 
