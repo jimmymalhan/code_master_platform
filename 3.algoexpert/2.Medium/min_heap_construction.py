@@ -1,3 +1,8 @@
+# firstParentIdx = (len(array) - 2) // 2
+# childOneIdx = currentIdx * 2 + 1 
+# childTwoIdx = currentIdx * 2 + 2 
+# parentIdx = (currentIdx - 1) // 2 
+
 class MinHeap:
     def __init__(self, array):
         self.heap = self.buildHeap(array)
@@ -17,7 +22,7 @@ class MinHeap:
 			if childTwoIdx != -1 and heap[childTwoIdx] < heap[childOneIdx]:
 				idxToSwap = childTwoIdx
 			else:
-				idxToSwap = childOneIdx # if childIdx is smaller rhan child two idx
+				idxToSwap = childOneIdx # if childOneIdx < childTwoIdx
 			if heap[idxToSwap] < heap[currentIdx]:
 				self.swap(currentIdx, idxToSwap, heap)
 				currentIdx = idxToSwap # siftDown
