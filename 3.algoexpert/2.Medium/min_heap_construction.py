@@ -17,7 +17,7 @@ class MinHeap:
 	# O(log(n) time, O(1) space)
     def siftDown(self, currentIdx, endIdx, heap): # compare both childs
 		childOneIdx = currentIdx * 2 + 1 # formula
-		while childOneIdx <= endIdx: # To check - if node doesn't have leaf or doesn't have anymore child
+		while childOneIdx <= endIdx: #  if node doesn't have leaf or doesn't have anymore child
 			childTwoIdx = currentIdx * 2 + 2 if currentIdx * 2 + 2 <= endIdx else -1 # -1 is coz if childIdx doesn't have leaf
 			if childTwoIdx != -1 and heap[childTwoIdx] < heap[childOneIdx]:
 				idxToSwap = childTwoIdx
