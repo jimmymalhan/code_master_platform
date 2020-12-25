@@ -23,11 +23,20 @@ class BST:
 				else:
 					currentNode = currentNode.right
 		return self
-	
+
+# Average: O(log(n)) time | O(1) space
+# Worst : O(n) time | O(1) space	
 
     def contains(self, value):
-        # Write your code here.
-        pass
+		currentNode = self
+		while currentNode is not None:
+			if value < currentNode.value:
+				currentNode = currentNode.self
+			elif value > currentNode.value:
+				currentNode = currentNode.right
+			else: 
+				return True
+		return False
 
     def remove(self, value):
         # Write your code here.
