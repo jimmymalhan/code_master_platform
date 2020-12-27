@@ -7,7 +7,7 @@ class BST:
 	# Average: O(log(n)) time | O(1) space
 	# Worst : O(n) time | O(1) space
     def insert(self, value):
-		currentNode = self # intialize the currentNode and tells you're with the currentNode
+		currentNode = self # intialize the currentNode # tells you're with the currentNode
 		while True:
 			if value < currentNode.value: # traverse left subtree
 				if currentNode.left is None: 
