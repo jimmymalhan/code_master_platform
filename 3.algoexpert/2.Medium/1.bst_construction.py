@@ -28,9 +28,9 @@ class BST:
     def contains(self, value):
 		currentNode = self 
 		while currentNode is not None:
-			if value < currentNode.value: # if value is less than explore left subtree
+			if value < currentNode.value: # if value is less than currentNode's value, explore left subtree
 				currentNode = currentNode.left
-			elif value > currentNode.value: # or if value is greater than, explore right subtree
+			elif value > currentNode.value: # or if value is greater than currentNode's value, explore right subtree
 				currentNode = currentNode.right
 			else: # or value == currentNode.value # found the value
 				return True
@@ -45,12 +45,12 @@ class BST:
 			elif value > currentNode.value:
 				parentNode = currentNode
 				currentNode = currentNode.right
-			else: # value is == currentNode and found the value | Deals with 2 subcases
+			else: # value is = currentNode and found the value | Deals with 2 subcases
 				if currentNode.left is not None and currentNode.right is not None: # FIRST SUBCASE - ROOT HAS 2 CHILD NODES
-					currentNode.value = currentNode.right.getMinValue() # get the smallest value in the given right subtree
-					currentNode.right.remove(currentNode.value, currentNode) # currentNode.value = smallest value of right subtree # currentnode is passing as parentNode
-				elif parentNode is None: # SECOND SUBCASE - ROOT DOESN't HAVE 2 CHILD NODES | RooT node doesn't have a parentNode
-					if currentNode.left is not None: # if the child node is the left node > replace the values with left node
+					currentNode.value = currentNode.right.getMinValue() # get the smallest value in the given right subtree # currentNode.value = smallest value of right subtree 
+					currentNode.right.remove(currentNode.value, currentNode) # currentNode is passing as parentNode
+				elif parentNode is None: # SECOND SUBCASE - ROOT DOESN't HAVE 2 CHILDREN NODES AND ROOT node doesn't have a parentNode
+					if currentNode.left is not None: # if the child node is the left node then, replace the values with left node
 						currentNode.value = currentNode.left.value
 						currentNode.right = currentNode.left.right
 						currentNode.left = currentNode.left.left # important to assign the left value in the last line so as to overwrite
