@@ -11,10 +11,10 @@ class BST:
 		while True:
 			if value < currentNode.value: # traverse left subtree
 				if currentNode.left is None: 
-					currentNode.left = BST(value) # successfully inserted the value
+					currentNode.left = BST(value) # #currentNode.left = assigning it to left subtree | successfully inserted the value
 					break
-				else: # currentNode.left is not None, still have left subtree to explore
-					currentNode = currentNode.left #currentNode.left = assigning it to left subtree
+				else: # currentNode.left is not None
+					currentNode = currentNode.left # still have left subtree to explore
 			else: # traverse right subtree
 				if currentNode.right is None:
 					currentNode.right = BST(value)
