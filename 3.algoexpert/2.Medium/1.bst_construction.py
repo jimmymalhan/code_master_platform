@@ -9,9 +9,9 @@ class BST:
     def insert(self, value):
 		currentNode = self # intialize the currentNode # tells you're with the currentNode
 		while True:
-			if value < currentNode.value: # traverse left subtree
-				if currentNode.left is None: 
-					currentNode.left = BST(value) # currentNode.left = assigning it to left subtree # successfully inserted the value
+			if value < currentNode.value: # insertion value is less than the current value
+				if currentNode.left is None: # traverse left subtree
+					currentNode.left = BST(value) # successfully inserted the value to left subtree
 					break
 				else: # currentNode.left is not None
 					currentNode = currentNode.left # still have left subtree to explore
