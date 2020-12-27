@@ -7,7 +7,7 @@ class BST:
 	# Average: O(log(n)) time | O(1) space
 	# Worst : O(n) time | O(1) space
     def insert(self, value):
-		currentNode = self ## intialize the current node | also, tell you where you are with the current node
+		currentNode = self # intialize the current node and tells you where you are with the currentNode
 		while True:
 			if value < currentNode.value: # traverse left subtree
 				if currentNode.left is None: 
@@ -38,18 +38,19 @@ class BST:
 
     def remove(self, value, parentNode = None):
     	currentNode = self 
-		while currentNode is not None:  # removal is two step process 1) find the node 2) remove the node
+		while currentNode is not None:  # removal is a two step process 1) find the node 2) remove the node
 			if value < currentNode.value: 
-				parentNode = currentNode # keep track of parent/root node coz to reassign child node to the parent of the node we are removing
+				parentNode = currentNode # keep track of parent/root node as to reassign the childNode to the parent of the node that we are removing
 				currentNode = currentNode.left
 			elif value > currentNode.value:
 				parentNode = currentNode
 				currentNode = currentNode.right
-			else: # value is = currentNode and found the value | Deals with 2 subcases
+			else: # value = currentNode and found the value | Deals with 2 subcases
 				if currentNode.left is not None and currentNode.right is not None: # FIRST SUBCASE - ROOT HAS 2 CHILD NODES
-					currentNode.value = currentNode.right.getMinValue() # get the smallest value in the given right subtree # currentNode.value = smallest value of right subtree 
+					currentNode.value = currentNode.right.getMinValue() # currentNode.value = smallest value of right subtree # get the smallest value in the given right subtree 
 					currentNode.right.remove(currentNode.value, currentNode) # currentNode is passing as parentNode
 				elif parentNode is None: # SECOND SUBCASE - ROOT DOESN't HAVE 2 CHILDREN NODES AND ROOT node doesn't have a parentNode
+					# will get back to it (TRICKY)
 					if currentNode.left is not None: # if the child node is the left node then, replace the values with left node
 						currentNode.value = currentNode.left.value
 						currentNode.right = currentNode.left.right
@@ -58,9 +59,9 @@ class BST:
 						currentNode.value = currentNode.right.value
 						currentNode.left = currentNode.right.left
 						currentNode.right = currentNode.right.right # important to assign the right value in the last line so as to overwrite
-					else: # root node which doesn't have a parent node and root node which doesn't have the children node # This is a single-node tree; do nothing
-						pass # currentNode.value = None
-				elif parentNode.left == currentNode: # ONLY have 1 child node or none and if the node is left child or right child
+					else: # root node which doesn't have a parent node and root node which doesn't have children nodes # This is a single-node tree; do nothing
+						pass # currentNode.value = None # can discuss with the interviewer for this used case scenario
+				elif parentNode.left == currentNode: # ONLY have 1 childNode or none and if the node is left child or right child
 					parentNode.left = currentNode.left if currentNode.left is not None else currentNode.right # left child of the parent node
 				elif parentNode.right == currentNode:
 					parentNode.right = currentNode.left if currentNode.left is not None else currentNode.right # right child of the parent node
@@ -69,6 +70,6 @@ class BST:
 
 	def getMinValue(self): # calling for right subtree
 		currentNode = self
-		while currentNode.left is not None: # traverse to left of the right subtree to see if there is None value > return the value
+		while currentNode.left is not None: # traverse to left of the right subtree to see if there is None value then, return the value
 			currentNode = currentNode.left
 		return currentNode.value

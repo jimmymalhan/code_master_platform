@@ -7,3 +7,6 @@ print(array)
 
 for i in range(len(array)):
     print(array[i])
+
+#  = equal
+#  == equalized
