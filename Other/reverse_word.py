@@ -1,10 +1,13 @@
 string = 'foo bar'
 
 ###### reverse every 2nd word ######
-
+# string = 'foo bar'
 # print(string[1]) # prints o
 # print(string[:1]) # prints f
 # print(string[::1]) # prints foo bar (whole string)
+# words = string.split()
+# for i in range(len(string)):
+#     print(words[i]) # print the items in the word (list)
 
 # 1) convert string to list 
 # 2) count the elements in the list 
