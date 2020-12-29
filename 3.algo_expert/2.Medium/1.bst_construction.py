@@ -58,7 +58,7 @@ class BST:
 					elif currentNode.right is not None:
 						currentNode.value = currentNode.right.value
 						currentNode.left = currentNode.right.left
-						currentNode.right = currentNode.right.right # important to assign the right value in the last line so as to overwrite
+						currentNode.right = currentNode.right.right # important to assign the right value in the last line so as not to be overwritten
 					else: # root node which doesn't have a parent node and root node which doesn't have children nodes # This is a single-node tree; do nothing
 						pass # currentNode.value = None # can discuss with the interviewer for this used case scenario
 				elif parentNode.left == currentNode: # ONLY have 1 childNode or none, if the node is left child or right child
