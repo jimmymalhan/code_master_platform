@@ -1,14 +1,41 @@
 string = 'foo bar'
 
-# Make list of string then go to alternate words then reverse those words itself in that list
-words = string.split(" ")
-for i in words:
-    print(i, i+1, end=' ')
-# print( " ".join(words))
+# create a list from string then go to alternate words then reverse those words itself in that list
 
 # print(string[1]) # prints o
 # print(string[:1]) # prints f
 # print(string[::1]) # prints foo bar (whole string)
+
+# 1) convert string to list 
+# 2) count the elements in the list 
+# 3) divide the list elements for odd index numbers and reverse them
+# 4) join the list and print it
+
+# words = string.split(" ") # converted string to list *******************
+# reverse = []
+# for i in words:
+#     print(i)
+# print(words)
+# print( " ".join(words))
+
+# words = string.split()
+# reverse = []
+# for i in words:
+#     if i % 2 == 1:
+#         reverse.append()
+#         break
+# print(reverse)
+
+#or 
+
+words = string.split()
+reverse = []
+i = 0
+while i < len(words):
+    if i % 2 == 1:
+        words.append(reverse)
+    break
+print(reverse)
 
 
 # reverse all the words
