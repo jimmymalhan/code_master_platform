@@ -1,6 +1,6 @@
 string = 'foo bar'
 
-# create a list from string then go to alternate words then reverse those words itself in that list
+###### reverse every 2nd word ######
 
 # print(string[1]) # prints o
 # print(string[:1]) # prints f
@@ -11,34 +11,28 @@ string = 'foo bar'
 # 3) divide the list elements for odd index numbers and reverse them
 # 4) join the list and print it
 
-# words = string.split(" ") # converted string to list *******************
-# reverse = []
-# for i in words:
-#     print(i)
-# print(words)
-# print( " ".join(words))
 
 # words = string.split()
 # reverse = []
-# for i in words:
+# i = 0
+# while i < len(words):
 #     if i % 2 == 1:
-#         reverse.append()
-#         break
-# print(reverse)
-
-#or 
+#         reverse.append(words[i][::-1])
+#     else:
+#         reverse.append(words[i])
+#     i += 1
+# print(" ".join(reverse))
 
 words = string.split()
 reverse = []
-i = 0
-while i < len(words):
+for i in range(len(words)):
     if i % 2 == 1:
-        words.append(reverse)
-    break
-print(reverse)
+        reverse.append(words[i][::-1])
+    else:
+        reverse.append(words[i])
+print(" ".join(reverse))
 
-
-# reverse all the words
+########## reverse all the words ##############
 # def reverse_whole_string(string):
 #     words = string.split(" ")
 #     words = list(reversed(words))
@@ -49,7 +43,7 @@ print(reverse)
 # r = ' '.join(reversed(string.split(' ')))
 # print(r)
 
-# # reverse each word in a sentence
+####### reverse each word in a sentence #######
 # def reverseWordSentence(string): 
 #     words = string.split(" ") 
 #     newWords = [word[::-1] for word in words] 
