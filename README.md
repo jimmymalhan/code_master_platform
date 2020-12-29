@@ -2,7 +2,7 @@
 
 ## Platforms
 ```bash
-* ELP
+* Elements of programming
 * Leet Code
 * Algo Expert
 * Hacker Rank
