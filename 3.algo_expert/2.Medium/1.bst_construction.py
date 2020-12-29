@@ -54,7 +54,7 @@ class BST:
 					if currentNode.left is not None: # if the child node is the left node then, replace the values with left node
 						currentNode.value = currentNode.left.value
 						currentNode.right = currentNode.left.right
-						currentNode.left = currentNode.left.left # important to assign the left value in the last line so as to overwrite
+						currentNode.left = currentNode.left.left # important to assign the left value in the last line so as not to be overwritten
 					elif currentNode.right is not None:
 						currentNode.value = currentNode.right.value
 						currentNode.left = currentNode.right.left
