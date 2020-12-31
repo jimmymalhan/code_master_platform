@@ -10,4 +10,4 @@ def swap(i, j, array):
 
 if __name__ == "__main__":
     array = [9,8,4,2,5,3]
-    print(insetion_sort(array))
+    print(insertionSort(array))
