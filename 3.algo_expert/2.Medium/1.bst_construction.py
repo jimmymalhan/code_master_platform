@@ -45,7 +45,7 @@ class BST:
 			elif value > currentNode.value:
 				parentNode = currentNode
 				currentNode = currentNode.right
-			else: # value = currentNode and found the value | Deals with 2 subcases
+			else: # value = currentNode.value and found the value | Deals with 2 subcases
 				if currentNode.left is not None and currentNode.right is not None: # FIRST SUBCASE - ROOT HAS 2 CHILD NODES
 					currentNode.value = currentNode.right.getMinValue() # currentNode.value = smallest value of right subtree
 					currentNode.right.remove(currentNode.value, currentNode) # currentNode is passing as parentNode
