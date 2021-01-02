@@ -4,7 +4,7 @@ def binarySearch(array, target):
 
 def binarySearchHelper(array, target, left, right):
 	if left > right:
-        return - 1 # if number is not found return -1
+        return - 1 # value is not found  - return - 1
     middle = (left + right) // 2
     potentialMatch = array[middle]
     if target == potentialMatch:
