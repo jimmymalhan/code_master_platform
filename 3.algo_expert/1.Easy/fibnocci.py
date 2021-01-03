@@ -27,14 +27,14 @@ n = 6
 # O(n) time |  O(1) space
 	
 def getNthFib(n):
-    lastTwo = [0 , 1]
-    counter = 3
-    while counter <= n:
-        nextFib = lastTwo[0] + lastTwo[1]
-        lastTwo[0] = lastTwo[1]
-        lastTwo[1] = nextFib
-        counter += 1
-    return lastTwo[1] if n > 1 else lastTwo[0]
+	lastTwo = [0, 1] # first two fib numbers
+	counter = 3 # 3rd fib number
+	while counter <= n: # while counter is smaller than n
+		nextFib = lastTwo[0] + lastTwo[1] # calculate next fib
+		lastTwo[0] = lastTwo[1]
+		lastTwo[1] = nextFib
+		counter += 1
+	return lastTwo[1] if n > 1 else lastTwo[0] # returning lastTwo[1] for the edge case that if asked to return for lastTwo[1] (1st element)
 
 getNthFib(n)
 print(getNthFib(n))
