@@ -3,14 +3,14 @@
                             # if used iteratively space complexity becomes O(1)- won't be using the frames on the call stack
 # Worst: O(N) time| (when BST has only 1 branch) | (N) space
                             # if used iteratively space complexity becomes O(1)
-            BST has 1 branch ONLY
-                        10 
-                        |
-                        15
-                        |
-                        22
-                        |
-                        30
+BST has 1 branch ONLY
+            10 
+            |
+            15
+            |
+            22
+            |
+            30
 
 find closest value to 12 
         10
@@ -49,16 +49,16 @@ if the |currentValue - targetValue| = 0 -> hence you found the closestValue (STO
 # Average: O(log(n)) time | O(log(n)) space
 # Worst: O(n) time | O(n) space
 def findClosestValueInBst(tree, target):
-	return findClosestValueInBstHelper(tree, target, tree.value)
+	return findClosestValueInBstHelper(tree, target, tree.value) # tree.value = float("inf") infinity
 
 def findClosestValueInBstHelper(tree, target, closest):
-	if tree is None:
+	if tree is None: # Recursive base case - where the currentNode is NULL
 		return closest
 	if abs(target - closest) > abs(target - tree.value):
 		closest = tree.value
-	if target < tree.value:
+	if target < tree.value: # if target < tree.value(CurrentNode) # then, ONLY explore left subtree 
 		return findClosestValueInBstHelper(tree.left, target, closest)
-	elif target > tree.value:
+	elif target > tree.value: # if target > tree.value(CurrentNode) # then, ONLY explore right subtree
 		return findClosestValueInBstHelper(tree.right, target, closest)
 	else:
 		return closest
@@ -74,7 +74,7 @@ class BST:
 # Average: O(log(n)) time | O(1) space
 # Worst: O(n) time | O(1) space
 def findClosestValueInBst(tree, target):
-	return findClosestValueInBstHelper(tree, target, tree.value)
+	return findClosestValueInBstHelper(tree, target, tree.value) # tree.value = float("inf") infinity
 
 def findClosestValueInBstHelper(tree, target, closest):
 	currentNode = tree
