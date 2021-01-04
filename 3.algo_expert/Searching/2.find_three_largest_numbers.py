@@ -1,7 +1,7 @@
 # O(n) time | O(1) space
 def findThreeLargestNumbers(array):
 	threeLargest = [None, None, None]
-	for num in array:
+	for num in array: # traversing the array
 		updateLargest(threeLargest, num)
 	return threeLargest
 	
