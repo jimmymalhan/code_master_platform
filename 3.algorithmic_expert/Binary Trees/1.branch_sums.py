@@ -8,15 +8,15 @@ Branch Sums
    / \  |
   8   9 10
 
+Depth first Search - 
+Begins with left subtree vs right subtree
+
 Output - [15, 16, 18, 10, 11]
 15 == 1 + 2 + 4 + 8
 16 == 1 + 2 + 4 + 9
 18 == 1 + 2 + 5 + 10
 10 == 1 + 3 + 6
 11 == 1 + 3 + 7
-
-Depth first Search - 
-Begins with left subtree vs right subtree
 
 O(n) time - traversing each of the node and time is constant
 O(n) space - returning to empty list(sums) at n number of operations, where half of them are leaf nodes and another half are branch nodes
