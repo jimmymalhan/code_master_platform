@@ -19,8 +19,13 @@ Output - [15, 16, 18, 10, 11]
 
 O(n) time - traversing all the nodes value and running at constant time operations
 O(n) space - returning to empty list(sums) at n number of operations, where half of them are leaf nodes and another half are branch nodes
-
 """
+
+# using depth first Search - from left to right
+# calculate branchSums - based on runningSum and append to the new list
+# edge case - if branch has one leaf or null node, return none
+# calculate branch for left and right node
+
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -34,7 +39,7 @@ def branchSums(root):
 	return sums
 
 def calculateBranchSums(node, runningSum, sums): # recursive function
-	if node is None: # if node is 
+	if node is None: # if branch has one child or node has null value
 		return
 	
 	newRunningSum = runningSum + node.value
