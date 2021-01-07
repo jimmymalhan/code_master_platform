@@ -1,15 +1,14 @@
 """
 Branch Sums 
-		 1
-	   /   \
-	  2      3
-     / \    / \
-	4   5  6   7
-   / \  |
-  8   9 10
-
-Depth first Search - 
-Begins with left subtree vs right subtree
+# 1 will be passing down	         1 	|(0) starts from + 1) = 1 runningSum # 1 will be passing down
+					              /     \
+   3 = 2 + runningSum(1)        2         3    |(1)runningSum + 3 = 4 # 4 will be passing down
+# 3 will be passing down       / \      /   \
+7 = 4 + runningSum(3)	      4   5(3)  6(4) 7 |(4)runningSum | 6 + 4 = 10 and 7 + 4 = 11 # No leaf nodes for left and right, return output
+# 7 & 8 will be passing down /  \   |  			
+				         (7)8 (7)9 10(8) | 7 + 8 = 15, 7 + 9 = 16, 10 + 8 = 18 # No leaf nodes for left and right, return output
+Depth First Search - 
+Begins with left subtree vs right subtree from the rootNode
 
 Output - [15, 16, 18, 10, 11]
 15 == 1 + 2 + 4 + 8
@@ -18,7 +17,7 @@ Output - [15, 16, 18, 10, 11]
 10 == 1 + 3 + 6
 11 == 1 + 3 + 7
 
-O(n) time - traversing each of the node and time is constant
+O(n) time - traversing all the nodes value and running at constant time operations
 O(n) space - returning to empty list(sums) at n number of operations, where half of them are leaf nodes and another half are branch nodes
 
 """
