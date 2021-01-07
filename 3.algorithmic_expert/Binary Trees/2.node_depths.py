@@ -1,3 +1,21 @@
+"""
+tree =              1
+                  /   \
+                2       3
+               / \     /  \
+              4   5   6    7
+            /   \
+           8     9
+
+Sample Output - 16
+The depth of the node with value 2 is 1.
+The depth of the node with value 3 is 1.
+The depth of the node with value 4 is 2.
+The depth of the node with value 5 is 2.
+Etc..
+Summing all of these depths yields 16.
+"""
+
 # avg case: when tree is balanced
 # O(n) time | O(h) space where n is the number of nodes in the binary tree and h is the height of the binary tree
 def nodeDepths(root, depth=0):
