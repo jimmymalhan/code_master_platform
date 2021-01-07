@@ -19,16 +19,8 @@ Output - [15, 16, 18, 10, 11]
 11 == 1 + 3 + 7
 
 O(n) time - traversing all the nodes value and running at constant time operations
-<<<<<<< HEAD
 O(n) space - returning to empty list(sums) at n number of operations, where half of them are leaf nodes and another half are branch nodes
-"""
 
-# using depth first Search - from left to right
-# calculate branchSums - based on runningSum and append to the new list
-# edge case - if branch has one leaf or null node, return none
-# calculate branch for left and right node
-
-=======
 O(n) space - We are not gonna exceed n node operations.  
 			1) List of branch sums [15, 16, 18, 10, 11] - complicated - counted by branch sums (branch nodes and lead nodes). You will never have more than n nodes.
 			2) recursive nature of the algorithm - multiple function calls on call stacks recursively 
@@ -45,7 +37,11 @@ O(n) space - We are not gonna exceed n node operations.
 														5
 """
 
->>>>>>> 88debf1601ce1689cbc4a068c8c1818e5b1badd9
+# using depth first Search - from left to right
+# calculate branchSums - based on runningSum and append to the new list
+# edge case - if branch has one leaf or null node, return none
+# calculate branch for left and right node
+
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -60,11 +56,7 @@ def branchSums(root):
 	return sums
 
 def calculateBranchSums(node, runningSum, sums): # recursive function
-<<<<<<< HEAD
 	if node is None: # if branch has one child or node has null value
-=======
-	if node is None: # if node have 1 child or null value
->>>>>>> 88debf1601ce1689cbc4a068c8c1818e5b1badd9
 		return
 	
 	newRunningSum = runningSum + node.value #newRunningSum is a branch sum
