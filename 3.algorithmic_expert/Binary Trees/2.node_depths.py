@@ -17,6 +17,13 @@ The depth of the node with value 7 is 2.
 The depth of the node with value 8 is 3.
 The depth of the node with value 9 is 3.
 Summing all of these depths yields 16.
+
+recursive - f(n, d) = d + f(l, d +1) + f(r , d + 1)
+
+n - node
+d - depth
+l - left
+r - right
 """
 
 # avg case: when tree is balanced
@@ -25,8 +32,13 @@ def nodeDepths(root, depth=0):
 	if root is None:
 		return 0
 	return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1)
-
-# This is the class of the input binary tree.
+"""
+recursive - f(n, d) = d + f(l, d + 1) + f(r , d + 1)
+n - node
+d - depth
+l - left
+r - right
+"""
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -49,7 +61,12 @@ def nodeDepths(root):
 		stack.append({"node": node.left, "depth": depth + 1})
 		stack.append({"node": node.right, "depth": depth + 1})
 	return sumOfDepths
-	
+"""Iterative
+empty stack -> grab root node (1) with the depth 0 and add it to the stack (to know it's depth with the runningNode) -> pop it off the node     # if the stack isn't empty, keep applying the algorithm
+grab child nodes (2) and (3) with the depth 1 and add it to the stack (to know it's depth with the runningNode) -> pop it off the node 
+
+"""
+
 class BinaryTree:
     def __init__(self, value):
         self.value = value
