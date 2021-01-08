@@ -1,6 +1,6 @@
 """
 Branch Sums 
-# 1 will be passing down	         1 	|(0)runningSum for rootNode + 1 = 1 	#1 will be passing down
+# 1 will be passing down	         1 		   |(0)runningSum for rootNode + 1 = 1 	#1 will be passing down
 					              /     \
    3 = 2 + runningSum(1)        2         3    |(1)runningSum + 3 = 4 	#4 will be passing down
 # 3 will be passing down       / \      /   \
