@@ -12,7 +12,10 @@ The depth of the node with value 2 is 1.
 The depth of the node with value 3 is 1.
 The depth of the node with value 4 is 2.
 The depth of the node with value 5 is 2.
-Etc..
+The depth of the node with value 6 is 2.
+The depth of the node with value 7 is 2.
+The depth of the node with value 8 is 3.
+The depth of the node with value 9 is 3.
 Summing all of these depths yields 16.
 """
 
