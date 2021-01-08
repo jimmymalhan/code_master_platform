@@ -8,9 +8,9 @@ tree =              1
            8     9
 
 Sample Output - 16
-The depth of the node with value 2 is 1.
+The depth of the node with value 2 is 1. # process of calculation depth of the tree (DFS) begins from the root of the node
 The depth of the node with value 3 is 1.
-The depth of the node with value 4 is 2.
+The depth of the node with value 4 is 2. # to get the depth of the children, need to know the depth of the parent- rootNode
 The depth of the node with value 5 is 2.
 The depth of the node with value 6 is 2.
 The depth of the node with value 7 is 2.
