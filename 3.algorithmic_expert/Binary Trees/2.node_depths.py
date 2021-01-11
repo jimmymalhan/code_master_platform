@@ -30,7 +30,8 @@ recursive - f(n, d) = d + f(l, d + 1) + f(r , d + 1)
 n - node | d - depth | l - left | r - right
 """
 # avg case: when tree is balanced
-# O(n) time | O(h) space where n is the number of nodes in the binary tree and h is the height of the binary tree
+# O(n) time
+# O(h) space where n is the number of nodes in the binary tree and h is the height of the binary tree
 def nodeDepths(root, depth=0):
 	if root is None:
 		return 0
@@ -49,7 +50,8 @@ grab child nodes (2) and (3) with the depth 1 and add it to the stack (to know i
 """
 
 # avg case: when tree is balanced
-# O(n) time | O(h) space where n is the number of nodes in the binary tree and h is the height of the binary tree
+# O(n) time 
+# O(h) space where n is the number of nodes in the binary tree and h is the height of the binary tree
 def nodeDepths(root):
 	sumOfDepths = 0
 	stack = [{"node": root, "depth": 0}]
