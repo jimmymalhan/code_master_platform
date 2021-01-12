@@ -37,8 +37,8 @@ def nodeDepths(root, depth=0):
 	if root is None: # base case - if node has null value
 		return 0
 	return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1)
-  # depth -> the root node
-  # depth + 1 -> a level down to 
+  # depth -> currentDepth /rootNode
+  # depth + 1 -> depth of the childNode(1 level deeper)
 
 class BinaryTree:
     def __init__(self, value):
