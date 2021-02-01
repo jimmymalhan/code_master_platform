@@ -5,7 +5,7 @@
 # Worst: O(n^2) time | O(1)space
 
 def selectionSort(array):
-	currentIdx = 0
+	currentIdx = 0 #starting point
 	while currentIdx < len(array) - 1:
 		smallestIdx = currentIdx # value is 0
 		for i in range(currentIdx + 1, len(array)):
