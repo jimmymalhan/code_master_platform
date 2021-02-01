@@ -1,3 +1,6 @@
+#Concept # if current number is smaller than next number, if not swap
+# if the array was sorted, re-check again if everything is sorted
+
 # Best: O(n) time | O(1) space
 # Average: O(n^2) time | O(1) space
 # Worst: O(n^2) time | O(1) space
