@@ -10,7 +10,7 @@ def selectionSort(array):
 		smallestIdx = currentIdx # value is 0
 		for i in range(currentIdx + 1, len(array)):
 			if array[smallestIdx] > array[i]: # if 0 > currentNumber- array[i]
-				smallestIdx = i # append smallestIdx to be i
+				smallestIdx = i # appending smallestIdx to be i
 		swap(currentIdx, smallestIdx, array)
 		currentIdx += 1
 	return array
