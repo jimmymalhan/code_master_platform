@@ -1,4 +1,4 @@
-# Concept - Find the smallest number in the array and swap it with the first element
+# Concept - Find the smallest number in the array - append swap it with the first element
 
 # Best: O(n^2) time | O(1)space
 # Average: O(n^2) time | O(1)space
