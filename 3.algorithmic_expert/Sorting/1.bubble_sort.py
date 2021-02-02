@@ -1,4 +1,4 @@
-#Concept # if current number is smaller than next number, if not swap
+#Concept # check if current number is smaller than next number, if not swap
 # if the array was sorted, re-check again if everything is sorted
 
 # Best: O(n) time | O(1) space
