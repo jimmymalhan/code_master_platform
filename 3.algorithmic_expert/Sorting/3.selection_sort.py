@@ -1,4 +1,4 @@
-# Concept - Find the smallest number in the array - append swap it with the first element
+# Concept - create a smallest number(as idx), append it with the idx(bigger idx) and swap it (with the first element)
 
 # Best: O(n^2) time | O(1)space
 # Average: O(n^2) time | O(1)space
@@ -9,7 +9,7 @@ def selectionSort(array):
 	while currentIdx < len(array) - 1:
 		smallestIdx = currentIdx # value is 0
 		for i in range(currentIdx + 1, len(array)):
-			if array[smallestIdx] > array[i]: # if 0 > currentNumber- array[i]
+			if array[smallestIdx] > array[i]: # if 0 > currentNumber(array[i])
 				smallestIdx = i # appending smallestIdx to be i
 		swap(currentIdx, smallestIdx, array)
 		currentIdx += 1
