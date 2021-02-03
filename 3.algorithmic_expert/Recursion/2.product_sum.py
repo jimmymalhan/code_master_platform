@@ -1,0 +1,1 @@
+# special array contains integers or other special arrays -> Recursion problem
