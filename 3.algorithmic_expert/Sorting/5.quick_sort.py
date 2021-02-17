@@ -1,10 +1,15 @@
 #		   S				 E
 # array = [8, 5, 2, 8, 5, 6, 3]
 #		   P  L				 R
-# L > P and R < P
+
 # start >= end
 # right >= left
-# time - O(nlog(n)),Space- O(log(n))
+# L > P and R < P
+
+# Worst : time - O(n^2),Space- O(log(n)) # in input - swap all positions
+# Best: time - O(nlog(n)),Space- O(log(n)) # in input - swap postions for left and right subarray
+# Avg: time - O(nlog(n)),Space- O(log(n))
+
 def quickSort(array):
 	quickSortHelper(array, 0, len(array) - 1)
 	return array
@@ -12,7 +17,7 @@ def quickSort(array):
 def quickSortHelper(array, startIdx, endIdx):
 	if startIdx >= endIdx:
 		return
-	pivotIdx = startIdx
+	pivotIdx = startIdx # assuming far left of the array
 	leftIdx = startIdx + 1
 	rightIdx = endIdx
 	while rightIdx >= leftIdx:
@@ -23,7 +28,7 @@ def quickSortHelper(array, startIdx, endIdx):
 		if array[rightIdx] >= array[pivotIdx]:
 			rightIdx -= 1
 	swap(pivotIdx, rightIdx, array)
-	# leftSubarray = rightIdx - 1 = 'ending index - endIdx' ( rightIdx - 1 - startIdx)
+	# leftSubarray = rightIdx - 1 ==>> 'ending index - endIdx' ( rightIdx - 1 - startIdx)
 	# rightSubarray = endIdx - (rightIdx + 1)
 	leftSubarrayIsSmaller = rightIdx - 1 - startIdx < endIdx - (rightIdx + 1)
 	if leftSubarrayIsSmaller:
