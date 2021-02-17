@@ -4,7 +4,7 @@
 
 # start >= end
 # right >= left
-# L > P and R < P
+	# L > P and R < P
 
 # Worst : time - O(n^2),Space- O(log(n)) # in input - swap all positions
 # Best: time - O(nlog(n)),Space- O(log(n)) # in input - swap postions for left and right subarray
