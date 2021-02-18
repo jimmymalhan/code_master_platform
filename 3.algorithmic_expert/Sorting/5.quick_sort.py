@@ -7,6 +7,8 @@
 	# L > P and R < P
 	# swap
 # R < L # swap
+# leftSubarrayIsSmaller?
+	# use recursion to swap
 
 # Worst : time - O(n^2),Space- O(log(n)) # in input - swap all positions
 # Best: time - O(nlog(n)),Space- O(log(n)) # in input - swap postions for left and right subarray
