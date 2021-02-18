@@ -27,7 +27,7 @@ def quickSortHelper(array, startIdx, endIdx):
 			leftIdx += 1
 		if array[rightIdx] >= array[pivotIdx]:
 			rightIdx -= 1
-	swap(pivotIdx, rightIdx, array)
+	swap(pivotIdx, rightIdx, array) # R < L
 	# leftSubarray = rightIdx - 1 ==>> 'ending index - endIdx' ( rightIdx - 1 - startIdx)
 	# rightSubarray = endIdx - (rightIdx + 1)
 	leftSubarrayIsSmaller = rightIdx - 1 - startIdx < endIdx - (rightIdx + 1)
