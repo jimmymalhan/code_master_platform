@@ -4,7 +4,7 @@
 
 # start >= end
 # right >= left
-	# L > P and R < P
+	# arrya[L] > [P] and [R] < [P]
 	# swap
 # R < L # swap
 # leftSubarrayIsSmaller?
