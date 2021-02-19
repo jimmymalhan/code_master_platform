@@ -7,10 +7,10 @@
 
 def bubbleSort(array):
 	isSorted = False
-	counter = 0
+	counter = 0 # skip last loop to verify that elements are in correct position (small optimization)
 	while not isSorted:
 		isSorted = True
-		for i in range(len(array) - 1 - counter): # counter -  everytime for loop completes, it goes to only one position before the position it went to
+		for i in range(len(array) - 1 - counter): # counter - when 'for loop' completes, it skips the position that it has already went
 			if array[i] > array[i + 1]:
 				swap(i, i + 1, array)
 				isSorted = False
