@@ -1,14 +1,17 @@
-#		   S				 E
+#		   S			  E
 # array = [8, 5, 2, 8, 5, 6, 3]
 #		   P  L				 R
 
-# start >= end
-# right >= left
-	# arrya[L] > [P] and [R] < [P]
-	# swap
-# R < L # swap
-# leftSubarrayIsSmaller?
-	# use recursion to swap
+# if  s >= e : r
+# 	assigning p, l, r -variables
+# while r >= e
+# if l >= p & r <= p
+# 	swap
+# l <= p -  l+
+# r >= p -  r-
+# leftsubarrayissmaller = r - 1 - s < e - (r + 1)
+# (p , s, r - 1)
+# (p, r + 1, e)
 
 # Worst : time - O(n^2),Space- O(log(n)) # in input - swap all positions
 # Best: time - O(nlog(n)),Space- O(log(n)) # in input - swap postions for left and right subarray
