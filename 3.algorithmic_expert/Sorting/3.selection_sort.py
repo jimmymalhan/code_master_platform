@@ -9,7 +9,7 @@
 def selectionSort(array):
 	currentIdx = 0 # sorted subarray with len 0
 	while currentIdx < len(array) - 1: # finding smallest num in unsorted subarray
-		smallestIdx = currentIdx # smallestidx is the 1st idx with value 0
+		smallestIdx = currentIdx # smallestidx is the 1st idx
 		for i in range(currentIdx + 1, len(array)): # from 2nd idx to len(array)
 			if array[smallestIdx] > array[i]: # if 1st idx(SMALLEST NUMBER) in the array > 2nd idx to end of the array(CURRENT NUMBER)
 				smallestIdx = i # appending (idx) smallestIdx(0) to be i (currentIdx)
