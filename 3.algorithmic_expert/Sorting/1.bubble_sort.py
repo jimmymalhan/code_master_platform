@@ -2,7 +2,7 @@
 # Average: O(n^2) time | O(1) space
 # Worst: O(n^2) time | O(1) space
 
-def bubbleSort(array):
+def bubbleSort(array): # looping forward
 	isSorted = False # keeping track of swaps
 	counter = 0 # skip last loop to verify that elements are in correct position (small optimization)
 	while not isSorted:

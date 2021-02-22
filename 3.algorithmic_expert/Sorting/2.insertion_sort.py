@@ -1,5 +1,8 @@
-# O(n^2) time | O(1) space
-def insertionSort(array):
+# Best: O(n) time | O(1) space
+# Average: O(n^2) time | O(1) space
+# Worst: O(n^2) time | O(1) space
+
+def insertionSort(array): # looping backwards
 	# Looping through the array once
 	for i in range(1, len(array)): # intialize the 'for' loop # keep inserting numbers to the tentative sorted sublist(very first number of the array)
 		j = i # 2nd index
