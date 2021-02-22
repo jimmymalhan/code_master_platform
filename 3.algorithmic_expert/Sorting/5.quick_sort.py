@@ -1,6 +1,6 @@
 #		   S			  E
 # array = [8, 5, 2, 8, 5, 6, 3]
-#		   P  L				 R
+#		   P  L			  R
 
 # if  s >= e : r
 # 	assigning p, l, r -variables
