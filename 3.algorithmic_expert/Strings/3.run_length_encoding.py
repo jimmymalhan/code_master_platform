@@ -1,15 +1,16 @@
+# O(n) time | O(n) space
 def runLengthEncoding(string):
-	encodedStringCharacters = []
-	currentRunLength = 1
+	encodedStringCharacters = [] # lossless data compression
+	currentRunLength = 1 # this will always be 1(never be zero)
 	
 	for i in range(1, len(string)):
 		currentCharacter = string[i]
 		previousCharacter = string[i - 1]
 		
-		if currentCharacter != previousCharacter or currentRunLength == 9:
+		if currentCharacter != previousCharacter and currentRunLength == 9: # or is req so it can append individually
 			encodedStringCharacters.append(str(currentRunLength))
 			encodedStringCharacters.append(previousCharacter)
-			currentRunLength = 0
+			currentRunLength = 0 # needed so it can add like 9A4A vs 13A(not required)
 			
 		currentRunLength += 1
 		
