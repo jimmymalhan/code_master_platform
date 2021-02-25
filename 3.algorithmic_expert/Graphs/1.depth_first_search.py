@@ -1,19 +1,19 @@
 class Node:
     def __init__(self, name):
-        self.children = []
-        self.name = name
+        self.children = [] # contains the graph
+        self.name = name # root node
 
     def addChild(self, name):
         self.children.append(Node(name))
         return self
-# v - vertex
+
+# v - vertices
 # e - edges
 # O(v + e) time | O(v) space # v frames on call stack
-
     def depthFirstSearch(self, array):
-		array.append(self.name)
-		for child in self.children:
-			child.depthFirstSearch(array)
+		array.append(self.name) # adding root Node
+		for child in self.children: # looping for child
+			child.depthFirstSearch(array) # calling recursively
 		return array
 
         #Example - 
