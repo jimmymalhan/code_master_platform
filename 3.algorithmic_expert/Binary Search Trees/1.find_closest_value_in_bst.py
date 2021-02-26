@@ -55,7 +55,7 @@ def findClosestValueInBstHelper(tree, target, closest):
 	if tree is None: # Recursive base case - where the currentNode is NULL
 		return closest
 	if abs(target - closest) > abs(target - tree.value):
-		closest = tree.value
+		closest = tree.value # closest value gets updated
 	if target < tree.value: # if target < tree.value(CurrentNode) # then, ONLY explore left subtree 
 		return findClosestValueInBstHelper(tree.left, target, closest)
 	elif target > tree.value: # if target > tree.value(CurrentNode) # then, ONLY explore right subtree
