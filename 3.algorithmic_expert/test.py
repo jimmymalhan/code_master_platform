@@ -17,11 +17,18 @@
 # print(range1(1,10))
 
 #Ques- 
-array = [1,2],[3,4]
+array = ([1,2],[3,4])
 # output = 1, 3, 2, 4
-# print(', '.join([str(n) for v in zip(*array) for n in v]))
+newList = []
 for v in zip(*array):
     # (1, 3)
     # (2, 4)
     for n in v:
-        print(', '.join(str(n)))
+        # print(n)
+        # 1
+        # 3
+        # 2
+        # 4
+        newList.append(n)
+print(newList)
+# print(', '.join([str(n) for v in zip(*array) for n in v]))
