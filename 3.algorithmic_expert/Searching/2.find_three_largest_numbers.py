@@ -17,6 +17,10 @@ def updateLargest(threeLargest, num):
 def shiftAndUpdate(array, num, idx):
 	for i in range(idx + 1): #idx + 1 is exclusive so, we are going from [0 to idx]
 		if i == idx:# At the point of iteration where, we are at last index that have passed in the method
+			# i = 0
+			# i = 1
+			# i = 2
+			# idx = 2
 			array[i] = num # update the array[i] to the number
 		else:
 			array[i] = array[i + 1]
