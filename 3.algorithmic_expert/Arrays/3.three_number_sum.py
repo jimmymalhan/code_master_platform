@@ -1,11 +1,11 @@
 def threeNumberSum(array, targetSum):
 	array.sort()
 	triplets = []
-	for i in range(len(array) - 2):# array[i]/currentNumber is the first element of an array
+	for i in range(len(array) - 2):
 		left = i + 1
 		right = len(array) - 1
 		while left < right:
-			currentSum = array[i] + array[left] + array[right] #formula
+			currentSum = array[i] + array[left] + array[right]
 			if currentSum == targetSum:
 				triplets.append([array[i], array[left], array[right]])
 				left += 1
