@@ -1,9 +1,15 @@
-# declare a variable - arrIdx = 0 and loop through to check arrIdx < len(array) or arrIdx == len(array)
+# Data Types: List, typles, sets and dictionaries
+# https://www.w3schools.com/python/python_datatypes.asp
+# x = ["1", "2", "3"] - List
+# x = ("1", "2", "3") - tuple
+# print("".join(x)) # 123
+
 # for v in zip(*array) - > ([1,2],[3,4]) or slice [1:-1]
+# declare a variable - arrIdx = 0 and loop through to check arrIdx < len(array) or arrIdx == len(array)
 # nested loops - for i in .. for j in i - Ques1
 # triplets -  len(array) - 2
 
-array = [1, 2, 3, 4]
+# array = [1, 2, 3, 4]
 # for i in range(len(array) - 2):
 #     print(i)
 # for i in range(len(array) - 1):
@@ -35,3 +41,6 @@ array = [1, 2, 3, 4]
 #         newList.append(n)
 # print(newList)
 # # print(', '.join([str(n) for v in zip(*array) for n in v]))
+
+x = ("1", "2", "3")
+print("".join(x)) # 123
