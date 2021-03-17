@@ -42,5 +42,17 @@
 # print(newList)
 # # print(', '.join([str(n) for v in zip(*array) for n in v]))
 
-x = ("1", "2", "3")
-print("".join(x)) # 123
+
+# x = ["apple", "banana", "cherry"]
+# for idx,value in enumerate(x):
+#     print(idx, value)
+# 0 apple
+# 1 banana
+# 2 cherry
+
+# x = ["apple", "banana", "cherry"]
+# for idx,value in enumerate(x, start=1):
+#     print(idx, value)
+# 1 apple
+# 2 banana
+# 3 cherry
