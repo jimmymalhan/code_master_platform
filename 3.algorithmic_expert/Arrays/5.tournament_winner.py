@@ -1,10 +1,11 @@
 # brute force approach
 	# create a DS - hash map
 	# loop through the competitions
-	# if the competition's element is winner based on the results
-	# append it with 3 points to the DS - hash map until finished
-	# loop to the newly DS - hash map and find out the winner element with most points
-	
+    # seperate home and away team 
+    # define winning team -
+        # if the competition's element is winner based on the results
+    # update scores by 3 points
+    # find the best team in the scores
 
 # optimization - create a new variable to track the winner element
 	# compare the current element's score with the winner element (in new variable) until finished
@@ -30,7 +31,7 @@ def tournamentWinner(competitions, results):
             # 1
 
 		homeTeam, awayTeam = competition # splitting the array for homeTeam and awayTeam
-		# defining the winningTeam 
+		# defining the winningTeam by checking the result is equal to Home_Team_Won
 		winningTeam = homeTeam if result == Home_Team_Won else awayTeam 
 		# updating the winningTeam's scores in the DS
 		updateScores(winningTeam, 3, scores)
