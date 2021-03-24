@@ -1,5 +1,5 @@
 # for v in zip(*array) -> ([1,2],[3,4]) or slice [1:-1]
-# loop through a string and split  -> modify string
+# split and then loop through a string -> to modify string
 # declare a variable -> arrIdx = 0 and loop through to check arrIdx < len(array) or arrIdx == len(array)
 # nested loops -> for i in .. for j in i - Ques1
 
