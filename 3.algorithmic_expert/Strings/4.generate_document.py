@@ -16,6 +16,17 @@
 # as key/vaue store {} to check if we have enough elements to create document
 # O(n+m)time | O(c) space where c is number of unique elements in the document
 
+# Solution - 0
+# using count  method for python inbuilt
+def generateDocument(characters, document):
+	for character in document:
+		documentFrequency = document.count(character) #O(n)
+		charactersFrequency = characters.count(character)
+		if documentFrequency > charactersFrequency:
+			return False
+	return True
+
+# Solution - 1
 # O(m*(n + m)) space | O(1) space 
 def generateDocument(characters, document):
 	for character in document:
@@ -24,12 +35,14 @@ def generateDocument(characters, document):
 		if documentFrequency > charactersFrequency:
 			return False
 	return True
-	# document.count(character) # O(n)
-	# characters.count(character)
-def countCharacterFrequency(character, target):
+def countCharacterFrequency(character, target): # target = document + characters
 		frequency = 0
 		for char in target:
 			if char == character:
 				frequency += 1
 		return frequency
-		
+
+
+# Solution - 2
+
+# Solution - 3
