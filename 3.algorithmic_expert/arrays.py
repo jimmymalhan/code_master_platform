@@ -50,3 +50,25 @@
 # 1 apple
 # 2 banana
 # 3 cherry
+
+#anagram
+# a = "abc"
+# b = "acb"
+# def Solution(a, b):
+#     if sorted(a) == sorted(b):
+#         return True
+#     else:
+#         return False
+
+# print(Solution(a,b))
+
+chara = "abccc"
+doc = "abcccc"
+def Solution(doc, chara):
+    for element in chara:
+        if doc.count(element) > chara.count(element):
+            return False
+    return True
+
+
+print(Solution(doc,chara))
