@@ -44,5 +44,26 @@ def countCharacterFrequency(character, target): # target = document + characters
 
 
 # Solution - 2
-
+def generateDocument(characters, document):
+	alreadyCounted = set() # [] - can be used but replace add with append
+	
+	for character in document:
+		if character in alreadyCounted:
+			continue
+			
+		documentFrequency = countCharacterFrequency(character, document)
+		charactersFrequency = countCharacterFrequency(character, characters)
+		if documentFrequency > charactersFrequency:
+			return False
+		
+		alreadyCounted.add(character) # replace add with append
+		
+	return True
+def countCharacterFrequency(character, target): # target = document + characters
+	frequency = 0
+	for char in target:
+		if char == character:
+			frequency += 1
+			
+	return frequency
 # Solution - 3
