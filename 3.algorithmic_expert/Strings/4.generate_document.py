@@ -1,7 +1,7 @@
 # n - len of character in string
 # m - len of document in string
 
-# Solution -> 1 counting elements in char and document everytime -> increses the time
+# Solution -> 1 counting elements in char and document everytime -> increases the time
 # O(m*(n + m)) space | O(1) space 
 # counting every element in character(n) + counting every element in document(m)
 # -> leads to (n + m)
@@ -20,9 +20,7 @@
 # using count  method for python inbuilt
 def generateDocument(characters, document):
 	for character in document:
-		documentFrequency = document.count(character) #O(n)
-		charactersFrequency = characters.count(character)
-		if documentFrequency > charactersFrequency:
+		if document.count(character) > characters.count(character): # count - O(n)
 			return False
 	return True
 
@@ -66,4 +64,5 @@ def countCharacterFrequency(character, target): # target = document + characters
 			frequency += 1
 			
 	return frequency
+	
 # Solution - 3
