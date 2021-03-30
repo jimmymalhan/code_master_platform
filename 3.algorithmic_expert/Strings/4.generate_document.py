@@ -14,6 +14,8 @@
 
 # Solution -> 3 -> loop through only once, store the count in hashmap/dictionary 
 # as key/vaue store {} to check if we have enough elements to create document
+# loop through characters - and add 1 value from it
+# loop through document - and subtract 1 value from it, if the value is less than zero, then return False
 # O(n+m)time | O(c) space where c is number of unique elements in the document
 
 # Solution - 0
@@ -42,6 +44,7 @@ def countCharacterFrequency(character, target): # target = document + characters
 
 
 # Solution - 2
+# O(c*(n+m)) time | O(c)space where, c is number of unique elements in the document
 def generateDocument(characters, document):
 	alreadyCounted = set() # [] - can be used but replace add with append
 	
@@ -66,3 +69,18 @@ def countCharacterFrequency(character, target): # target = document + characters
 	return frequency
 	
 # Solution - 3
+# O(n+m)time | O(c) space where c is number of unique elements in the document
+def generateDocument(characters, document):
+	characterCounts = {}
+	
+	for character in characters:
+		if character not in characterCounts:
+			characterCounts[character] = 0
+			
+		characterCounts[character] += 1
+	
+	for character in document:
+		if character not in characterCounts or characterCounts[character] == 0:
+			return False
+		characterCounts[character] -= 1
+	return True
