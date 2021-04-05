@@ -19,7 +19,7 @@ def getLongestPalindromeFrom(string, leftIdx, rightIdx):
 
 print(longestPalindromicSubstring(string))
 
-====================================================================================================
+# ====================================================================================================
 
 # O(n^3) time | O(n) space
 def longestPalindromicSubstring(string):
