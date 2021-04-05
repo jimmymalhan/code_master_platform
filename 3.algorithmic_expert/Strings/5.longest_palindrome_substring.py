@@ -2,8 +2,8 @@ string = "abaxyzzyxf"
 # O(n^2) time | O(n) space
 def longestPalindromicSubstring(string):
 	currentLongest = [0, 1]
-	for i in range(1, len(string)):
-		odd = getLongestPalindromeFrom(string, i - 1, i + 1)
+	for i in range(1, len(string)): # starting from 1, as index[0] is already a palindrome
+		odd = getLongestPalindromeFrom(string, i - 1, i + 1) # i-1 = leftIdx & i + 1 = rightIdx
 		even = getLongestPalindromeFrom(string, i - 1, i)
 		longest = max(odd, even, key=lambda x: x[1] - x[0])
 		currentLongest = max(longest, currentLongest, key=lambda x: x[1] - x[0])
