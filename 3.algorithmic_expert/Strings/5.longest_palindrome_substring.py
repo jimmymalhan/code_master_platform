@@ -24,10 +24,10 @@ print(longestPalindromicSubstring(string))
 # O(n^3) time | O(n) space
 def longestPalindromicSubstring(string):
     longest = ""
-	for i in range(len(string)):
-		for j in range(i, len(string)):
-			substring = string[i : j + 1]
-			if len(substring) > len(longest) and isPalindrome(substring):
+    for i in range(len(string)): # from index 0
+        for j in range(i, len(string)): # from 0-9, 1-9, 2-9 ...
+            substring = string[i : j + 1] # string at index[0, 0-1..., 0-9, 1, 1-2 ...]
+            if len(substring) > len(longest) and isPalindrome(substring): # len(substring)= 1-10, 1-9 ... > len(longest) and becomes palindrome
 				longest = substring
 	return longest
 
