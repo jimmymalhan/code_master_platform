@@ -25,7 +25,7 @@ print(longestPalindromicSubstring(string))
 def longestPalindromicSubstring(string):
     longest = ""
     for i in range(len(string)): # from index 0
-        for j in range(i, len(string)): # from 0-9, 1-9, 2-9 ...
+        for j in range(i, len(string)): # idx[0-6], [1-6], [2-6], [3-6], [4-6], [5,6],[6]
             substring = string[i : j + 1] # string at index[0, 0-1..., 0-9, 1, 1-2 ...]
             if len(substring) > len(longest) and isPalindrome(substring): # len(substring)= 1-10, 1-9 ... > len(longest) and becomes palindrome
 				longest = substring
