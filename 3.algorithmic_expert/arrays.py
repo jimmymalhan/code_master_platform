@@ -62,13 +62,19 @@
 
 # print(Solution(a,b))
 
-chara = "abccc"
-doc = "abcccc"
-def Solution(doc, chara):
-    for element in chara:
-        if doc.count(element) > chara.count(element):
-            return False
-    return True
+# chara = "abccc"
+# doc = "abcccc"
+# def Solution(doc, chara):
+#     for element in chara:
+#         if doc.count(element) > chara.count(element):
+#             return False
+#     return True
 
 
-print(Solution(doc,chara))
+# print(Solution(doc,chara))
+
+string = "abcdcaf"
+for i in range(len(string)): # idx[0-6]
+    # for j in range(len(string)): # idx[0-6] - 7 times
+    for j in range(i, len(string)): # idx[0-6], [1-6], [2-6], [3-6], [4-6], [5,6],[6]
+        print(j)
