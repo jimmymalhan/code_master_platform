@@ -11,13 +11,6 @@
     # print(array[i + 1]) # 2, 3, 4
     # print(array[i]+array[i+1], end=' ') #3, 5, 7
 
-# # for i in range(len(array)):
-# #     print(array[i]) # 1, 2, 3, 4
-# #     # print(i) # 0, 1, 2, 3, 4
-
-# def range1(start, end):
-#     return range(start, end+1)
-# print(range1(1,10))
 
 #Ques 1- 
 # array = ([1,2],[3,4])
@@ -61,9 +54,9 @@
 #         return False
 
 # print(Solution(a,b))
-
+# or 
+# doc = "acccb"
 # chara = "abccc"
-# doc = "abcccc"
 # def Solution(doc, chara):
 #     for element in chara:
 #         if doc.count(element) > chara.count(element):
@@ -73,8 +66,7 @@
 
 # print(Solution(doc,chara))
 
-string = "abcdcaf"
-for i in range(len(string)): # idx[0-6]
-    # for j in range(len(string)): # idx[0-6] - 7 times
-    for j in range(i, len(string)): # idx[0-6], [1-6], [2-6], [3-6], [4-6], [5,6],[6]
-        print(j)
+# string = "abcdcaf" - 7 elements
+# for i in range(len(string)): # idx[0-6]
+#     # for j in range(len(string)): # idx[0-6] - 7 times
+#     for j in range(i, len(string)): # idx[0-6], [1-6], [2-6], [3-6], [4-6], [5,6],[6]
