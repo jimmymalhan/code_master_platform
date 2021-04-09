@@ -1,24 +1,24 @@
-# O(n^2) time | O(1) space
-def firstNonRepeatingCharacter(string):
-	for i in range(len(string)):
-		foundDuplicate = False
-		for j in range(len(string)):
-			if string[i] == string[j] and i != j:
-				foundDuplicate = True
+string = "abcdcaf"
+# # O(n^2) time | O(1) space
+# def firstNonRepeatingCharacter(string):
+# 	for i in range(len(string)):
+# 		foundDuplicate = False
+# 		for j in range(len(string)):
+# 			if string[i] == string[j] and i != j:
+# 				foundDuplicate = True
 				
-		if not foundDuplicate:
-			return i
+# 		if not foundDuplicate:
+# 			return i
 		
-	return -1
+# 	return -1
 
 # O(n) time | O(1) space
 def firstNonRepeatingCharacter(string):
 	characterFrequencies = {}
 	
 	for character in string:
-		characterFrequencies[character] = characterFrequencies.get(character, 0) + 1 
+		characterFrequencies[character] = characterFrequencies.get(character, 0) + 1 # characterFrequencies[character] is mapping the value of key 1 | if repeating - add 1 = 2
 		# it look in the hashMap/Dict - if character is not there(array) it assigns/add the value 0 + 1 = 1 
-		
 	
 	# idx traversal
 	for idx in range(len(string)):
@@ -26,3 +26,5 @@ def firstNonRepeatingCharacter(string):
 		if characterFrequencies[character] == 1: # checking the first non-repeating character in hashMap
 			return idx
 	return -1
+
+print(firstNonRepeatingCharacter(string))
