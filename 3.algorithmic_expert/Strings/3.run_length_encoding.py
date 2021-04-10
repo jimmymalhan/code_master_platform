@@ -7,7 +7,7 @@ def runLengthEncoding(string):
 		currentCharacter = string[i]
 		previousCharacter = string[i - 1]
 		
-		if currentCharacter != previousCharacter and currentRunLength == 9: # or is req so it can append individually
+		if currentCharacter != previousCharacter or currentRunLength == 9: # or is req so it can append individually
 			encodedStringCharacters.append(str(currentRunLength))
 			encodedStringCharacters.append(previousCharacter)
 			currentRunLength = 0 # needed so it can add like 9A4A vs 13A(not required)
