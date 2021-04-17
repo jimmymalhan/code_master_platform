@@ -73,12 +73,14 @@
 
 # count from list
 # https://stackoverflow.com/questions/20510768/count-frequency-of-words-in-a-list-and-sort-by-frequency
-from collections import Counter
-words =["hello world","b","b"]
+# from collections import Counter
+# words =["hello world","b","b"]
 
-def Solution(words = None):
-    # return dict((i, words.count(i)) for i in words)
-    return Counter(words)
+# def Solution(words = None):
+#     # return dict((i, words.count(i)) for i in words) #{'hello world': 1, 'b': 2}
+#     # return Counter(words) # Counter({'b': 2, 'hello world': 1})
+    
 
-if __name__ == '__main__':
-    print(Solution(words))
+
+# if __name__ == '__main__':
+#     print(Solution(words))
