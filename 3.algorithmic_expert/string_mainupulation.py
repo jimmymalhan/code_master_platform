@@ -72,16 +72,13 @@
 #     for j in range(i, len(string)): # idx[0-6], [1-6], [2-6], [3-6], [4-6], [5,6],[6]
 
 # count from list
+# https://stackoverflow.com/questions/20510768/count-frequency-of-words-in-a-list-and-sort-by-frequency
 from collections import Counter
-words =["a","b","b"]
+words =["hello world","b","b"]
 
 def Solution(words = None):
-    return Counter(words)
     # return dict((i, words.count(i)) for i in words)
+    return Counter(words)
 
-print(Solution(words))
-
-
-# from collections import Counter
-# >>> Counter(l)
-# Counter({'b': 2, 'a': 1})
+if __name__ == '__main__':
+    print(Solution(words))
