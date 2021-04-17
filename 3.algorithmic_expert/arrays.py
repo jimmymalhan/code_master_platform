@@ -70,3 +70,18 @@
 # for i in range(len(string)): # idx[0-6]
 #     # for j in range(len(string)): # idx[0-6] - 7 times
 #     for j in range(i, len(string)): # idx[0-6], [1-6], [2-6], [3-6], [4-6], [5,6],[6]
+
+# count from list
+from collections import Counter
+words =["a","b","b"]
+
+def Solution(words = None):
+    return Counter(words)
+    # return dict((i, words.count(i)) for i in words)
+
+print(Solution(words))
+
+
+# from collections import Counter
+# >>> Counter(l)
+# Counter({'b': 2, 'a': 1})
