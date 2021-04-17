@@ -34,17 +34,27 @@ def groupAnagrams(words):
 
 #	=== 
 
-# O(wnlog(n) time) | O (wn) space - where w is the number of words and n is the length of the longest word
-# sort w  at length n | checking hashtable at constant space with wn
+# O(w * n * log(n) time) | O (wn) space - where w is the number of words and 
+# n is the length of the longest word
+
+# words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
 def groupAnagrams(words):
 	anagrams = {}
-	for word in words:
-		sortedWord = "".join(sorted(word)) # sorted in a list | oy, act, flop, act, foo, act, oy, flop
-
+	for word in words: # print(word) # yo, act, flop, tac, foo, cat, oy, olfp
+		sortedWord = "".join(sorted(word)) # sort indices # oy, act, flop, act, foo, act, oy, flop
 		if sortedWord in anagrams:
-			anagrams[sortedWord].append(word)
+			# print(sortedWord) # act, act, oy, flop # keys
+			# print(anagrams)
+				# {'oy': ['yo'], 'act': ['act'], 'flop': ['flop']}
+				# {'oy': ['yo'], 'act': ['act', 'tac'], 'flop': ['flop'], 'foo': ['foo']}
+				# {'oy': ['yo'], 'act': ['act', 'tac', 'cat'], 'flop': ['flop'], 'foo': ['foo']}
+				# {'oy': ['yo', 'oy'], 'act': ['act', 'tac', 'cat'], 'flop': ['flop'], 'foo': ['foo']}
+			# print(anagrams[sortedWord]) # ['act'], ['act', 'tac'], ['yo'], ['flop']
+			# value = key
+			anagrams[sortedWord].append(word) # if sorted word in anagram -> appending keys(word)
 		else:
-			anagrams[sortedWord] = [word]
+			anagrams[sortedWord] = [word] # if word is not found in anagram then adding word
+	# print(anagrams) #{'oy': ['yo', 'oy'], 'act': ['act', 'tac', 'cat'], 'flop': ['flop', 'olfp'], 'foo': ['foo']}
+	# print(list(anagrams.keys())) # ['oy', 'act', 'flop', 'foo']
+	# print(list(anagrams.values())) # [['yo', 'oy'], ['act', 'tac', 'cat'], ['flop', 'olfp'], ['foo']]
 	return list(anagrams.values())
-
-print(groupAnagrams(words))
