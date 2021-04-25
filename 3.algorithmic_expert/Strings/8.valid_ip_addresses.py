@@ -9,12 +9,12 @@ def validIPAddresses(string):
 		if not isValidPart(currentIPAddressParts[0]):
 			continue
 			
-		for j in range(i + 1, i + min(len(string) - i, 4)): # i + 1 = for second period, placement of i at most 3 positions past of i 
+		for j in range(i + 1, i + min(len(string) - i, 4)): # i + 1 = for second period, placement of i at most in 3 positions past of i 
 			currentIPAddressParts[1] = string[i : j] # start from index i where the first position started to j at placement
 			if not isValidPart(currentIPAddressParts[1]):
 				continue
 			
-			for k in range(j + 1, j + min(len(string) - j, 4)):
+			for k in range(j + 1, j + min(len(string) - j, 4)): # j + 1 = for third period, placement of j at most in 3 positions past of j 
 				currentIPAddressParts[2] = string[j:k] # 3rd section
 				currentIPAddressParts[3] = string[k:] # 4th section
 				
