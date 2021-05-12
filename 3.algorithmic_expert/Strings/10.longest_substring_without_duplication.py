@@ -12,3 +12,4 @@ def longestSubstringWithoutDuplication(string):
 	return string[longest[0]: longest[1]]
 
 #test
+#testts
