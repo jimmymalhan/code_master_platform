@@ -10,6 +10,3 @@ def longestSubstringWithoutDuplication(string):
 			longest = [startIdx, i + 1]
 		lastSeen[char] = i
 	return string[longest[0]: longest[1]]
-
-#test
-#testts
