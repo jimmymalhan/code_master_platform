@@ -76,33 +76,33 @@
 #######################
 # https://stackoverflow.com/questions/20510768/count-frequency-of-words-in-a-list-and-sort-by-frequency
 # from collections import Counter
-# words =["hello world","b","b"]
+# words =["hello_world", "word", "b"]
 
 # def Solution(words = None):
-    # return dict((i, words.count(i)) for i in words) #{'hello world': 1, 'b': 2}
-    # for i in words:
-    #     print(dict(i, words.count(i)))
+#     # return dict((i, words.count(i)) for i in words) #{'hello world': 1, 'b': 2}
+#     # for i in words:
+#     #     print(dict(i, words.count(i)))
 
-#     # return Counter(words) # Counter({'b': 2, 'hello world': 1})
+# #     # return Counter(words) # Counter({'b': 2, 'hello world': 1})
 #     dic = {}
 #     for i in words:
 #         dic[i] = dic.get(i, 0) + 1
-#         return dic # {'hello world': 1}
+#         return dic # {'hello_world': 1}
 
 # if __name__ == '__main__':
 #     print(Solution(words))
 
-string = "1921680"
+# string = "1921680"
 
-def Solution(string):
-    # newList = []
-    # for i in range(1, len(string)):
-    #     print(string[:i])
-    return ([string[:i] for i in range(1,len(string))])
-    # print([string[:i] for i in range(1,len(string))])
-        # for j in range(len(array)):
+# def Solution(string):
+#     # newList = []
+#     # for i in range(1, len(string)):
+#     #     print(string[:i])
+#     return ([string[:i] for i in range(1,len(string))])
+#     # print([string[:i] for i in range(1,len(string))])
+#         # for j in range(len(array)):
 
 
-if __name__ == '__main__':
-    # Solution(string)
-    print(Solution(string))
+# if __name__ == '__main__':
+#     # Solution(string)
+#     print(Solution(string))
