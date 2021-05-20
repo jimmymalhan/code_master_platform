@@ -71,7 +71,9 @@
 #     # for j in range(len(string)): # idx[0-6] - 7 times
 #     for j in range(i, len(string)): # idx[0-6], [1-6], [2-6], [3-6], [4-6], [5,6],[6]
 
+#######################
 # count from list
+#######################
 # https://stackoverflow.com/questions/20510768/count-frequency-of-words-in-a-list-and-sort-by-frequency
 # from collections import Counter
 # words =["hello world","b","b"]
