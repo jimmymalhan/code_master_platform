@@ -18,27 +18,28 @@
 # when every single character in each word is unique across all words 
 # and the output array therefore contains n * l characters.
 
+# counts and maximum frequency(unique characters) is required to keep track of characters
 def minimumCharactersForWords(words):
 	maximumCharacterFrequencies = {}
-	
+	# loop through words - count all the characters in the words and update the hashmap as I find
 	for word in words:
-		characterFrequencies = countCharacterFrequencies(word)
-		updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies)
+		characterFrequencies = countCharacterFrequencies(word) # counting characters
+		updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies) # using character frequencies to update the maximumCharacterFrequencies
 	
-	return makeArrayFromCharacterFrequencies(maximumCharacterFrequencies)
+	return makeArrayFromCharacterFrequencies(maximumCharacterFrequencies) # generating a list from a maximumCharacterFrequencies
 
 def countCharacterFrequencies(string):
-	characterFrequencies = {}
+	characterFrequencies = {} # count no of times, characters occur in this string
 	
 	for character in string:
-		if character not in characterFrequencies:
+		if character not in characterFrequencies: # checking - if character is already in hashmap
 			characterFrequencies[character] = 0
 		
 		characterFrequencies[character] += 1
 	
 	return characterFrequencies
 
-def updateMaximumFrequencies(frequencies, maximumFrequencies):
+def updateMaximumFrequencies(frequencies, maximumFrequencies): # function for - using character frequencies to update the maximumCharacterFrequencies
 	for character in frequencies:
 		frequency = frequencies[character]
 		
@@ -46,8 +47,8 @@ def updateMaximumFrequencies(frequencies, maximumFrequencies):
 			maximumFrequencies[character] = max(frequency, maximumFrequencies[character])
 		else:
 			maximumFrequencies[character] = frequency
-
-def makeArrayFromCharacterFrequencies(characterFrequencies):
+# don't need to return anything as we are modifying the hashMap
+def makeArrayFromCharacterFrequencies(characterFrequencies): # function for - character frequencies to update the maximumCharacterFrequencies
 	characters = []
 	
 	for character in characterFrequencies:
