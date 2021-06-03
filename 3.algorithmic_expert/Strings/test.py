@@ -6,6 +6,7 @@ def minimumCharactersForWords(words):
     maximumCharacterFrequencies = {}
     for word in words:
         characterFrequencies = countCharacterFrequencies
+        updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies)
     # return countCharacterFrequencies
 
 def countCharacterFrequencies(string):
@@ -15,5 +16,8 @@ def countCharacterFrequencies(string):
             characterFrequencies[character] += 0
         characterFrequencies[character] += 1
     return countCharacterFrequencies  
+
+def updateMaximumFrequencies(frequencies, maximumFrequencies):
+    
 
 print(minimumCharactersForWords(words))
