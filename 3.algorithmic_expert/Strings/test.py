@@ -1,33 +1,9 @@
-# maximumCharacterFrequencies , countCharacterFrequencies
+# read from backwards
 
-words = ["this", "that", "did", "deed", "them!", "a"]
+class MyClass:
+    def __init__(self, string:str) -> bool:
+        self.string = string
+    def isPalindrome(self):
+        print(self.string[:-1])
 
-def minimumCharactersForWords(words):
-    maximumCharacterFrequencies = {}
-    for word in words:
-        characterFrequencies = countCharacterFrequencies
-        updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies)
-    
-    return makeArrayFromCharacterFrequencies
-
-def countCharacterFrequencies(string):
-    characterFrequencies = {}
-    for character in string:
-        if character not in characterFrequencies:
-            characterFrequencies[character] += 0
-        characterFrequencies[character] += 1
-    return countCharacterFrequencies  
-
-def updateMaximumFrequencies(frequencies, maximumFrequencies):
-    for character in frequencies:
-        frequency = maximumFrequencies[character]
-        
-        if character in maximumFrequencies:
-            maximumFrequencies[character] = max(frequency, maximumFrequencies[character])
-        else:
-            maximumFrequencies[character] = frequency
-
-def makeArrayFromCharacterFrequencies(characterFrequencies):
-    
-
-print(minimumCharactersForWords(words))
+p1 = MyClass("abcdcbc").isPalindrome()
