@@ -12,7 +12,10 @@ class MyClass:
         return self.string == reversedString
 
 def main():
-	print(MyClass("abcdcba").isPalindrome())
+    stringName = MyClass("abcdcba")
+    print(stringName.isPalindrome())
+    example2 = MyClass("abcdcb")
+    print(example2.isPalindrome())
 
 if __name__ == '__main__':
 	main()
