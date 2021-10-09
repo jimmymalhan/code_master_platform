@@ -1,3 +1,4 @@
+# brute force
 # # O(n^2) time | O(n) space
 def isPalindrome(string):
 	reversedString = "" #
@@ -5,12 +6,13 @@ def isPalindrome(string):
 		reversedString += (string[i]) # creating newString -> increases time
 	return string == reversedString
 
+# recursion
 # # O(n) time | O(n) space
 def isPalindrome(string):
-	reversedString = [] #
+	reversedString = []
 	for i in reversed(range(len(string))):
 		reversedString.append(string[i]) # adding directly to newString -> imporving
-	return string =="".join(reversedString)
+	return string == "".join(reversedString)
 
 # # O(n) time | O(n) space
 def isPalindrome(string, i = 0):
