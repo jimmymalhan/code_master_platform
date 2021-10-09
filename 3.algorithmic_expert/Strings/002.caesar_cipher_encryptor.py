@@ -1,10 +1,12 @@
 # caesar cipher encryptor
 
-# Input
-string = "xyz"
-key = 2
+### returns a new string by shifting every letter in the input string by k poistions in the alphabet, where k is the key
 
-# Output
+# Sample Input
+# string = "xyz"
+# key = 2
+
+# Sample Output
 # "zab"
 
 # Creating your own mapping of letters to codes. In other words, try associating each letter in the alphabet with a specific number -its poistion in the alphbet, for instance - and using that to determine which letters the input string's letters should be mapped to.
