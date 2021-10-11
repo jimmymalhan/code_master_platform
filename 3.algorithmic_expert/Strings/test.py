@@ -1,5 +1,5 @@
 class MyClass:
-    def __init__(self, string:str):
+    def __init__(self, string:str) -> bool:
         self.string = string
 		
     def isPalindrome(self):
@@ -11,6 +11,8 @@ class MyClass:
 def main():
     stringName = MyClass("abcdcba")
     print(stringName.isPalindrome())
+    example2 = MyClass("abcdcb")
+    print(example2.isPalindrome())
 
 if __name__ == '__main__':
 	main()

@@ -1,0 +1,8 @@
+pip==21.2.4
+PyYAML==5.4.1
+pytz==2021.1 # datetime
+flask==2.0.1
+pytest-mock==3.6.1 # unit test
+responses==0.13.4
+
+# python -m pip install -r requirements.txt
