@@ -1,8 +1,15 @@
-pip==21.2.4
-PyYAML==5.4.1
+# Common
+pip==21.3
 pytz==2021.1 # datetime
-flask==2.0.1
-pytest-mock==3.6.1 # unit test
+PyYAML==5.4.1
 responses==0.13.4
 
+# Parsing html
+requests-html==0.10.0
+
+# Other
+flask==2.0.1
+pytest-mock==3.6.1 # unit test
+
 # python -m pip install -r requirements.txt
+# python -m pip freeze

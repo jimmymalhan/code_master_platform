@@ -1,21 +1,21 @@
 #######################################
-# 1 Question - read the file and print the results
+# Parse API in JSON format
+#######################################
 import time
 import requests
 import json
 from requests.exceptions import HTTPError
+# Read the file and print the results in json format
 
 # def Solution():
 #     file = open("input.json", "rt")
 #     print(file.read())
-#     # start_time = time.time()
-#     # print("--- %s seconds ---" % (time.time() - start_time))
 
 # if __name__ == "__main__":
 #     Solution()
 
 #######################################
-# 2 Question - sanity checks of the website
+# Sanity checks of the website
 
 # def Solution():
 #     response=requests.get('https://my-json-server.typicode.com/typicode/demo/db')
@@ -31,12 +31,12 @@ from requests.exceptions import HTTPError
 #     Solution()
 
 #######################################
-# 3rd question
+# fetch the data and add custom headers
 
 # Brute force
 
 # O(n) time - looping through until gets it
-# O(n) time - extra storage of the vars
+# O(n) time - extra storage of the vars where n is length of elements
 
 # response=requests.get('https://my-json-server.typicode.com/typicode/demo/db')
 # try:
