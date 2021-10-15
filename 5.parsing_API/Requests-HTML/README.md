@@ -8,5 +8,6 @@ Requests-HTML is an excellent tool for parsing HTML code and grabbing exactly th
 
 ### Hierarchy of HTML page
 ![Screenshot](Hierarchy_of_HTML_page.png)
-- h1 & h2 - headline
+- Article > Header > H1 or H2 > p
+- h1 or h2 - headline
 - p - paragraph
