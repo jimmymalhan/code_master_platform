@@ -70,7 +70,8 @@ class parsingHTMLfrom:
         #     print(headline)
         #     print(summary)
         #     print() # empty print spread out the ouput
+            pass
 
 if __name__ == "__main__":
-    # parsingHTMLfrom.file() # parsing HTML from local file
+    parsingHTMLfrom.file() # parsing HTML from local file
     parsingHTMLfrom.website()
