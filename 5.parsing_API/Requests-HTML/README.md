@@ -5,3 +5,8 @@ Requests-HTML is an excellent tool for parsing HTML code and grabbing exactly th
 ### Note: Check the contents of the website (on the browser)
 - write click on the contents of the website
 - click inspect > Under Elements Tab
+
+### Hierarchy of HTML page
+![Screenshot](Hierarchy_of_HTML_page.png)
+- h1 & h2 - headline
+- p - paragraph
