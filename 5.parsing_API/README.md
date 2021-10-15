@@ -11,4 +11,4 @@
 ## Contains 2 projects
 - Requests-HTML
 - Requests-JSON
-- AND requirements of the project
+- AND requirements of the projects
