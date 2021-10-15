@@ -21,8 +21,8 @@ from requests.exceptions import HTTPError
 #     response=requests.get('https://my-json-server.typicode.com/typicode/demo/db')
 #     print(response.status_code) # check the status code of the website response
 #     print(response.raise_for_status()) # raises the error for status
-#     print(response.text) # prints the output of the website
-#     print(response.url) # prints the url of the website
+#     print(response.text) # output of the website in text
+#     print(response.url) # url of the website
 
 #     jsonResponse = response.json() # convert the response to json
 #     print(jsonResponse)
