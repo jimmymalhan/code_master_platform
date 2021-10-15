@@ -3,7 +3,6 @@ from requests_html import HTML, HTMLSession
 # importing HTML for parsing local HTML file
 # importing HTMLSession for parsing HTML from website 
 
-
 class parsingHTMLfrom:
     def file():
     # Method 1
@@ -42,8 +41,6 @@ class parsingHTMLfrom:
         # article = html.find('"div".article', first=True) 
         # print(article.text)
     # Seperate the contents first "div" to show headline and summary
-    # h2 is the headline
-    # p is the paragraph
         # article = html.find('"div".article', first=True) 
         # headline = article.find('h2', first=True).text
         # summary = article.find('p', first=True).text
@@ -59,19 +56,24 @@ class parsingHTMLfrom:
             print(summary)
             print() # empty print spread out the ouput
     
-        def website():
-        # session = HTMLSession()
-        # response = session.get()
+    def website():
+        # Grabbing - Headline, Summary, YoutubeLink in this function
+        session = HTMLSession()
+        response = session.get('https://coreyms.com/')
+
+        # 1) Article # Output of the website in HTML for first article because "first=True"
+        article = response.html.find('article', first=True)
+        # print(article.html) # file is created for referenc for first article ONLY- first_article_from_website.html
         
-        # articles = html.find('div.article')
-        # for article in articles:
-        #     headline = article.find('h2', first=True).text
-        #     summary = article.find('p', first=True).text
-        #     print(headline)
-        #     print(summary)
-        #     print() # empty print spread out the ouput
-            pass
+        # 2) Headline # In the article > header > Under H2 class shows > headline class "entry-title-link"
+        # headline = response.html.find('.entry-title-link', first=True).text
+        # or
+        headline = article.find('.entry-title-link', first=True).text
+        print(headline)
+        # To Do:
+            # - Summary
+            # - YoutubeLink
 
 if __name__ == "__main__":
-    parsingHTMLfrom.file() # parsing HTML from local file
-    parsingHTMLfrom.website()
+    # parsingHTMLfrom.file() # parsing HTML from local file
+    parsingHTMLfrom.website() # parsing HTML from website
