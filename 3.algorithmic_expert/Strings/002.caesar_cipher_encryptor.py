@@ -16,17 +16,29 @@
 # - where the key is very large and causes multiple wrappings around the alphabet (modulo operator)
 
 # O(n) time | O(n) space
-def caesarCipherEncryptor(string, key):
-	newLetters = []
-	newKey = key % 26 # edge case - when key (is BIG number) then, use - mod (%) 26 
-	alphabet = list("abcdefghijklmnopqrstuvwxyz")
-	for letter in string:
-		newLetters.append(getNewLetter(letter, newKey, alphabet))
-	return "".join(newLetters)
+class Solution:
+    def __init__(self, string:str, key:int):
+        self.string = string
+        self.key = key
 
-def getNewLetter(letter, key, alphabet):
-	newLetterCode = alphabet.index(letter) + key
-	return alphabet[newLetterCode % 26]
+    def caesarCipherEncryptor(self):
+        newLetters = []
+        newKey = self.key % 26
+        alphabet = list("abcdefghijklmnopqrstuvwxyz")
+        for letter in self.string:
+            newLetters.append(self.getNewLetter(letter, newKey, alphabet))
+        return "".join(newLetters)
+
+    def getNewLetter(self, letter, key, alphabet):
+        newLetterCode = alphabet.index(letter) + self.key
+        return alphabet[newLetterCode % 26]
+            
+def main():
+    givenString1 = Solution("xyz", 2)
+    print(givenString1.caesarCipherEncryptor())
+    
+if __name__ == '__main__':
+    main()
 
 # # O(n) time |  O(n) space
 # def caesarCipherEncryptor(string, key):
