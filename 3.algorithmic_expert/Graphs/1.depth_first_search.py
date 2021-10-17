@@ -4,17 +4,17 @@ class Node:
         self.name = name # root node
 
     def addChild(self, name):
-        self.children.append(Node(name)) # adding the namem of the childs
+        self.children.append(Node(name)) # adding the name of the children
         return self
 
 # v - vertices
 # e - edges
 # O(v + e) time | O(v) space # v frames on call stack
     def depthFirstSearch(self, array):
-		array.append(self.name) # adding root Node
-		for child in self.children: # looping for every object in children
-			child.depthFirstSearch(array) # calling recursively
-		return array
+        array.append(self.name) # adding root Node
+        for child in self.children:# looping for every object in children
+            child.depthFirstSearch(array) # calling recursively
+        return array
 
         #Example - 
         # def depthFirstSearch(self, array):
