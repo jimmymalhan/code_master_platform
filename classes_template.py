@@ -1,6 +1,6 @@
 class Solution:
     def __init__(self, string: str):
-        self.string = s
+        self.string = string
 
     def toQuestion(self):
         pass
