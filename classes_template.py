@@ -4,7 +4,10 @@ class Solution:
 
     def toQuestion(self):
         pass
-
-if __name__ == '__main__':
+            
+def main():
     givenArray = Solution("enter_string")
     print(givenArray.toQuestion())
+
+if __name__ == '__main__':
+    main()
