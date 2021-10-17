@@ -1,5 +1,5 @@
 class Solution:
-    def __init__(self,string: str):
+    def __init__(self, string: str):
         self.string = s
 
     def toQuestion(self):
