@@ -6,8 +6,11 @@ class Solution:
         pass
             
 def main():
-    givenArray = Solution("enter_string")
-    print(givenArray.toQuestion())
+    givenString1 = Solution("enter_string")
+    print(givenString1.toQuestion())
+
+    givenString2 = Solution("enter_2nd_string")
+    print(givenString2.toQuestion())
 
 if __name__ == '__main__':
     main()
