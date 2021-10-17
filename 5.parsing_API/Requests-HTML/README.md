@@ -10,4 +10,5 @@ Requests-HTML is an excellent tool for parsing HTML code and grabbing exactly th
 ![Screenshot](Hierarchy_of_HTML_page.png)
 - Article > Header > H1 or H2 > p
 - h1 or h2 - headline
-- p - paragraph
+- p - paragraph- shows description/summary
+- iframe- shows Youtube video link
