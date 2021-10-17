@@ -20,7 +20,7 @@ class Node:
     Explanation:
 
     def depthFirstSearch(self, array):
-        array.append(self.name)          # Step - 1 begins at rootNode and ADD - 'A' | Step - 4 append 'B'
+        array.append(self.name)          # Step - 1 start at rootNode and ADD - 'A' | Step - 4 append 'B'
         for child in self.children:      # Step - 2 go to 'B'                     | Step - 5 go to 'E'
             child.depthFirstSearch(array)# Step - 3 call the stack in DFS for 'B' | step - 6 so on and so forth
         return array
