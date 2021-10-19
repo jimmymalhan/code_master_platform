@@ -132,7 +132,11 @@ class parsingHTMLfrom:
             4. YoutubeLink 
                 a) YoutubeID
                 b) Creates new Youtube link with the above fetched ID.
+            5. CSV
+                a) Parse the contents to CSV
+                b) Add the contents to CSV
         """
+        # 5a) Parse the contents to CSV
         csv_file = open('html_parse.csv', 'w')
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow(['Headline', 'Summary', 'Video']) # headers of the file
@@ -161,18 +165,11 @@ class parsingHTMLfrom:
             # print(video_src) # accessing attributes in source dictionary
             print(youtubeLink) # open the output link and it should redirect and works
             print() # separating out the outputs
-
-            csv_writer.writerow(['headline', 'summary', 'youtubeLink'])
+        
+        # 5b) Add the contents to CSV
+            csv_writer.writerow([headline, summary, youtubeLink])
 
         csv_file.close()
-    
-    # To Do: 
-        # put the csv file in the function below
-        # open csv on mac
-        # create sperate function for method 2
-
-    def csv():
-        pass
 
 if __name__ == "__main__":
     # parsingHTMLfrom.file() # parsing HTML from local file
