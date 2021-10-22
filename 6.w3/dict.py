@@ -1,24 +1,18 @@
 # 1. Write a Python script to sort (ascending and descending) a dictionary by value.
 
-# class Solution():
-#     def toQuestion():
-#       pass
+class Solution():
+    def __init__(self, d: dict):
+        self.d = d
 
-# def main():
-#   givenString1 = Solution({1: 2, 3: 4, 4: 3, 2: 1, 0: 0})
-#   givenString1.toQuestion()
+    def toQuestion(self):
+        s = dict(sorted(self.d.items(), key=lambda x: x[1])) # sorted
+        k = dict(sorted(self.d.items(), key=lambda x: x[1], reverse = True)) # sorted reversed
+        print(s)
+        print(k)
 
+def main():
+    givenDict = Solution({1: 2, 3: 4, 4: 3, 2: 1, 0: 0})
+    givenDict.toQuestion()
 
-# if __name__ == '__main__':
-#   main()
-
-
-d = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
-s = dict(sorted(d.items(), key=lambda x: x[1])) # sorted
-k = dict(sorted(d.items(),key=lambda x:x[1],reverse = True)) # sorted reversed
-
-print(d)
-print(s)
-print(k)
-
-# to do - tu put this into class
+if __name__ == '__main__':
+  main()
