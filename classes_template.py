@@ -79,3 +79,26 @@ if __name__ == '__main__':
 
 # if __name__ == '__main__':
 #     main()
+
+####################
+# self is the only parameter
+####################
+
+# class Solution:
+#     def fizzbuzz(self):
+#         for i in range(1, 101): # 0 - 100
+#             if i % 3 == 0 and i % 5 == 0:
+#                 print("Fizz Buzz")
+#             elif i % 3 == 0:
+#                 print("Fizz")
+#             elif i % 5 == 0:
+#                 print("Buzz")
+#             else:
+#                 print(i)
+
+# def main():
+#     p1 = Solution()
+#     p1.fizzbuzz()
+
+# if __name__ == '__main__':
+#     main()
