@@ -48,34 +48,20 @@ if __name__ == '__main__':
 # Array
 ####################
 
-# class graph:
-#     def __init__(self, array):
-#         self.array = array
-    
-#     def hasSingleCycle(self):
-#         numElementsVisited = 0
-#         currentIdx = 0
+# class Dictionary:
+#     def __init__(self, dictionary):
+#         self.dictionary = dictionary
 
-#         while numElementsVisited < len(self.array):
-#             if numElementsVisited > 0 and currentIdx == 0:
-#                 return False
-#             numElementsVisited += 1
-#             currentIdx = self.getNextIndex(currentIdx, self.array)
-#         return currentIdx == 0
-    
-#     def getNextIndex(self, currentIdx, array):
-#         jump = self.array[currentIdx]
-#         # print(jump) # [2, 1, -4, 2, 3, -4]
-#         nextIdx = (currentIdx + jump) % len(self.array)
-#         # print(nextIdx) # [2, 3, 5, 1, 4, 0]
-#         return nextIdx if nextIdx >= 0 else nextIdx + len(self.array)
+#     def sort_ascending(self):
+#         return sorted(self.dictionary.items(), key=lambda x: x[1])
+
+#     def sort_descending(self):
+#         return sorted(self.dictionary.items(), key=lambda x: x[1], reverse=True)
 
 # def main():
-#     givenArray1 = graph([2, 3, 1, -4, -4, 2])
-#     print(givenArray1.hasSingleCycle())
-
-#     givenArray2 = graph([2, 2, -1])
-#     print(givenArray2.hasSingleCycle())
+#     dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+#     print(Dictionary(dictionary).sort_ascending())
+#     print(Dictionary(dictionary).sort_descending())
 
 # if __name__ == '__main__':
 #     main()
