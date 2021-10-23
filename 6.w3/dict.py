@@ -105,3 +105,66 @@
 
 # if __name__ == '__main__':
 #     main()
+
+################################
+# 5. Write a Python program to iterate over dictionaries using for loops.
+################################
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+
+#     def iterate_dictionary(self):
+#         for key, value in self.dictionary.items():
+#             print(f'{key} : {value}')
+
+# import unittest
+# class Test(unittest.TestCase):
+#     def test_iterate_dictionary(self):
+#         givenDict = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+#         givenSolution = Solution(givenDict)
+#         givenSolution.iterate_dictionary()
+# def main():
+#     unittest.main()
+
+# if __name__ == '__main__':
+#     main()
+
+################################
+# 6. Write a Python script to generate and print a dictionary that contains a number (between 1 and n) in the form (x, x*x). Go to the editor
+# Sample Dictionary ( n = 5) :
+# Expected Output : {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+################################
+
+# class Solution:
+#     def __init__(self, n:int) -> None:
+#         self.n = n
+
+#     # method 1
+#     # def generate_dictionary(self):
+#     #     for key, value in self.dictionary.items():
+#     #         finalValue = key * key
+#     #         print(f'{key} : {finalValue}')
+
+#     def generate_dictionary(self):
+#         return {x: x*x for x in range(1, self.n+1)}
+    
+#     def print_dictionary(self):
+#         print(self.generate_dictionary())
+    
+# import unittest
+# class Test(unittest.TestCase):
+#     def test_generate_dictionary(self):
+#         givenN = 5
+#         givenSolution = Solution(givenN)
+#         givenSolution.print_dictionary()
+
+# def main():
+#     unittest.main()
+
+# if __name__ == '__main__':
+#     main()
+
+#################################
+# 7.
+#################################
