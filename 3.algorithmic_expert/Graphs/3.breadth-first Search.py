@@ -1,4 +1,8 @@
-# create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO -> you can create a breadth-first search.
+# Breadth-first search is a search algorithm that starts at the root node and explores as far as possible along each branch before backtracking.
+
+# Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO -> you can create a breadth-first search.
+
+# Create/initialize the queue, while que is not empty, pop/dequeue the first node and add it to the visited list (append name of current node to array). For each child in current node, add it to the queue.
 
 class Node:
     def __init__(self, name):
@@ -13,11 +17,11 @@ class Node:
     # O(v + e) time | O(v) space          # v frames on call stack
 
     def breadthFirstSearch(self, array):
-        queue = [self] # create queue
+        queue = [self] # create/initialize the queue
         while len(queue) > 0: # while queue is not empty
-            current = queue.pop(0) # pop first item from queue
+            current = queue.pop(0) # pop first item from queue - FIFO
             array.append(current.name) # append name of current node to array
-            for child in current.children: # for each child of current node
+            for child in current.children: # for each child in current node
                 queue.append(child) # add child to queue
         return array
     
