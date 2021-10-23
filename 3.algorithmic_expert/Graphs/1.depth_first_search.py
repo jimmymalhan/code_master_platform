@@ -1,14 +1,13 @@
 class Node:
     def __init__(self, name):
-        self.children = []                # contains the graph
-        self.name = name                  # root node
+        self.children = [] # list of children
+        self.name = name # name of node
 
     def addChild(self, name):
-        self.children.append(Node(name))  # adding the names of children through 'class Node'
-        return self
+        self.children.append(Node(name)) # add child to list of children
+        return self # return self to allow chaining
 
-    # v - vertices
-    # e - edges
+    # v - vertices | # e - edges
     # O(v + e) time | O(v) space          # v frames on call stack
 
     def depthFirstSearch(self, array):
@@ -25,3 +24,11 @@ class Node:
             child.depthFirstSearch(array)# Step - 3 call the stack in DFS for 'B' | step - 6 so on and so forth
         return array
 """
+# unit testing
+if __name__ == '__main__':
+    root = Node('A')
+    root.addChild('B').addChild('C')
+    root.children[0].addChild('D')
+    root.children[0].children[0].addChild('E')
+    print(root.depthFirstSearch([]))
+    # ['A', 'B', 'D', 'E', 'C']
