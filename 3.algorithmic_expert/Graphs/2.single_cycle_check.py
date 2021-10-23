@@ -13,17 +13,18 @@ class graph:
 
         while numElementsVisited < len(self.array): # condition1
             if numElementsVisited > 0 and currentIdx == 0: # condition2
-                return False
+                return False # if we have visited more than 1 element and we are back at index 0
             numElementsVisited += 1
-            currentIdx = self.getNextIndex(currentIdx, self.array)
-        return currentIdx == 0 # the cycle should return back to index 0
+            currentIdx = self.getNextIndex(currentIdx, self.array) # get next index of the current element
+        return currentIdx == 0 # 
     
     def getNextIndex(self, currentIdx, array):
         jump = self.array[currentIdx]
-        # print(jump) # [2, 1, -4, 2, 3, -4]
-        nextIdx = (currentIdx + jump) % len(self.array) # '%' takes care of the -ve value
+        # print(jump) # [2, 1, -4, 2, 3, -4] # this is how you visit the array using the algorithm
+        
+        nextIdx = (currentIdx + jump) % len(self.array) # % len(self.array) - to make sure we don't go out of bounds
         # print(nextIdx) # [2, 3, 5, 1, 4, 0]
-        return nextIdx if nextIdx >= 0 else nextIdx + len(self.array)
+        return nextIdx if nextIdx >= 0 else nextIdx + len(self.array) # if nextIdx is negative, add the length of the array to it
 
 def main():
     givenArray1 = graph([2, 3, 1, -4, -4, 2])
