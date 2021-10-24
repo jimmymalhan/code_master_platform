@@ -3,6 +3,7 @@
 # Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO -> you can create a breadth-first search.
 
 # Create/initialize the queue, while que is not empty, pop/dequeue the first node and add it to the visited list (append name of current node to array). For each child in current node, add it to the queue.
+import unittest
 
 class Node:
     def __init__(self, name):
@@ -25,13 +26,26 @@ class Node:
                 queue.append(child) # add child to queue
         return array
     
-# unit testing
-if __name__ == "__main__":
+def main():
     root = Node("A")
     root.addChild("B").addChild("C").addChild("D")
-    root.children[0].addChild("E").addChild("F")
-    root.children[2].addChild("G")
+    root.addChild("E").addChild("F").addChild("G")
+    root.addChild("H").addChild("I").addChild("J")
     print(root.breadthFirstSearch([]))
-    # ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
-        
+if __name__ == "__main__":
+    main()
+
+class Test(unittest.TestCase):
+    def test_node(self):
+        root = Node("A")
+        root.addChild("B").addChild("C").addChild("D")
+        root.addChild("E").addChild("F").addChild("G")
+        root.addChild("H").addChild("I").addChild("J")
+        self.assertEqual(root.breadthFirstSearch([]), ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"])
+
+def main():
+    unittest.main()
+
+if __name__ == "__main__":
+    main()
