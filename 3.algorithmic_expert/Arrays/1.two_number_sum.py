@@ -12,7 +12,7 @@ class Solutions:
 		nums = {}
 		for num in array:
 			potentialMatch = targetSum - num
-			if potentialMatch in numDict:
+			if potentialMatch in nums:
 				return [potentialMatch, num]
 			else:
 				nums[num] = True
