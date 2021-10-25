@@ -42,7 +42,7 @@ class Test(unittest.TestCase):
 		self.assertEqual(s.twoNumberSum1([3, 5,-4, 8, 11, 1, -1, 6], 10), [11, -1])
 	def test_twoNumberSum3(self):
 		s = Solutions()
-		self.assertEqual(s.twoNumberSum1([3, 5,-4, 8, 11, 1, -1, 6], 10), [11, -1])
+		self.assertEqual(s.twoNumberSum1([3, 2, 4], 6), [1, 2]) # this test case doesn't work
 
 def main():
 	unittest.main()
