@@ -1,12 +1,14 @@
+# https://leetcode.com/problems/maximum-subarray/
+
 # Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
 # A subarray is a contiguous part of an array.
 """ Note:
 Kadane's Algorithm
 """
-
-# O(n) time, O(1) space
+import unittest
 class Solution:
+    # O(n) time, O(1) space
     def maxSubArray(self, nums) -> int:
         max_sum, current_sum = -float('inf'), 0    
         for num in nums:   
@@ -14,7 +16,6 @@ class Solution:
             max_sum = max(current_sum, max_sum) # if current_sum > max_sum, then current_sum is the new max_sum    
         return max_sum
 
-import unittest
 class Test(unittest.TestCase):
     def test(self):
         test = Solution()
