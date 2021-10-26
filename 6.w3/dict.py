@@ -166,5 +166,31 @@
 #     main()
 
 #################################
-# 7.
+# 7. Write a Python script to print a dictionary where the keys are numbers between 1 and 15 (both included) and the values are square of keys.
 #################################
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+    
+#     def print_dictionary(self):
+#         # method 1
+#         # for i in range(1, 16):
+#         #     print(f'{i}' ':' f'{i*i}')
+#         # method 2
+#         # print({x: x*x for x in range(1, 16)})
+#         # method 3
+#         # print(f'{dict(zip(range(1, 16), [x*x for x in range(1, 16)]))}')
+#         # method 4
+#         # dictionary = {x: x*x for x in range(1, 16)}
+#         # print(dictionary)
+#         # method 5
+#         # d = dict()
+#         # for i in range(1, 16):
+#         #     d[i] = i*i
+#         # print(d)
+# def main():
+#     Solution({}).print_dictionary()
+
+# if __name__ == '__main__':
+#     main()
