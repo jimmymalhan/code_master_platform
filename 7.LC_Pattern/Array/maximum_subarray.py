@@ -7,6 +7,8 @@
 Kadane's Algorithm
 """
 import unittest
+from typing import List
+
 class Solution:
     # O(n) time, O(1) space
     def maxSubArray(self, nums) -> int:
@@ -17,9 +19,7 @@ class Solution:
         return max_sum
 
     # divide and conquer
-    # explain divide and conquer in detail here
-    # what is @staticmethod?
-    # https://stackoverflow.com/questions/234564/what-is-the-difference-between-staticmethod-and-classmethod-in-python
+    # O(nlogn) time, O(1) space
 
     def maxSubArray_divide_conquer(self, nums) -> int:
         if len(nums) == 1:
@@ -44,6 +44,17 @@ class Solution:
             right_sum_max = max(right_sum_max, right_sum_current) # if right_sum_current > right_sum_max, then right_sum_current is the new right_sum_max
         return max(left_sum, right_sum, left_sum_max + right_sum_max)
 
+    # dynamic programming
+    # O(n) time, O(1) space
+    def maxSubArray_dynamic_programming(self, nums: List[int]) -> int:
+        best = nums[0]
+        current = nums[0]
+        for i in nums[1:]:
+            current = max(i, current + i)
+            if current > best:
+                best = current
+        return best
+
 
 class Test(unittest.TestCase):
     def test(self):
@@ -54,6 +65,11 @@ class Test(unittest.TestCase):
         test = Solution()
         nums = [-2,1,-3,4,-1,2,1,-5,4]
         self.assertEqual(test.maxSubArray_divide_conquer(nums), 6)
+    def test_dynamic_programming(self):
+        test = Solution()
+        nums = [-2,1,-3,4,-1,2,1,-5,4]
+        self.assertEqual(test.maxSubArray_dynamic_programming(nums), 6)
+
 def main():
     unittest.main()
 
