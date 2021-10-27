@@ -196,5 +196,89 @@
 #     main()
 
 #################################
-# 8.
+# 8. Write a Python script to merge two Python dictionaries.
 #################################
+
+# class Solution:
+#     def __init__(self, dictionary1:dict(), dictionary2:dict()) -> None:
+#         self.dictionary1 = dictionary1
+#         self.dictionary2 = dictionary2
+
+#     def merge_dictionary(self):
+#         return {**self.dictionary1, **self.dictionary2}
+    
+#     def print_dictionary(self):
+#         print(self.merge_dictionary())
+
+# def main():
+#     givenDict1 = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+#     givenDict2 = {7: 70, 8: 80, 9: 90, 10: 100}
+#     givenSolution = Solution(givenDict1, givenDict2)
+#     givenSolution.print_dictionary()
+    
+# if __name__ == '__main__':
+#     main()
+
+#################################
+# 9. Write a Python program to iterate over dictionaries using for loops.
+#################################
+
+# class Solution:
+#     def __init__(self):
+#         self.dict = {'a': 1, 'b': 2, 'c': 3}
+
+#     def print_dictionary(self):
+#         for key, value in self.dict.items():
+#             print(key, value)
+
+# def main():
+#     s = Solution()
+#     s.print_dictionary()
+
+# if __name__ == '__main__':
+#     main()
+
+#################################
+# 10. Write a Python program to sum all the items in a dictionary.
+#################################
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+
+#     def sum_items(self):
+#         return sum(self.dictionary.values())
+
+#     def print_sum(self):
+#         print(self.sum_items())
+
+# def main():
+#     givenDict = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+#     givenSolution = Solution(givenDict)
+#     givenSolution.print_sum()
+
+# if __name__ == '__main__':
+#     main()
+
+#################################
+# 11. 11. Write a Python program to multiply all the items in a dictionary. 
+#################################
+# from functools import reduce
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+    
+#     def multiply_items(self):
+#         return reduce(lambda x, y: x*y, self.dictionary.values())
+
+#     def print_multiply(self):
+#         print(self.multiply_items())
+
+# def main():
+#     givenDict = {1: 1, 2: 2, 3: 3}
+#     givenSolution = Solution(givenDict)
+#     givenSolution.print_multiply()
+
+# if __name__ == '__main__':
+#     main()
