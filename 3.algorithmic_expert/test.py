@@ -25,14 +25,17 @@
 
 # Solution explanation:
 # 1: 1 # there is only one 1
-# 2: 2 # there are two 1s in a column
-# 3: 2 # there are two 1s in a column
-# 4: 2 # there are two 1s in a column
-# 5: 5 # there are five 1s in a L shaped column
+# 2: 2 # there are two 1s in a row
+# 3: 2 # there are two 1s in a row
+# 4: 2 # there are two 1s in a row
+# 5: 5 # there are five 1s in a L shaped row
 
-
+"""
+stacks = breadth first search
+queue = depth first search
+"""
 # Explain the solution:
-# 1. create a queue to hold the river
+# 1. create a queue to hold the river # depth first search
 # 2. iterate through the matrix
 # 3. if the element is 1, add it to the queue
 # 4. if the element is 0, add it to the queue
@@ -44,28 +47,27 @@ def riverSizes(matrix):
 
     # iterate through the matrix row by row and check if the element is 1 # if it is 1, add it to the queue # if it is 0, add it to the queue
     for i in range(len(matrix)): # iterate through the rows
-        for j in range(len(matrix[i])): # iterate through the columns
+        for j in range(len(matrix[i])): # iterate through the rows
             if visited[i][j]: # if the node has been visited, continue or if visited[i][j] == True
                 continue
             traverseNode(i, j, matrix, visited, sizes) # if the node has not been visited, traverse the node
     return sizes
 
-
-def traverseNode(i, j, matrix, visited, sizes): # i is the row, j is the column
+def traverseNode(i, j, matrix, visited, sizes): # i is the row, j is the row
     currentRiverSize = 0 # holds the size of the river
-    # depth first search 
-    nodesToExplore = [[i, j]] # holds the nodes to explore
+    # depth first search # stack
+    nodesToExplore = [[i, j]] # holds the nodes to explore # stack
     while len(nodesToExplore): # while there are nodes to explore
         currentNode = nodesToExplore.pop() # pop the last node from the queue
         i = currentNode[0] # get the row
-        j = currentNode[1] # get the column
+        j = currentNode[1] # get the row
         if visited[i][j]: # if the node has been visited, continue
             continue
         visited[i][j] = True # mark the node as visited
         if matrix[i][j] == 0: # if the node is 0, add it to the queue
             continue
-        currentRiverSize += 1 # increment the river size
-        unvisitedNeighbors = getUnvisitedNeighbors(i, j, matrix, visited) # get the unvisited neighbors
+        currentRiverSize += 1 # increment the river size # if the node is 1, add it to the queue
+        unvisitedNeighbors = getUnvisitedNeighbors(i, j, matrix, visited) # get the unvisited neighbors of the node
         for neighbor in unvisitedNeighbors: # iterate through the unvisited neighbors
             nodesToExplore.append(neighbor) # add the neighbor to the queue
     if currentRiverSize > 0: # if the river size is greater than 0
@@ -73,13 +75,13 @@ def traverseNode(i, j, matrix, visited, sizes): # i is the row, j is the column
 
 def getUnvisitedNeighbors(i, j, matrix, visited):
     unvisitedNeighbors = [] # holds the unvisited neighbors
-    if i > 0 and not visited[i - 1][j]: # if the row is greater than 0 and the node has not been visited
+    if i > 0 and not visited[i - 1][j]: # if the row is greater than 0 and the node has not been visited ABOVE the node
         unvisitedNeighbors.append([i - 1, j]) # add the node to the unvisited neighbors
-    if i < len(matrix) - 1 and not visited[i + 1][j]: # if the row is less than the length of the matrix and the node has not been visited
+    if i < len(matrix) - 1 and not visited[i + 1][j]: # if the row is less than the length of the matrix and the node has not been visited BELOW the node
         unvisitedNeighbors.append([i + 1, j]) # add the node to the unvisited neighbors
-    if j > 0 and not visited[i][j - 1]: # if the column is greater than 0 and the node has not been visited
-        unvisitedNeighbors.append([i, j - 1]) # add the node to the unvisited neighbors
-    if j < len(matrix[0]) - 1 and not visited[i][j + 1]:# if the column is less than the length of the matrix and the node has not been visited
+    if j > 0 and not visited[i][j - 1]: # if the row is greater than 0 and the node has not been visited to the LEFT of the node
+        unvisitedNeighbors.append([i, j - 1]) # add the node to the unvisited neighbors 
+    if j < len(matrix[0]) - 1 and not visited[i][j + 1]:# if the row is less than the length of the matrix and the node has not been visited to the RIGHT of the node
         unvisitedNeighbors.append([i, j + 1]) # add the node to the unvisited neighbors
     return unvisitedNeighbors
 
