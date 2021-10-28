@@ -261,7 +261,7 @@
 #     main()
 
 #################################
-# 11. 11. Write a Python program to multiply all the items in a dictionary. 
+# 11. Write a Python program to multiply all the items in a dictionary. 
 #################################
 # from functools import reduce
 
@@ -282,3 +282,33 @@
 
 # if __name__ == '__main__':
 #     main()
+
+#################################
+# 12. Write a Python program to remove a key from a dictionary.
+#################################
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+    
+#     def remove_key(self, key):
+#         del self.dictionary[key]
+
+#     def print_dictionary(self):
+#         print(self.dictionary)
+
+#     def print_removed_key(self):
+#         print(self.dictionary)
+
+# def main():
+#     givenDict = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+#     givenSolution = Solution(givenDict)
+#     givenSolution.remove_key(3)
+#     givenSolution.print_removed_key()
+
+# if __name__ == '__main__':
+#     main()  
+
+#################################
+# 13. 
+#################################
