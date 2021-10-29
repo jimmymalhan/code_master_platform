@@ -35,10 +35,11 @@ stacks = breadth first search
 queue = depth first search
 """
 # Explain the solution:
-# 1. create a queue to hold the river # depth first search
-# 2. iterate through the matrix
-# 3. if the element is 1, add it to the queue
-# 4. if the element is 0, add it to the queue
+
+# 1. Return the sizes of the rivers horizontally and vertically adjacent 1s in as traversing the matrix. Treat matrix as a graph where each element is a node with upto 4 neighbors nodes(left, right, top, bottom) and traverse the graph using DFS.
+# 2. While traversing the matrix, anytime you encounter a 1, taverse entire river that this 1 is part of(keep track of the size of the river) by node's neighboring nodes and their own neighboring nodes as long as they are 1s. if you encounter a 0, mark it as visited and continue.
+# 3. In order to prevent mistakenly calculating the size of the river multiple times, use auxiliary data structure "queue" to perform computation on unvisited nodes only. 
+
 
 # Solution 1:
 def riverSizes(matrix):
