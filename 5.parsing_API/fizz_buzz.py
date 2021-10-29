@@ -1,5 +1,6 @@
 # fizz buzz
 
+# O(n) time complexity and O(1) space complexity
 class FizzBuzz:
     def __init__(self, start, end):
         self.start = start
