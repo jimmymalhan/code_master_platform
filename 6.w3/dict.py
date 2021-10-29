@@ -310,5 +310,31 @@
 #     main()  
 
 #################################
-# 13. 
+# 13. Write a Python program to map two lists into a dictionary.
+#################################
+# class Solution:
+#     def __init__(self, list1:list(), list2:list()) -> None:
+#         self.list1 = list1
+#         self.list2 = list2
+    
+#     #method 1
+#     def map_lists(self):
+#         return dict(zip(self.list1, self.list2)) # zip function is used to map two lists into a dictionary 
+    
+#     #method 2
+#     def map_lists_2(self):
+#         return {x: y for x, y in zip(self.list1, self.list2)} # # zip joins elements of two lists into tuples
+
+# def main():
+#     givenList1 = [1, 2, 3]
+#     givenList2 = [10, 20, 30]
+#     givenSolution = Solution(givenList1, givenList2)
+#     print(givenSolution.map_lists())
+#     print(givenSolution.map_lists_2())
+
+# if __name__ == '__main__':
+#     main()
+
+#################################
+# 14. 
 #################################
