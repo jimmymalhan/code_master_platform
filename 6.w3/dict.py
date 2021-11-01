@@ -336,5 +336,29 @@
 #     main()
 
 #################################
-# 14. 
+# 14. Write a Python program to sort a given dictionary by key.
 #################################
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+
+#     def sort_dictionary(self):
+#         # return {k: v for k, v in sorted(self.dictionary.items(), key=lambda item: item[0])}
+#         for key in sorted(self.dictionary):
+#             print(key, self.dictionary[key])
+        
+
+#     def print_dictionary(self):
+#         print(self.sort_dictionary())
+
+# def main():
+#     givenDict = {'red':'#FF0000',
+#           'green':'#008000',
+#           'black':'#000000',
+#           'white':'#FFFFFF'}
+
+#     givenSolution = Solution(givenDict)
+#     givenSolution.print_dictionary()
+
+# if __name__ == '__main__':
+#     main()
