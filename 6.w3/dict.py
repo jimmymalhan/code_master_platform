@@ -362,3 +362,29 @@
 
 # if __name__ == '__main__':
 #     main()
+
+#################################
+# 15. Write a Python program to get the maximum and minimum value in a dictionary.
+#################################
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+
+#     def get_max_value(self):
+#         return max(self.dictionary.values())
+    
+#     def get_min_value(self):
+#         return min(self.dictionary.values())
+
+# def main():
+#     givenDict = {'red':'1',
+#             'green':'2',
+#             'black':'4',
+#             'white':'3'}
+#     givenSolution = Solution(givenDict)
+#     print(givenSolution.get_max_value())
+#     print(givenSolution.get_min_value())
+
+# if __name__ == '__main__':
+#     main()
