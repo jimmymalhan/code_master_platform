@@ -35,15 +35,22 @@ node B
 # Note that at this point, one of the descendants will be the ancestor of the lower descendant that is at the same level as the higher descendant. 
 
 class AncestralTree:
-    def __init__(self, name): # name is the name of the node
+   def __init__(self, name): # name = the name of the node
         self.name = name # name of the node
         self.ancestor = None
+
    
 # O(d) time | O(1) space, where d is the depth(height) of the ancenstral tree
 
+# topAncestor = node A
+# descendantOne = node E
+# descendantTwo = node I
+
+# .ancestor = the node's ancestor property points to its youngest ancestor GIVEN
+
 def getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo):
-      depthOne = getDescendantDepth(descendantOne, topAncestor)
-      depthTwo = getDescendantDepth(descendantTwo, topAncestor)
+      depthOne = getDescendantDepth(descendantOne, topAncestor) # get the depth of the first descendant
+      depthTwo = getDescendantDepth(descendantTwo, topAncestor) # get the depth of the second descendant
       if depthOne > depthTwo: # if descendantOne is deeper
          return backtrackAncestralTree(descendantOne, descendantTwo, depthOne - depthTwo) # return the first common ancestor
       else:
@@ -56,12 +63,54 @@ def getDescendantDepth(descendant, topAncestor):
          descendant = descendant.ancestor # move up the ancestral tree by one level
       return depth
 
-def backtrackAncestralTree(lowerDescendant, higherDescendant, diff): # lowerDescendant is the lower descendant, higherDescendant is the higher descendant, and diff is the difference in depths
+def backtrackAncestralTree(lowerDescendant, higherDescendant, diff): # lowerDescendant, higherDescendant, and diff is the difference in depths of the two descendants
       while diff > 0:
          lowerDescendant = lowerDescendant.ancestor # move up the ancestral tree by one level
          diff -= 1 # decrement the difference
       while lowerDescendant != higherDescendant: # while the lower descendant is not the higher descendant
-         lowerDescendant = lowerDescendant.ancestor # move up the ancestral tree by one level
-         higherDescendant = higherDescendant.ancestor # move up the ancestral tree by one level
+         lowerDescendant = lowerDescendant.ancestor # move up the ancestral tree by one level for the lower descendant
+         higherDescendant = higherDescendant.ancestor # move up the ancestral tree by one level for the higher descendant
       return lowerDescendant # return the first common ancestor
 
+
+
+import unittest
+
+class AncestralTree():
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
+        
+    def addDescendants(self, *descendants):
+        for descendant in descendants:
+            descendant.ancestor = self
+
+
+def new_trees():
+    ancestralTrees = {}
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        ancestralTrees[letter] = AncestralTree(letter)
+    return ancestralTrees
+
+
+class TestProgram(unittest.TestCase):
+    def test_case_1(self):
+        trees = new_trees()
+        trees["A"].addDescendants(trees["B"], trees["C"])
+        trees["B"].addDescendants(trees["D"], trees["E"])
+        trees["D"].addDescendants(trees["H"], trees["I"])
+        trees["C"].addDescendants(trees["F"], trees["G"])
+        
+        self.assertEqual(getYoungestCommonAncestor(trees["A"], trees["E"], trees["I"]).name, "B")
+
+def main():
+   trees = new_trees()
+   trees["A"].addDescendants(trees["B"], trees["C"])
+   trees["B"].addDescendants(trees["D"], trees["E"])
+   trees["D"].addDescendants(trees["H"], trees["I"])
+   trees["C"].addDescendants(trees["F"], trees["G"])
+   print(getYoungestCommonAncestor(trees["A"], trees["E"], trees["I"]).name)
+
+if __name__ == "__main__":
+   main()
+   # unittest.main()
