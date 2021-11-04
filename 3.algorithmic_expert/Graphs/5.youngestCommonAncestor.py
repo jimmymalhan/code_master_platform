@@ -39,8 +39,12 @@ class AncestralTree:
         self.name = name # name of the node
         self.ancestor = None
 
+   def addDescendants(self, *descendants): # *descendants = a list of descendants
+      for descendant in descendants: # for each descendant in the list of descendants 
+         descendant.ancestor = self # set the descendant's ancestor to the current node
+
    
-# O(d) time | O(1) space, where d is the depth(height) of the ancenstral tree
+# O(d) time | O(1) space, where d is the depth(height) of the ancestral tree
 
 # topAncestor = node A
 # descendantOne = node E
@@ -72,36 +76,12 @@ def backtrackAncestralTree(lowerDescendant, higherDescendant, diff): # lowerDesc
          higherDescendant = higherDescendant.ancestor # move up the ancestral tree by one level for the higher descendant
       return lowerDescendant # return the first common ancestor
 
-
-
-import unittest
-
-class AncestralTree():
-    def __init__(self, name):
-        self.name = name
-        self.ancestor = None
-        
-    def addDescendants(self, *descendants):
-        for descendant in descendants:
-            descendant.ancestor = self
-
-
+# driver code
 def new_trees():
     ancestralTrees = {}
     for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
         ancestralTrees[letter] = AncestralTree(letter)
     return ancestralTrees
-
-
-class TestProgram(unittest.TestCase):
-    def test_case_1(self):
-        trees = new_trees()
-        trees["A"].addDescendants(trees["B"], trees["C"])
-        trees["B"].addDescendants(trees["D"], trees["E"])
-        trees["D"].addDescendants(trees["H"], trees["I"])
-        trees["C"].addDescendants(trees["F"], trees["G"])
-        
-        self.assertEqual(getYoungestCommonAncestor(trees["A"], trees["E"], trees["I"]).name, "B")
 
 def main():
    trees = new_trees()
@@ -109,7 +89,21 @@ def main():
    trees["B"].addDescendants(trees["D"], trees["E"])
    trees["D"].addDescendants(trees["H"], trees["I"])
    trees["C"].addDescendants(trees["F"], trees["G"])
-   print(getYoungestCommonAncestor(trees["A"], trees["E"], trees["I"]).name)
+   print(getYoungestCommonAncestor(trees["A"], trees["E"], trees["I"]).name) # B
+   print(getYoungestCommonAncestor(trees["A"], trees["B"], trees["D"]).name) # B
+   print(getYoungestCommonAncestor(trees["A"], trees["C"], trees["F"]).name) # C
+
+
+import unittest
+class TestProgram(unittest.TestCase):
+    def test_case_1(self):
+        trees = new_trees()
+        trees["A"].addDescendants(trees["B"], trees["C"])
+        trees["B"].addDescendants(trees["D"], trees["E"])
+        trees["D"].addDescendants(trees["H"], trees["I"])
+        trees["C"].addDescendants(trees["F"], trees["G"])
+        self.assertEqual(getYoungestCommonAncestor(trees["A"], trees["E"], trees["I"]).name, "B")
+
 
 if __name__ == "__main__":
    main()
