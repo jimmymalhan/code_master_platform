@@ -77,11 +77,11 @@ def backtrackAncestralTree(lowerDescendant, higherDescendant, diff): # lowerDesc
       return lowerDescendant # return the first common ancestor
 
 # driver code
-def new_trees():
-    ancestralTrees = {}
-    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-        ancestralTrees[letter] = AncestralTree(letter)
-    return ancestralTrees
+def new_trees(): # create a new ancestral tree
+    ancestralTrees = {} # create a dictionary of ancestral trees
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"): # for each letter in the alphabet
+        ancestralTrees[letter] = AncestralTree(letter) # create a new ancestral tree with the letter as the name
+    return ancestralTrees # return the dictionary of ancestral trees
 
 def main():
    trees = new_trees()
