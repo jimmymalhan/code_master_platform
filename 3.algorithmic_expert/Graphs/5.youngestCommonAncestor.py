@@ -1,11 +1,11 @@
 # https://www.algoexpert.io/questions/Youngest%20Common%20Ancestor
 
 """
-You're given three inputs, all of which are instances of an AncestralTree class that have an ancenstor property pointing to their youngest ancestor. The first input is the top ancenstor in an ancestral tree(i.e  the only instance that has no ancestors --its propert points to None/null). and the other two inputs are descendants of the ancestral tree.
+You're given three inputs, all of which are instances of an AncestralTree class that have an ancestor property pointing to their youngest ancestor. The first input is the top ancestor in an ancestral tree(i.e  the only instance that has no ancestors --its property points to None/null). and the other two inputs are descendants of the ancestral tree.
 
 Write a function that returns the youngest common ancestor of the two descendants.
 
-Note that a descendant is considered its own ancenstor. So in simple ancestral tree below, the youngest common ancestor to nodes A and B is node A.
+Note that a descendant is considered its own ancestor. So in simple ancestral tree below, the youngest common ancestor to nodes A and B is node A.
 
 // The youngest common ancestor to nodes A and B is node A.
      A
@@ -77,7 +77,7 @@ def backtrackAncestralTree(lowerDescendant, higherDescendant, diff): # lowerDesc
       return lowerDescendant # return the first common ancestor
 
 # driver code
-def new_trees(): # create a new ancestral tree
+def new_trees(): # create a new ancestral tree for Test Cases
     ancestralTrees = {} # create a dictionary of ancestral trees
     for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"): # for each letter in the alphabet
         ancestralTrees[letter] = AncestralTree(letter) # create a new ancestral tree with the letter as the name
