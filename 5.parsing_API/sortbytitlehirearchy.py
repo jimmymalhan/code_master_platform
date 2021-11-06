@@ -37,7 +37,7 @@ class Employee:
         sorted_data = self.sort_by_hirearchy()
         with open('employees.csv', 'w') as csv_file:
             csv_writer = csv.writer(csv_file)
-            csv_writer.writerow(['Name', 'Salary', 'Age', 'Department', 'Manager'])
+            csv_writer.writerow(['Name', 'Salary', 'Age', 'Department', 'Manager']) # writing the headers
             for employee in sorted_data:
                 csv_writer.writerow([employee['employee_name'], employee['employee_salary'], employee['employee_age'], employee['employee_department'], employee['employee_manager_name']])
 
