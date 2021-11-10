@@ -1,9 +1,9 @@
 # Fetching the api, sorting the employees by hirearchy and printing the result
 
 import requests
+import csv
 import json
 from requests.exceptions import HTTPError
-import csv
 
 class Employee:
     def __init__(self, name, title, manager):
