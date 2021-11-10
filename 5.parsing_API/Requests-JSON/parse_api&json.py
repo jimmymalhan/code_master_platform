@@ -99,10 +99,6 @@ def Solution():
         with open('output.json', 'wt') as convert_file:
             convert_file.write(json.dumps(actual_value))
 
-# check the time to take to run this code
-        start_time = time.time()
-        print("--- %s seconds ---" % (time.time() - start_time))
-
     except HTTPError as http_err:
         print(f'HTTP error occurred: {http_err}')
     except Exception as err:
