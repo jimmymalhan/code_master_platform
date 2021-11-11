@@ -18,3 +18,9 @@ def runLengthEncoding(string):
 	encodedStringCharacters.append(string[len(string) - 1])
 	
 	return "".join(encodedStringCharacters)
+
+def main():
+	print(runLengthEncoding("AAAABBBCCDAA"))
+
+if __name__ == "__main__":
+	main()
