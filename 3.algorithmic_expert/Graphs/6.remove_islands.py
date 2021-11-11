@@ -48,3 +48,4 @@
 # Explanation of the solution:
 #   We start by iterating through the matrix and marking all the 1s that are not touching the border of the matrix.
 #   Then, we iterate through the matrix again and replace all the 1s that are touching the border with 0s.
+
