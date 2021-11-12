@@ -388,3 +388,79 @@
 
 # if __name__ == '__main__':
 #     main()
+
+#################################
+# 16. Write a Python program to get a dictionary from an object's fields.
+#################################
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+
+#     def get_dictionary(self):
+#         return self.dictionary
+
+#     def print_dictionary(self):
+#         print(self.get_dictionary())
+
+# def main():
+#     givenDict = {'red':'1',
+#             'green':'2',
+#             'black':'4',
+#             'white':'3'}
+#     givenSolution = Solution(givenDict)
+#     givenSolution.print_dictionary()
+
+# if __name__ == '__main__':
+#     main()
+
+#################################
+# 17. Write a Python program to remove duplicates from Dictionary.
+#################################
+
+# class Solution:
+#     def __init__(self, dictionary:dict()) -> None:
+#         self.dictionary = dictionary
+
+#     def remove_duplicates(self):
+#         result = {}
+#         for k,v in self.dictionary.items():
+#             if v not in result.values():
+#                 result[k] = v
+
+#         return result
+#     def remove_duplicates_2(self):
+#         return {k: v for k, v in self.dictionary.items() if v not in self.dictionary.values()}
+
+#     def print_dictionary(self):
+#         print(self.remove_duplicates())
+#         print(self.remove_duplicates_2())
+
+# def main():
+#     student_data = {'id1': 
+#     {'name': ['Sara'], 
+#         'class': ['V'], 
+#         'subject_integration': ['english, math, science']
+#     },
+#     'id2': 
+#     {'name': ['David'], 
+#         'class': ['V'], 
+#         'subject_integration': ['english, math, science']
+#     },
+#     'id3': 
+#         {'name': ['Sara'], 
+#         'class': ['V'], 
+#         'subject_integration': ['english, math, science']
+#     },
+#     'id4': 
+#     {'name': ['Surya'], 
+#         'class': ['V'], 
+#         'subject_integration': ['english, math, science']
+#     },
+#     }
+#     givenSolution = Solution(student_data)
+#     givenSolution.print_dictionary()
+
+# if __name__ == '__main__':
+#     main()
+
