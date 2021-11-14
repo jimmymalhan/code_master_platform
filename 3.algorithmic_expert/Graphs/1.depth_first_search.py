@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, name):
         self.children = [] # list of children
-        self.name = name # name of node
+        self.name = name # name of the root node
 
     def addChild(self, name):
         self.children.append(Node(name)) # add child to list of children
@@ -24,11 +24,12 @@ class Node:
             child.depthFirstSearch(array)# Step - 3 call the stack in DFS for 'B' | step - 6 so on and so forth
         return array
 """
-# unit testing
-if __name__ == '__main__':
+def main():
     root = Node('A')
     root.addChild('B').addChild('C')
     root.children[0].addChild('D')
     root.children[0].children[0].addChild('E')
-    print(root.depthFirstSearch([]))
-    # ['A', 'B', 'D', 'E', 'C']
+    print(root.depthFirstSearch([])) # ['A', 'B', 'D', 'E', 'C']
+
+if __name__ == '__main__':
+    main()
