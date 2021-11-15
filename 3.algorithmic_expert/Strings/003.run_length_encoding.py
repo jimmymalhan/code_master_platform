@@ -20,7 +20,7 @@ def runLengthEncoding(string):
 	return "".join(encodedStringCharacters)
 
 def main():
-	print(runLengthEncoding("AAAABBBCCDAA"))
+	print(runLengthEncoding("AAAABBBCCDAA")) # 4A3B2C1D2A
 
 if __name__ == "__main__":
 	main()
