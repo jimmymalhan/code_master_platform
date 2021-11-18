@@ -64,6 +64,70 @@
 
 # O(wh) time | O(wh) space(coz of identical DS) - where w and h are the width and height of the matrix
 
+class Solution:
+    def removeIslands(self, matrix):
+        onesConnectedToBorder = [[False for col in matrix[0]] for row in matrix]
+
+        # Find all the 1s that are not islands
+        for row in range(len(matrix)):
+            for col in range(len(matrix[row])):
+                rowIsBorder = row == 0 or row == len(matrix) - 1 # check if the row is on the border
+                colIsBorder = col == 0 or col == len(matrix[row]) - 1 # check if the col is on the border
+                isBorder = rowIsBorder or colIsBorder # check if the position is on the border
+                if not isBorder:
+                    continue
+
+                if matrix[row][col] != 1:
+                    continue # skip the position if it is not a 1
+
+                findOnesConnectedToBorder(matrix, row, col, onesConnectedToBorder) # perform DFS on all the 1s that are connected to the border
+
+        for row in range(1, len(matrix) - 1):
+            for col in range(1, len(matrix[row]) - 1):
+                if onesConnectedToBorder[row][col]: # if the position is 1 and has the value True, then we skip the position
+                    continue
+                    
+                matrix[row][col] = 0 # replace the position with 0
+        return matrix
+
+    def findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBorder):
+        stack = [(startRow, startCol)] # push the starting position into the stack
+        
+        while len(stack) > 0:
+            currentPosition = stack.pop() # pop the last element from the stack
+            currentRow, currentCol = currentPosition # unpack the current position
+            
+            alreadyVisited = onesConnectedToBorder[currentRow][currentCol] # mark the current position as True
+            if alreadyVisited:
+                continue
+            
+            onesConnectedToBorder[currentRow][currentCol] = True
+            
+            neighbors = getNeighbors(matrix, currentRow, currentCol) # get all the neighbors of the current position
+            for neighbor in neighbors:
+                row, col = neighbor # unpack the neighbor
+                if matrix[row][col] != 1:
+                    continue # skip the neighbor if it is not a 1
+                stack.append(neighbor) # push the neighbor into the stack
+
+    def getNeighbors(matrix, row, col):
+        neighbors = []
+        
+        numRows = len(matrix)
+        numCols = len(matrix[row])
+
+        if row - 1 >= 0: # UP # check if the row is not on the border
+            neighbors.append((row - 1, col)) # push the neighbor into the neighbors list
+        if row + 1 < numRows: # DOWN # check if the row is not on the border
+            neighbors.append((row + 1, col))
+        if col - 1 >= 0: # LEFT # check if the col is not on the border
+            neighbors.append((row, col - 1)) #
+        if col + 1 < numCols: # RIGHT # check if the col is not on the border
+            neighbors.append((row, col + 1))
+        return neighbors
+
+
+
 ####################################
 # C) Optimal Solution: Better Average space complexity
 ####################################
@@ -79,7 +143,3 @@
 # Its same space complexity as we need to perform DFS on the matrix using Stack. Suppose if we have all 1s in the matrix, then we need to perform DFS on all the 1s, so the space complexity is O(wh) and stack needs to store all the positions of the 1s.
 
 # Has better Average Space Complexity than the other two solutions
-
-class Solution:
-    def removeIslands(self, matrix):
-        return []
