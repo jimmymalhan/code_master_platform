@@ -1,50 +1,58 @@
-# # O(n^2) time | O(n) space
-
-# brute force
 class MyClass:
-    def __init__(self, string:str) -> bool:
+    def __init__(self, string:str):
         self.string = string
-		
-    def isPalindrome(self):
-        reversedString = ""
+
+# O(n^2) time | O(n) space
+    def isPalindrome_bruteforce(self):
+        self.string = self.string.lower()
+        # self.string = self.string.replace(" ", "")
+        # use isalnum() to check if the string contains only alphanumeric characters
+        self.string = ''.join(e for e in self.string if e.isalnum())
+        reversedString = []
         for i in reversed(range(len(self.string))):
-            reversedString += self.string[i] # creating newString -> increases time
-        return self.string == reversedString
+            reversedString.append(self.string[i]) # adding directly to newString -> imporving
+        return self.string == "".join(reversedString)
+
+# O(n) time and O(n) space
+    def isPalindrome_quickSol(self):
+        self.string = self.string.lower()
+        # self.string = self.string.replace(" ", "")
+        # use isalnum() to check if the string contains only alphanumeric characters
+        self.string = ''.join(e for e in self.string if e.isalnum())
+        return self.string == self.string[::-1]
+
+# recursion
+# O(n) time | O(n) space
+    def isPalindrome_recursion(self, i = 0):
+        j = len(self.string) - 1 - i
+        return True if i >= j else self.string[i] == self.string[j] and self.isPalindrome_recursion(i + 1)
+    # string[i] = firstIdx
+    # stringp[j] = lastIdx
+    # recursion always involve extra memory because of tail recursion
+    # tail recursion - 
+
+
+# O(n) time and O(1) space
+    def isPalindromeOptimized(self):
+        self.string = self.string.lower()
+        # self.string = self.string.replace(" ", "")
+# use isalnum() to check if the string contains only alphanumeric characters
+        self.string = ''.join(e for e in self.string if e.isalnum())
+        leftIdx = 0 # pointer on firstIdx
+        rightIdx = len(self.string) - 1 # # pointer on lastIdx
+        while leftIdx < rightIdx:
+            if self.string[leftIdx] != self.string[rightIdx]:
+                return False
+            leftIdx += 1
+            rightIdx -= 1
+        return True
 
 def main():
-    stringName = MyClass("abcdcba")
-    print(stringName.isPalindrome())
-    example2 = MyClass("abcdcb")
-    print(example2.isPalindrome())
+    stringName = MyClass("abcdcbA ##$@$  ^##^$")
+    print(stringName.isPalindrome_bruteforce())
+    print(stringName.isPalindrome_quickSol())
+    print(stringName.isPalindrome_recursion())
+    print(stringName.isPalindromeOptimized())
 
 if __name__ == '__main__':
 	main()
-
-# recursion
-# # O(n) time | O(n) space
-def isPalindrome(string):
-	reversedString = []
-	for i in reversed(range(len(string))):
-		reversedString.append(string[i]) # adding directly to newString -> imporving
-	return string == "".join(reversedString)
-
-# # O(n) time | O(n) space
-def isPalindrome(string, i = 0):
-	j = len(string) - 1 - i
-	return True if i >= j else string[i] == string[j] and isPalindrome(string, i + 1)
-# string[i] = firstIdx
-# stringp[j] = lastIdx
-# recursion always involve extra memory because of tail recursion
-# tail recursion - 
-
-# # O(n) time | O(1) space
-def isPalindrome(string):
-	leftIdx = 0 # pointer on firstIdx
-	rightIdx = len(string) - 1 # # pointer on lastIdx
-	while leftIdx < rightIdx:
-		if string[leftIdx] != string[rightIdx]:
-			return False
-		leftIdx += 1
-		rightIdx -= 1
-	return True
-
