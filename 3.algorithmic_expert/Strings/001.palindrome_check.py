@@ -37,7 +37,7 @@ def isPalindrome(string, i = 0):
 # recursion always involve extra memory because of tail recursion
 # tail recursion - 
 
-# # O(1) time | O(n) space
+# # O(n) time | O(1) space
 def isPalindrome(string):
 	leftIdx = 0 # pointer on firstIdx
 	rightIdx = len(string) - 1 # # pointer on lastIdx
