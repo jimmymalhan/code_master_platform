@@ -17,9 +17,11 @@
 # Sample Output:
 # ['A', 'B', 'E', 'F', 'I', 'J', 'C', 'D', 'G', 'K', 'H']
 
+#########################################################
 # Concept:
 # Add rootNode in the array
 # loop through leafnodes -> call DFS on all children
+#########################################################
 
 class Node:
     def __init__(self, name):

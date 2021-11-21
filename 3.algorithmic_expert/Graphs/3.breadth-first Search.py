@@ -15,10 +15,19 @@
 # Sample Output:
 # ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
 
+#########################################################
 # Concept:
 # Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO -> you can create a breadth-first search.
 
-# Create/initialize the queue, while que is not empty, pop/dequeue the first node and add it to the visited list (append name of current node to array). For each child in current node, add it to the queue.
+# create the queue
+# while the queue is not empty
+# pop the first node from the queue 0- FIFO
+# append the current node to the array
+# for each child of the current node
+# add the child to the queue
+# return the array
+#########################################################
+
 import unittest
 
 class Node:
@@ -34,7 +43,7 @@ class Node:
     # O(v + e) time | O(v) space          # v frames on call stack
 
     def breadthFirstSearch(self, array):
-        queue = [self] # create/initialize the queue
+        queue = [self] # create queue
         while len(queue) > 0: # while queue is not empty
             current = queue.pop(0) # pop first item from queue - FIFO
             array.append(current.name) # append name of current node to array
