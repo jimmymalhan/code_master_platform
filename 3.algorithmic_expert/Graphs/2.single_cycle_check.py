@@ -13,6 +13,7 @@
 # Sample Output:
 # True
 
+#########################################################
 # Concept:
 # initialize - numElementsVisited , currentIdx =0, 0
 # Condition - element at index 0 cannot be jumped through more than once and 
@@ -24,6 +25,7 @@
 #   jump = visit the array at currentIdx
 #   nextIdx = currentIdx + jump % len(array) #make sure you don't go out of bounds
 #   return nextIdx is equal or greater than 0 else add the nextidx to the length of the array
+#########################################################
 
 class graph:
     def __init__(self, array):
