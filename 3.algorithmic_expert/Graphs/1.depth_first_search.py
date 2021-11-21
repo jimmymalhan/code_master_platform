@@ -1,8 +1,25 @@
 # https://www.algoexpert.io/questions/Depth-first%20Search
+# Depth-first Search
 
 # You're given a Node class that has a name and an array of optional children nodes. When put together, nodes form a acyclic tree-like structure.
 
 # Implement the depthFirstSearch method on the Node class, which takes in an empty array, traverses the tree using the Depth-First Search approach (specifically navigating the tree from left to right), stores all of the nodes' names in the array, and returns it.
+
+# Sample Input:
+# graph = A
+#       / | \
+#      B  C  D
+#     / \    / \
+#    E   F  G   H
+#       / \  \
+#      I   J  K
+
+# Sample Output:
+# ['A', 'B', 'E', 'F', 'I', 'J', 'C', 'D', 'G', 'K', 'H']
+
+# Concept:
+# Add rootNode in the array
+# loop through leafnodes -> call DFS on all children
 
 class Node:
     def __init__(self, name):
