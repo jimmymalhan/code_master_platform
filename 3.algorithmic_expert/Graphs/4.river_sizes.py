@@ -32,12 +32,60 @@
 
 """
 stacks = depth first search
-"""
-# Explain the solution:
 
-# 1. Return the sizes of the rivers horizontally and vertically adjacent 1s in as traversing the matrix. Treat matrix as a graph where each element is a node with upto 4 neighbors nodes(left, right, top, bottom) and traverse the graph using DFS.
-# 2. While traversing the matrix, anytime you encounter a 1, traverse entire river that this 1 is part of(keep track of the size of the river) by node's neighboring nodes and their own neighboring nodes as long as they are 1s. if you encounter a 0, mark it as visited and continue.
-# 3. In order to prevent mistakenly calculating the size of the river multiple times, use auxiliary data structure "queue" to perform computation on unvisited nodes only. 
+Explain the solution:
+
+O(W.H) Time | O(wh) Space - width, height of matrix
+1. Return the sizes of the rivers horizontally and vertically adjacent 1s in as traversing the matrix. Treat matrix as a graph where each 
+element is a node with upto 4 neighbors nodes(left, right1, top, bottom) and traverse the graph using DFS.
+2. While traversing the matrix, anytime you encounter a 1, taverse entire river that this 1 is part of(keep track of the size of the river) 
+by node's neighboring nodes and their own neighboring nodes as long as they are 1s. if you encounter a 0, mark it as visited and continue.
+3. In order to prevent mistakenly calculating the size of the river multiple times, use auxiliary data structure "queue" to perform 
+computation on unvisited nodes only.
+
+# function - riversizes for matrix:
+Initialize sizes as list to hold the rivers
+Initializing visited as "2D matrix to False" - False for value in row and for row in matrix
+
+loop as i for range len in the matrix
+ nested loop as j in range of len matrix for i
+ if visited i j:
+    continue
+ traverseNode for i, j, matrix, visited, sizes
+return the sizes of the array as initialized before
+
+# function - traverseNode(i, j, matrix, visited, sizes)
+intialize the currentRiverSize to be 0
+nodesToExplore for [[i, j]] # queue
+
+while there are nodeToExplore in length:
+  initize current Node  to pop the first element in the nodesToExplore from the queue
+  initialize i as currentNode for first index
+  initialize j as currentNode for second index
+  if visited i j:
+    continue
+  mark visited i j as True
+  if matrix i j is 0, add it to the queue
+  increment currentRiverSize by 1
+  getunvisitedNeighbors for i, j, matrix, visited
+  iterate through the unvisitedNeighbors as neighbor
+   add neighbor to the queue
+  if the currentRiverSize is greater than the 0
+      add the currentRiverSize to the sizes array
+
+# function ​- getUnvisitedNeighbor(i, j, matrix, visited)
+initialize unvisitedNeighbors as empty list
+
+- if the row as i is greater than 0 and not visited[i-1][j](node has not been visited ABOVE the node)
+  ​add [i-1, j] to the unvisitedNeighbors
+- if the row as i is less than the length of the matrix -1 and not visited[i+1][j](node has not been visited BELOW the node)
+  ​add [i+1, j] to the unvisitedNeighbors
+- if the row as j is greater than 0 and not visited[i][j-1](node has not been visited LEFT of the node)
+  ​add [i, j-1] to the unvisitedNeighbors
+- if the row as j is less than the length of the matrix at index [0] -1 and not visited[i][j+1](node has not been visited RIGHT of the node)
+  ​add [i, j+1] to the unvisitedNeighbors
+return the unvisitedNeighbors
+"""
 
 
 # Solution 1:
@@ -58,7 +106,7 @@ def traverseNode(i, j, matrix, visited, sizes): # i and j are rows
     # depth first search # stack
     nodesToExplore = [[i, j]] # holds the nodes to explore # stack
     while len(nodesToExplore): # while there are nodes to explore
-        currentNode = nodesToExplore.pop() # pop the last node from the queue
+        currentNode = nodesToExplore.pop() # pop the first node from the queue
         i = currentNode[0] # get the row
         j = currentNode[1] # get the row
         if visited[i][j]: # if the node has been visited, continue
