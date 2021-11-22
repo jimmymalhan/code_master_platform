@@ -17,11 +17,11 @@
 
 #########################################################
 # Concept:
-# Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO -> you can create a breadth-first search.
+# Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO.
 
 # create the queue
 # while the queue is not empty
-# pop the first node from the queue 0- FIFO
+# current = pop the first node from the queue - FIFO
 # append the current node to the array
 # for each child of the current node
 # add the child to the queue
