@@ -43,7 +43,7 @@ stacks = depth first search
 # Solution 1:
 def riverSizes(matrix):
     sizes = [] # holds the sizes of the rivers
-    visited = [[False for value in row] for row in matrix] # intially, intialzing the visited matrix to False # holds the visited nodes # output: [1, 2, 2, 2, 5] 
+    visited = [[False for value in row] for row in matrix] # initializing visited as "2D matrix to False" - False for value in row and for row in matrix
 
     # iterate through the matrix row by row and check if the element is 1 # if it is 1, add it to the queue # if it is 0, add it to the queue
     for i in range(len(matrix)): # iterate through the rows
@@ -53,7 +53,7 @@ def riverSizes(matrix):
             traverseNode(i, j, matrix, visited, sizes) # if the node has not been visited, traverse the node
     return sizes
 
-def traverseNode(i, j, matrix, visited, sizes): # i is the row, j is the row
+def traverseNode(i, j, matrix, visited, sizes): # i and j are rows
     currentRiverSize = 0 # holds the size of the river
     # depth first search # stack
     nodesToExplore = [[i, j]] # holds the nodes to explore # stack
