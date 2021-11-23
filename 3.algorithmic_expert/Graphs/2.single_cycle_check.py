@@ -14,17 +14,19 @@
 # True
 
 #########################################################
-# Concept:
-# initialize - numElementsVisited , currentIdx =0, 0
-# Condition - element at index 0 cannot be jumped through more than once and 
-#   clause - (n+1)th element jump must be the first element you visited i.e index 0
-#   increment the number of elements visited
-#   currentIdx = # getNextIndex of the current element using (helper function)
-# return if we have visited all elements and we are back at index 0
-# create helper function
-#   jump = visit the array at currentIdx
-#   nextIdx = currentIdx + jump % len(array) #make sure you don't go out of bounds
-#   return nextIdx is equal or greater than 0 else add the nextidx to the length of the array
+"""
+Concept:
+initialize - numElementsVisited , currentIdx =0, 0
+Condition - element at index 0 cannot be jumped through more than once and 
+  clause - (n+1)th element jump must be the first element you visited i.e index 0
+  increment the number of elements visited
+  currentIdx = self.getNextIndex of the currentIdx, self.array using (helper function)
+return if we have visited all elements and we are back at index 0
+create helper function
+  jump = visit the array at currentIdx
+  nextIdx = currentIdx + jump % len(array) #make sure you don't go out of bounds
+  return nextIdx is equal or greater than 0 else add the nextidx to the length of the array
+"""
 #########################################################
 
 class graph:
