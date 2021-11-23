@@ -16,16 +16,18 @@
 # ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
 
 #########################################################
-# Concept:
-# Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO.
+"""
+Concept:
+Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO.
 
-# create the queue
-# while the queue is not empty
-# current = pop the first node from the queue - FIFO
-# append the current node to the array
-# for each child of the current node
-# add the child to the queue
-# return the array
+create the queue
+while the queue is not empty
+current = pop the first node from the queue - FIFO
+append the current node to the array
+for each child of the current node
+add the child to the queue
+return the array
+"""
 #########################################################
 
 import unittest
