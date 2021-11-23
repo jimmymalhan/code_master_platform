@@ -55,12 +55,20 @@ matrix = [
 # j = matrix[4][0] # fifth row first column 
 # print(h, i, j) # 0 1 1
 
-for i in range(len(matrix)):
-    print(matrix[i]) # print the whole matrix
-    for j in range(len(matrix[i])): 
-        print(j, end=" ") # what is j? # j is the index count of the row on the pointer for 'i'
-        # 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
-# 0 1 2 3 4 [1, 0, 1, 0, 0]
-# 0 1 2 3 4 [0, 0, 1, 0, 1]
-# 0 1 2 3 4 [1, 0, 1, 0, 1]
-# 0 1 2 3 4 [1, 0, 1, 1, 0]
+# for i in range(len(matrix)):
+#     print(matrix[i]) # print the whole matrix
+#     for j in range(len(matrix[i])): 
+#         print(j, end=" ") # what is j? # j is the index count of the row on the pointer for 'i'
+#         # 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
+# # 0 1 2 3 4 [1, 0, 1, 0, 0]
+# # 0 1 2 3 4 [0, 0, 1, 0, 1]
+# # 0 1 2 3 4 [1, 0, 1, 0, 1]
+# # 0 1 2 3 4 [1, 0, 1, 1, 0]
+
+a = [[False for col in matrix[0]] for row in matrix] # initialize a 2d array with False
+b = [[False for value in row] for row in matrix] # initialize a 2d array with False
+c = [[0 for value in row] for row in matrix] # initialize a 2d array with 0s
+
+print(a)
+print(b)
+print(c)
