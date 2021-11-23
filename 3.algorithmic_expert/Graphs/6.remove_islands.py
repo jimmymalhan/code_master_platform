@@ -1,6 +1,6 @@
 # https://www.algoexpert.io/questions/Remove%20Islands
 
-# You're given a two-dimensional array(a matrix) of potentionally unequal height and width containing only 0s and 1s. The matrix represents a two-toned image, where each 1 represents black and each 0 represents white. An island is a defined as any number of 1s that are horizontally or vertically adjacent(not diagonally adjacent) and that don't touch the border of the image. In other words, a group of horizontally or vertically adjacent 1s isin't an island is any of those 1s are in the first row, last row, first column, or last column of the input matrix.
+# You're given a two-dimensional array(a matrix) of potentially unequal height and width containing only 0s and 1s. The matrix represents a two-toned image, where each 1 represents black and each 0 represents white. An island is a defined as any number of 1s that are horizontally or vertically adjacent(not diagonally adjacent) and that don't touch the border of the image. In other words, a group of horizontally or vertically adjacent 1s isin't an island is any of those 1s are in the first row, last row, first column, or last column of the input matrix.
 
 # Note that an island can twist. In other words, it doesn't have to be straight vertical line or straight horizontal line; it can L-shaped, for example.
 # You can think of islands as patches of black that don't touch the border of the two-toned image.
@@ -125,8 +125,18 @@ class Solution:
         if col + 1 < numCols: # RIGHT # check if the col is not on the border
             neighbors.append((row, col + 1))
         return neighbors
+def main():
+    matrix = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    print(Solution().removeIslands(matrix))
 
-
+main()
 
 ####################################
 # C) Optimal Solution: Better Average space complexity
