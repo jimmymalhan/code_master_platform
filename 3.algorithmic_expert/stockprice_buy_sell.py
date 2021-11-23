@@ -7,7 +7,6 @@
 
 # Example output: 6
 
-# O(n) time complexity | O(1) space complexity
 class Solution:
     def __init__(self, prices):
         self.prices = prices
