@@ -36,8 +36,11 @@
 #     [ ,  , 1, 1,  ,  ],
 #     [ ,  ,  ,  ,  ,  ],
 # ]
-# Explanation on the question:
-# Remove islands = remove all the 1s that are not connected to the border horizontally or vertically (not diagonally)
+
+"""
+Remove islands = remove all the 1s that are not connected to the border horizontally or vertically (not diagonally)
+- If it is connected to the border, that is not an island.
+"""
 
 # Hints:
 # Find the positions of all the non-island 1s and store. Use dfs on all the 1st that are on the border of the image. Afterwards, you can easily identify and remove all the islands 1s from the input matrix by relying on the DS that you used to store the positions of the non-island 1s.
@@ -61,11 +64,10 @@
 
 # 2. Loop through INTERIOR/INNER positions(not on the border) and if the value is 1 and doesn't have the value True, then we replace it with 0. If the position is 1 and has the value True, then we skip the position.
 
+
 # O(wh) time | O(wh) space(coz of identical DS) - where w and h are the width and height of the matrix
-
-
 def removeIslands(matrix):
-    onesConnectedToBorder = [[False for col in matrix[0]] for row in matrix]
+    onesConnectedToBorder = [[False for col in matrix[0]] for row in matrix] # connected to the border
 
     # Find all the 1s that are not islands
     for row in range(len(matrix)):
