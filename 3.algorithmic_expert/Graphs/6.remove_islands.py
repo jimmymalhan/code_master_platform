@@ -72,7 +72,7 @@ def removeIslands(matrix):
     # Find all the 1s that are not islands
     for row in range(len(matrix)):
         for col in range(len(matrix[row])):
-            rowIsBorder = row == 0 or row == len(matrix) - 1 # check if the row is on the border
+            rowIsBorder = row == 0 or row == len(matrix) - 1 # check if the row is on the border 
             colIsBorder = col == 0 or col == len(matrix[row]) - 1 # check if the col is on the border
             isBorder = rowIsBorder or colIsBorder # check if the position is on the border
             if not isBorder:
@@ -96,17 +96,17 @@ def findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBorder)
     
     while len(stack) > 0:
         currentPosition = stack.pop() # pop the last element from the stack
-        currentRow, currentCol = currentPosition # unpack the current position
+        currentRow, currentCol = currentPosition # unpack the current position # currentRow = currentPosition[0], currentCol = currentPosition[1]
         
         alreadyVisited = onesConnectedToBorder[currentRow][currentCol] # mark the current position as True
         if alreadyVisited:
             continue
         
-        onesConnectedToBorder[currentRow][currentCol] = True
+        onesConnectedToBorder[currentRow][currentCol] = True # mark the current position as True
         
         neighbors = getNeighbors(matrix, currentRow, currentCol) # get all the neighbors of the current position
         for neighbor in neighbors:
-            row, col = neighbor # unpack the neighbor
+            row, col = neighbor # unpack the neighbor # row = neighbor[0], col = neighbor[1]
             if matrix[row][col] != 1:
                 continue # skip the neighbor if it is not a 1
             stack.append(neighbor) # push the neighbor into the stack
@@ -127,19 +127,6 @@ def getNeighbors(matrix, row, col):
         neighbors.append((row, col + 1))
     return neighbors
 
-def main():
-    matrix = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 1, 0, 1, 1, 1],
-        [0, 0, 1, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 1, 1, 0, 0],
-        [1, 0, 0, 0, 0, 1],
-    ]
-    print(removeIslands(matrix))
-
-main()
-
 ####################################
 # C) Optimal Solution: Better Average space complexity
 ####################################
@@ -155,3 +142,20 @@ main()
 # Its same space complexity as we need to perform DFS on the matrix using Stack. Suppose if we have all 1s in the matrix, then we need to perform DFS on all the 1s, so the space complexity is O(wh) and stack needs to store all the positions of the 1s.
 
 # Has better Average Space Complexity than the other two solutions
+
+
+
+def main():
+    matrix = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    print(removeIslands(matrix))
+    # print(removeIslands2(matrix))
+
+if __name__ == "__main__":
+    main()
