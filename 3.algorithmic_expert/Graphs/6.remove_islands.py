@@ -42,12 +42,11 @@
 # Hints:
 # Find the positions of all the non-island 1s and store. Use dfs on all the 1st that are on the border of the image. Afterwards, you can easily identify and remove all the islands 1s from the input matrix by relying on the DS that you used to store the positions of the non-island 1s.
 
-# You can also solve this problem without the use of a DS that stores the positions of the non-island 1s. Simply loop through the border of the image, and perform DFS on all positions with the value 1. Find all the 1s that are connected to the original position on the border, and change them from 1 to 2. After changing all non-island 1s to 2s, you can simply remove all the remaining 1s which are guranteed to be islands, from the matrix(by replacing them with 0s), and you can then change all the 2s back to 1s, since these were previously determined to be non-islands.
-
 ####################################
 # A) Brute Force approach:
 ####################################
-# loop the matrix and check if the current position is 1. If it is, then check if it is on the border of the matrix then perform DFS on the current position.
+# loop the matrix and check if the current position -
+# If it is on the border of the matrix then perform DFS on the current position.
 # if the current position is 1, then check if it is not a neighbor of the border which is 1, then we can replace it with 0.
 # O(n^2) time complexity and O(n) space complexity
 
@@ -64,67 +63,68 @@
 
 # O(wh) time | O(wh) space(coz of identical DS) - where w and h are the width and height of the matrix
 
-class Solution:
-    def removeIslands(self, matrix):
-        onesConnectedToBorder = [[False for col in matrix[0]] for row in matrix]
 
-        # Find all the 1s that are not islands
-        for row in range(len(matrix)):
-            for col in range(len(matrix[row])):
-                rowIsBorder = row == 0 or row == len(matrix) - 1 # check if the row is on the border
-                colIsBorder = col == 0 or col == len(matrix[row]) - 1 # check if the col is on the border
-                isBorder = rowIsBorder or colIsBorder # check if the position is on the border
-                if not isBorder:
-                    continue
+def removeIslands(matrix):
+    onesConnectedToBorder = [[False for col in matrix[0]] for row in matrix]
 
-                if matrix[row][col] != 1:
-                    continue # skip the position if it is not a 1
-
-                findOnesConnectedToBorder(matrix, row, col, onesConnectedToBorder) # perform DFS on all the 1s that are connected to the border
-
-        for row in range(1, len(matrix) - 1):
-            for col in range(1, len(matrix[row]) - 1):
-                if onesConnectedToBorder[row][col]: # if the position is 1 and has the value True, then we skip the position
-                    continue
-                    
-                matrix[row][col] = 0 # replace the position with 0
-        return matrix
-
-    def findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBorder):
-        stack = [(startRow, startCol)] # push the starting position into the stack
-        
-        while len(stack) > 0:
-            currentPosition = stack.pop() # pop the last element from the stack
-            currentRow, currentCol = currentPosition # unpack the current position
-            
-            alreadyVisited = onesConnectedToBorder[currentRow][currentCol] # mark the current position as True
-            if alreadyVisited:
+    # Find all the 1s that are not islands
+    for row in range(len(matrix)):
+        for col in range(len(matrix[row])):
+            rowIsBorder = row == 0 or row == len(matrix) - 1 # check if the row is on the border
+            colIsBorder = col == 0 or col == len(matrix[row]) - 1 # check if the col is on the border
+            isBorder = rowIsBorder or colIsBorder # check if the position is on the border
+            if not isBorder:
                 continue
-            
-            onesConnectedToBorder[currentRow][currentCol] = True
-            
-            neighbors = getNeighbors(matrix, currentRow, currentCol) # get all the neighbors of the current position
-            for neighbor in neighbors:
-                row, col = neighbor # unpack the neighbor
-                if matrix[row][col] != 1:
-                    continue # skip the neighbor if it is not a 1
-                stack.append(neighbor) # push the neighbor into the stack
 
-    def getNeighbors(matrix, row, col):
-        neighbors = []
+            if matrix[row][col] != 1:
+                continue # skip the position if it's not a 1
+
+            findOnesConnectedToBorder(matrix, row, col, onesConnectedToBorder) # perform DFS on all the 1s that are connected to the border
+
+    for row in range(1, len(matrix) - 1):
+        for col in range(1, len(matrix[row]) - 1):
+            if onesConnectedToBorder[row][col]: # if the position is 1 and has the value True, then we skip the position
+                continue
+                
+            matrix[row][col] = 0 # replace the position with 0
+    return matrix
+
+def findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBorder):
+    stack = [(startRow, startCol)] # push the starting position into the stack
+    
+    while len(stack) > 0:
+        currentPosition = stack.pop() # pop the last element from the stack
+        currentRow, currentCol = currentPosition # unpack the current position
         
-        numRows = len(matrix)
-        numCols = len(matrix[row])
+        alreadyVisited = onesConnectedToBorder[currentRow][currentCol] # mark the current position as True
+        if alreadyVisited:
+            continue
+        
+        onesConnectedToBorder[currentRow][currentCol] = True
+        
+        neighbors = getNeighbors(matrix, currentRow, currentCol) # get all the neighbors of the current position
+        for neighbor in neighbors:
+            row, col = neighbor # unpack the neighbor
+            if matrix[row][col] != 1:
+                continue # skip the neighbor if it is not a 1
+            stack.append(neighbor) # push the neighbor into the stack
 
-        if row - 1 >= 0: # UP # check if the row is not on the border
-            neighbors.append((row - 1, col)) # push the neighbor into the neighbors list
-        if row + 1 < numRows: # DOWN # check if the row is not on the border
-            neighbors.append((row + 1, col))
-        if col - 1 >= 0: # LEFT # check if the col is not on the border
-            neighbors.append((row, col - 1)) #
-        if col + 1 < numCols: # RIGHT # check if the col is not on the border
-            neighbors.append((row, col + 1))
-        return neighbors
+def getNeighbors(matrix, row, col):
+    neighbors = []
+    
+    numRows = len(matrix)
+    numCols = len(matrix[row])
+
+    if row - 1 >= 0: # UP # check if the row is not on the border
+        neighbors.append((row - 1, col)) # push the neighbor into the neighbors list
+    if row + 1 < numRows: # DOWN # check if the row is not on the border
+        neighbors.append((row + 1, col))
+    if col - 1 >= 0: # LEFT # check if the col is not on the border
+        neighbors.append((row, col - 1)) #
+    if col + 1 < numCols: # RIGHT # check if the col is not on the border
+        neighbors.append((row, col + 1))
+    return neighbors
+
 def main():
     matrix = [
         [1, 0, 0, 0, 0, 0],
@@ -134,7 +134,7 @@ def main():
         [1, 0, 1, 1, 0, 0],
         [1, 0, 0, 0, 0, 1],
     ]
-    print(Solution().removeIslands(matrix))
+    print(removeIslands(matrix))
 
 main()
 
