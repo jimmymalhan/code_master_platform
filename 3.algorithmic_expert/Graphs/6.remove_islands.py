@@ -143,7 +143,62 @@ def getNeighbors(matrix, row, col):
 
 # Has better Average Space Complexity than the other two solutions
 
+def removeIslandsOptimized(matrix):
+    # Find all the 1s that are not islands
+    for row in range(len(matrix)):
+        for col in range(len(matrix[row])):
+            rowIsBorder = row == 0 or row == len(matrix) - 1 # check if the row is on the border 
+            colIsBorder = col == 0 or col == len(matrix[row]) - 1 # check if the col is on the border
+            isBorder = rowIsBorder or colIsBorder # check if the position is on the border
+            if not isBorder:
+                continue
 
+            if matrix[row][col] != 1:
+                continue # skip the position if it's not a 1
+
+            changeOnesConnectedToBorderToTwos(matrix, row, col) # perform DFS on all the 1s that are connected to the border
+
+    for row in range(len(matrix)):
+        for col in range(len(matrix[row])):
+            color = matrix[row][col] # get the color of the position
+            if color == 1: # if the position is 1, then we replace it with 0
+                matrix[row][col] = 0 # replace the position with 0
+            elif color == 2: # if the position is 2, then we replace it with 1
+                matrix[row][col] = 1 # replace the position with 1
+    return matrix
+
+def changeOnesConnectedToBorderToTwos(matrix, startRow, startCol):
+    stack = [(startRow, startCol)] # push the starting position into the stack
+    
+    while len(stack) > 0:
+        currentPosition = stack.pop() # pop the last element from the stack
+        currentRow, currentCol = currentPosition # unpack the current position # currentRow = currentPosition[0], currentCol = currentPosition[1]
+        
+        matrix[currentRow][currentCol] = 2 # mark the current position as 2
+
+        neighbors = getNeighbors(matrix, currentRow, currentCol) # get all the neighbors of the current position
+
+        for neighbor in neighbors:
+            row, col = neighbor # unpack the neighbor # row = neighbor[0], col = neighbor[1]
+            if matrix[row][col] != 1:
+                continue # skip the neighbor if it is not a 1
+            stack.append(neighbor) # push the neighbor into the stack
+
+def getNeighbors(matrix, row, col):
+    neighbors = []
+    
+    numRows = len(matrix)
+    numCols = len(matrix[row])
+
+    if row - 1 >= 0: # UP # check if the row is not on the border
+        neighbors.append((row - 1, col)) # push the neighbor into the neighbors list
+    if row + 1 < numRows: # DOWN # check if the row is not on the border
+        neighbors.append((row + 1, col))
+    if col - 1 >= 0: # LEFT # check if the col is not on the border
+        neighbors.append((row, col - 1)) #
+    if col + 1 < numCols: # RIGHT # check if the col is not on the border
+        neighbors.append((row, col + 1))
+    return neighbors
 
 def main():
     matrix = [
@@ -155,7 +210,7 @@ def main():
         [1, 0, 0, 0, 0, 1],
     ]
     print(removeIslands(matrix))
-    # print(removeIslands2(matrix))
+    print(removeIslandsOptimized(matrix))
 
 if __name__ == "__main__":
     main()
