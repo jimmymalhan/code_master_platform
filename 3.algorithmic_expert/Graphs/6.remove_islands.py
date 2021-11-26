@@ -146,18 +146,19 @@ Has better Average Space Complexity than the other two solutions
 
 ##################
 function for removeIsIslands for matrix
-    loop for row as range to len of matrix
-        loop for col as range to len of matrix
+    loop for row in range to len of matrix
+        loop for col in range to len of matrix for row
             rowIsBorder is equal to row is equalized to 0 or row is equalized to len of matrix - 1 # to check if row is border
             colIsBorder is equal to col is equalized to 0 or col is equalized to len of matrix for row - 1 # to check if col is border
+            isBorder is equal to rowIsBorder or colIsBorder # to check if row or col is border
             if not isBorder # if the position is not a border
                 continue
             if matrix[row][col] is not equal to 1
                 continue
             changeOnesConnectedToBorderToTwos for matix, row, col # change all ones connected to border to twos using DFS
 
-    loop for row as range to len of matrix
-        loop for col as range to len of matrix for row
+    loop for row in range to len of matrix
+        loop for col in range to len of matrix for row
             color is equal to matrix[row][col] # color of the current position
             if color is equalized to 1
                 matrix[row][col] is equal to 0 # change color to 0
@@ -165,17 +166,18 @@ function for removeIsIslands for matrix
                 matrix for row,col is equal to 1 # change color to 1
     return matrix
 
-function changeOnesConnectedToBorderToTwos for matrix, row, col
-    stack is equal to [(startRow, StartCol)] # stack to store the positions to be checked
+function changeOnesConnectedToBorderToTwos for matrix, startRow, startCol
+    stack is equal to [(startRow, startCol)] # stack to store the positions to be checked
     while len of stack is greater than 0
-        currentPOsition = stack.pop() # pop the last position from the stack
+        currentPosition = stack.pop() # pop the last position from the stack
         currentRow, currentCol = currentPosition # get the row and col of the current position
-        matrix for [currentRow][currentCol] is equal to 2 # change the color of the current position to 2
+        matrix for [currentRow][currentCol] is equal to 2 # mark the current position as 2
         neighbors is equal to getNeighbors for matrix, currentRow, currentCol # get the neighbors of the current position
         loop for neighbor in neighbors
             row, col = neighbor # get the row and col of the neighbor
-            if matrix[row][col] is not equal to 1
-            stack.append(neighbor) # add the neighbor to the stack
+            if matrix for [row][col] is not equal to 1
+                continue # skip the neighbor if it is not a 1    
+            append the neighbor to the stack
 
 function getNeighbors for matrix, row, col
     neighbors is equal to [] # list to store the neighbors
@@ -184,11 +186,11 @@ function getNeighbors for matrix, row, col
 
     if row - 1 is greater than and equal to 0:
         neighbors.append((row - 1, col)) # add the neighbor to the list # `UP`
-    if row + 1 is less than and equal to numRows:
+    if row + 1 is less than to numRows:
         neighbors.append((row + 1, col)) # add the neighbor to the list # `DOWN`
     if col - 1 is greater than and equal to 0:
         neighbors.append((row, col - 1)) # add the neighbor to the list # `LEFT`
-    if col + 1 is less than and equal to numCols:
+    if col + 1 is less than to numCols:
         neighbors.append((row, col + 1)) # add the neighbor to the list # `RIGHT`
     return neighbors
 """
