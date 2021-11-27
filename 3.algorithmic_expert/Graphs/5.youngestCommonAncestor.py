@@ -48,7 +48,7 @@ function of getDescendantDepth for descendant, topAncestor
     initialize depth is equal to 0
     while descendant is not equal to topAncestor
         increment depth by 1
-        descendant is equal to getParent of descendant
+        descendant is equal descendant.ancestor # getParent of descendant
     return depth
 
 function of backtrackAncestralTree for lowerDescendant, higherDescendant, diff
