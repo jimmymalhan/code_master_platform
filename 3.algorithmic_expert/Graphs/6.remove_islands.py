@@ -131,7 +131,8 @@ def getNeighbors(matrix, row, col):
 # C) Optimal Solution: Better Average space complexity
 ####################################
 """
-Don't need to create Auxilary DS
+Explain the solution:
+Note: Don't need to create Auxilary DS
 1. Loop through the EXTERIOR/BORDER of the image and find all of the 1s which are connected to the border and change them to 2.
     # DFS:
         Check Vertically and Horizontally if the position is 0, then we skip the position.
