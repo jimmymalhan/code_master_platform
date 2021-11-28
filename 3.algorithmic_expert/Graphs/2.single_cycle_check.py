@@ -1,7 +1,11 @@
-# https://www.algoexpert.io/questions/Single%20Cycle%20Check
-# Single Cycle Check - Given a directed graph, check whether it contains a cycle or not.
+# Problem Link: https://www.algoexpert.io/questions/Single%20Cycle%20Check
 
-# You're giveen an array of integers where each integer represents a jump of of its value in the array. For instance, 2 represents a jump of two indices forward in the array, the integer -3 represents a jump of three indices backward in the array.
+# Problem Name: Single Cycle Check 
+
+# Problem Description:
+# Given a directed graph, check whether it contains a cycle or not.
+
+# You're given an array of integers where each integer represents a jump of of its value in the array. For instance, 2 represents a jump of two indices forward in the array, the integer -3 represents a jump of three indices backward in the array.
 
 # If a jump spills past the array's bounds, it wraps over to the other side. For instance, a jump of -1 at index 0 brings us to the last index in the array. Similarly, a jump of 1 at the last index in the array brings us to index 0.
 
@@ -12,10 +16,13 @@
 
 # Sample Output:
 # True
-
-#########################################################
+####################################
 """
-Concept:
+Explain the solution:
+
+
+##################
+Detailed explanation of the Solution:
 initialize - numElementsVisited , currentIdx =0, 0
 Condition - element at index 0 cannot be jumped through more than once and 
   clause - (n+1)th element jump must be the first element you visited i.e index 0
@@ -27,7 +34,7 @@ create helper function
   nextIdx = currentIdx + jump % len(array) #make sure you don't go out of bounds
   return nextIdx is equal or greater than 0 else add the nextidx to the length of the array
 """
-#########################################################
+####################################
 
 class graph:
     def __init__(self, array):

@@ -1,5 +1,9 @@
-# https://www.algoexpert.io/questions/Breadth-first%20Search
-# Breadth-first search is a search algorithm that starts at the root node and explores as far as possible along each branch before backtracking.
+# Problem Link: https://www.algoexpert.io/questions/Breadth-first%20Search
+
+# Problem Name: Breadth-first search 
+
+# Problem Description:
+# BFS is a search algorithm that starts at the root node and explores as far as possible along each branch before backtracking.
 
 # You're given a Node class that has a name and an array of optional children nodes. When put together, nodes form a acyclic tree-like structure. Implement the breadthFirstSearch method on the Node class, which takes in an empty array, traverses the tree using the Breadth-first Search approach (specifically navigating the tree from left to right), stores all of the nodes' names in the array, and returns it.
 
@@ -15,9 +19,13 @@
 # Sample Output:
 # ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
 
-#########################################################
+####################################
 """
-Concept:
+Explain the solution:
+
+
+##################
+Detailed explanation of the Solution:
 Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO.
 
 create the queue
@@ -28,10 +36,9 @@ for each child of the current node
 add the child to the queue
 return the array
 """
-#########################################################
+####################################
 
 import unittest
-
 class Node:
     def __init__(self, name):
         self.children = [] # list of children
