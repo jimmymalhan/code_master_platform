@@ -1,6 +1,8 @@
-# https://www.algoexpert.io/questions/Youngest%20Common%20Ancestor
+# Problem Link: https://www.algoexpert.io/questions/Youngest%20Common%20Ancestor
 
+# Problem Name: Youngest Common Ancestor
 
+# Problem Description:
 # You're given three inputs, all of which are instances of an AncestralTree class that have an ancestor property pointing to their youngest ancestor. The first input is the top ancestor in an ancestral tree(i.e  the only instance that has no ancestors --its property points to None/null). and the other two inputs are descendants of the ancestral tree.
 
 # Write a function that returns the youngest common ancestor of the two descendants.
@@ -27,7 +29,7 @@
 
 # Sample Output:
 # node B
-
+####################################
 """
 Explain the solution:
 Start by finding the two input descendants' depths in the ancestral tree. If one of them is deeper, iterate up through its ancestors until you reach the depth of the higher descendant.
@@ -60,6 +62,8 @@ function of backtrackAncestralTree for lowerDescendant, higherDescendant, diff
         higherDescendant is equal to higherDescendant.ancestor # get the parent of the higherDescendant
     return lowerDescendant
 """
+####################################
+
 class AncestralTree:
    def __init__(self, name): # name = the name of the node
         self.name = name # name of the node

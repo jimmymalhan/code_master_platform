@@ -1,6 +1,8 @@
-# https://www.algoexpert.io/questions/Depth-first%20Search
-# Depth-first Search
+# Problem Link: https://www.algoexpert.io/questions/Depth-first%20Search
 
+# Problem Name: Depth-first Search
+
+# Problem Description:
 # You're given a Node class that has a name and an array of optional children nodes. When put together, nodes form a acyclic tree-like structure.
 
 # Implement the depthFirstSearch method on the Node class, which takes in an empty array, traverses the tree using the Depth-First Search approach (specifically navigating the tree from left to right), stores all of the nodes' names in the array, and returns it.
@@ -17,13 +19,20 @@
 # Sample Output:
 # ['A', 'B', 'E', 'F', 'I', 'J', 'C', 'D', 'G', 'K', 'H']
 
-#########################################################
+####################################
 """
-Concept:
-Add rootNode in the array
-loop through leafnodes -> call DFS on all children
+Explain the solution:
+1. The Depth-First Search algorithm works by traversing the graph branch by branch, starting at the root node. Before traversiing any Node;s sibling Nodes, its children nodes must be traversed first.
+2. Start at the root Node and try simply calling the depthFirstSearch method on all children Nodes of each child Node.Add the name of the child Node to the array at every call of depthFirstSearch.
+
+##################
+Detailed explanation of the Solution:
+append rootNode in the array
+loop through leafnodes
+    call DFS on all children
+return array
 """
-#########################################################
+####################################
 
 class Node:
     def __init__(self, name):
@@ -51,6 +60,7 @@ class Node:
             child.depthFirstSearch(array)# Step - 3 call the stack in DFS for 'B' | step - 6 so on and so forth
         return array
 """
+
 def main():
     root = Node('A')
     root.addChild('B').addChild('C')

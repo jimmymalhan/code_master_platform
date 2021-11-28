@@ -1,5 +1,8 @@
-# https://www.algoexpert.io/questions/Remove%20Islands
+# Problem Link: https://www.algoexpert.io/questions/Remove%20Islands
 
+# Problem Name: Remove Islands
+
+# Problem Description:
 # You're given a two-dimensional array(a matrix) of potentially unequal height and width containing only 0s and 1s. The matrix represents a two-toned image, where each 1 represents black and each 0 represents white. An island is a defined as any number of 1s that are horizontally or vertically adjacent(not diagonally adjacent) and that don't touch the border of the image. In other words, a group of horizontally or vertically adjacent 1s isin't an island is any of those 1s are in the first row, last row, first column, or last column of the input matrix.
 
 # Note that an island can twist. In other words, it doesn't have to be straight vertical line or straight horizontal line; it can L-shaped, for example.
@@ -7,7 +10,7 @@
 # Write a function that returns a modified version of the input matrix, where all the islands are removed. You remove an island by replacing it with 0s.
 # Naturally, you're allowed to change the input matrix.
 
-# Sample input:
+# Sample Input:
 # matrix = [
 #     [1, 0, 0, 0, 0, 0],
 #     [0, 1, 0, 1, 1, 1],
@@ -17,7 +20,7 @@
 #     [1, 0, 0, 0, 0, 1],
 # ]
 
-# Sample output:
+# Sample Output:
 #   [
 #     [1, 0, 0, 0, 0, 0],
 #     [0, 0, 0, 1, 1, 1],
@@ -37,24 +40,18 @@
 #     [ ,  ,  ,  ,  ,  ],
 # ]
 
-"""
-Remove islands = remove all the 1s that are not connected to the border horizontally or vertically (not diagonally)
-- If it is connected to the border, that is not an island.
-"""
-
-# Hints:
-# Find the positions of all the non-island 1s and store. Use dfs on all the 1st that are on the border of the image. Afterwards, you can easily identify and remove all the islands 1s from the input matrix by relying on the DS that you used to store the positions of the non-island 1s.
+# -  Remove islands = remove all the 1s that are not connected to the border horizontally or vertically (not diagonally)
+# - If it is connected to the border, that is not an island.
 
 ####################################
-# A) Brute Force approach:
+# A) Brute Force approach: O(n^2) time complexity and O(n) space complexity
 ####################################
 # loop the matrix and check if the current position -
 # If it is on the border of the matrix then perform DFS on the current position.
 # if the current position is 1, then check if it is not a neighbor of the border which is 1, then we can replace it with 0.
-# O(n^2) time complexity and O(n) space complexity
 
 ####################################
-# B) Optimal Solution than brute force > reduce the time complexity to O(n)
+# B) Optimal Solution than brute force > reduce the time complexity to O(n), where n is the number of 1s in the matrix
 ####################################
 # Build Auxilary Data Structure =>> Intialize False for all positions in the matrix.
 # 1. Loop through the EXTERIOR/BORDER of the image and find all of the 1s which are connected to the border and mark them as True (perform DFS on all the 1s).
@@ -146,6 +143,7 @@ Its same space complexity as we need to perform DFS on the matrix using Stack. S
 Has better Average Space Complexity than the other two solutions
 
 ##################
+Detailed explanation of the Solution:
 function for removeIsIslands for matrix
     loop for row in range to len of matrix
         loop for col in range to len of matrix for row
@@ -195,7 +193,6 @@ function getNeighbors for matrix, row, col
         neighbors.append((row, col + 1)) # add the neighbor to the list # `RIGHT`
     return neighbors
 """
-
 
 def removeIslandsOptimized(matrix):
     # Find all the 1s that are not islands

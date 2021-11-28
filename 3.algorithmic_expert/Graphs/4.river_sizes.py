@@ -1,8 +1,11 @@
-# https://www.algoexpert.io/questions/River%20Sizes
+# Problem Link: https://www.algoexpert.io/questions/River%20Sizes
 
+# Problem Name: River Sizes
+
+# Problem Description:
 # You are given a two-dimensional array (matrix) of potentially unequal height and width containing only 0s and 1s. Each 0 represents land, and each 1 represents part of a river. A river consists of any number of 1s that are either horizontally or vertically adjacent (but not diagonally adjacent). The number of adjacent 1s forming a river determine its size. Write a function that returns an array of the sizes of all rivers represented in the input matrix. Note that these sizes do not need to be in any particular order. 
 
-# Sample input:
+# Sample Input:
 # matrix = [
 #     [1, 0, 0, 1, 0],
 #     [1, 0, 1, 0, 0],
@@ -11,7 +14,7 @@
 #     [1, 0, 1, 1, 0],
 # ]
 
-# Sample output:
+# Sample Output:
 # [1, 2, 2, 2, 5]
 
 ## The rivers can be clearly seen below.
@@ -30,12 +33,11 @@
 # 4: 2 # there are two 1s in a row
 # 5: 5 # there are five 1s in a L shaped row
 
-#########################################################
+####################################
 """
 stacks = depth first search
 
 Explain the solution:
-
 O(W.H) Time | O(wh) Space - width, height of matrix
 1. Return the sizes of the rivers horizontally and vertically adjacent 1s in as traversing the matrix. Treat matrix as a graph where each 
 element is a node with upto 4 neighbors nodes(left, right1, top, bottom) and traverse the graph using DFS.
@@ -44,6 +46,8 @@ by node's neighboring nodes and their own neighboring nodes as long as they are 
 3. In order to prevent mistakenly calculating the size of the river multiple times, use auxiliary data structure "queue" to perform 
 computation on unvisited nodes only.
 
+##################
+Detailed explanation of the Solution:
 # function - riversizes for matrix:
 Initialize sizes as list to hold the rivers
 Initializing visited as "2D matrix to False" - False for value in row and for row in matrix
@@ -88,7 +92,7 @@ initialize unvisitedNeighbors as empty list
   ​add [i, j+1] to the unvisitedNeighbors
 return the unvisitedNeighbors
 """
-#########################################################
+####################################
 
 # Solution 1:
 def riverSizes(matrix):
