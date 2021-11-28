@@ -1,6 +1,6 @@
 # Problem Link: https://www.algoexpert.io/questions/Breadth-first%20Search
 
-# Problem Name: Breadth-first search 
+# Problem Name: Breadth-first Search 
 
 # Problem Description:
 # BFS is a search algorithm that starts at the root node and explores as far as possible along each branch before backtracking.
