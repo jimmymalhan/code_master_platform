@@ -18,26 +18,33 @@
 # True
 ####################################
 """
-Explain the solution:
-
+Explain the Solution:
+1. Keep track of counter as you jump through the elements.
+2. If you start at index 0 and jump through n elements, meet the following conditions:
+    a. Starting element at index 0 cannot be jumped through more than once
+    b. (n+1) element must be the first element you visited
+# O(n) time | O(1) space - where n is the length of the input array
 
 ##################
 Detailed explanation of the Solution:
-initialize - numElementsVisited , currentIdx =0, 0
-Condition - element at index 0 cannot be jumped through more than once and 
-  clause - (n+1)th element jump must be the first element you visited i.e index 0
-  increment the number of elements visited
-  currentIdx = self.getNextIndex of the currentIdx, self.array using (helper function)
-return if we have visited all elements and we are back at index 0
-create helper function
-  jump = visit the array at currentIdx
-  nextIdx = currentIdx + jump % len(array) #make sure you don't go out of bounds
-  return nextIdx is equal or greater than 0 else add the nextidx to the length of the array
+function hasSingleCycle(array)
+    initialize - numElementsVisited , currentIdx = 0, 0
+    while numElementsVisited is less than array: #Condition - element at index 0 cannot be jumped through more than once and 
+    if numElementsVisited is greater than 0 and currentIdx is equilized to 0 # clause - (n+1)th element jump must be the first element you visited i.e index 0
+        return False
+    increment the numElementsVisited
+    intialize currentIdx = self.getNextIndex of the currentIdx, self.array using (helper function)
+    return currentIdx is equilized to 0 # if we have visited all elements and we are back at index 0
+
+function getNextIndex(self, currentIdx, array):
+  jump = array at currentIdx
+  nextIdx = (currentIdx + jump) % len(self.array) # make sure you don't go out of bounds
+  return nextIdx if nextIdx is greater than and equal to 0 else nextIdx + length of the array
 """
 ####################################
 
 class graph:
-    def __init__(self, array):
+    def __init__(self, array: list):
         self.array = array
 
 # O(n) time | O(1) space - where n is the length of the input array    
@@ -45,8 +52,8 @@ class graph:
     def hasSingleCycle(self):
         numElementsVisited, currentIdx = 0, 0
 
-        while numElementsVisited < len(self.array): # condition1
-            if numElementsVisited > 0 and currentIdx == 0: # condition2
+        while numElementsVisited < len(self.array): # condition a.
+            if numElementsVisited > 0 and currentIdx == 0: # condition b.
                 return False # if we have visited more than 1 element and we are back at index 0
             numElementsVisited += 1 # increment the number of elements visited
             currentIdx = self.getNextIndex(currentIdx, self.array) # get next index of the current element

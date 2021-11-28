@@ -31,12 +31,13 @@
 # node B
 ####################################
 """
-Explain the solution:
+Explain the Solution:
 Start by finding the two input descendants' depths in the ancestral tree. If one of them is deeper, iterate up through its ancestors until you reach the depth of the higher descendant.
 Then iterate up through both descendants' ancestors in tandem/parallel until you find the first common ancestor. 
 Note that at this point, one of the descendants will be the ancestor of the lower descendant that is at the same level as the higher descendant. 
 
 ##################
+Detailed explanation of the Solution:
 function of getYoungestCommonAncestor for topAncestor, descendantOne, descendantTwo
     initialize depthOne is equal to getDescendantDepth for descendantOne, topAncestor # get the depth of descendantOne
     initialize depthTwo is equal to getDescendantDepth for descendantTwo, topAncestor # get the depth of descendantTwo

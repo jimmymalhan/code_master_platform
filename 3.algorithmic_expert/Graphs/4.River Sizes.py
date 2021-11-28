@@ -37,7 +37,7 @@
 """
 stacks = depth first search
 
-Explain the solution:
+Explain the Solution:
 O(W.H) Time | O(wh) Space - width, height of matrix
 1. Return the sizes of the rivers horizontally and vertically adjacent 1s in as traversing the matrix. Treat matrix as a graph where each 
 element is a node with upto 4 neighbors nodes(left, right1, top, bottom) and traverse the graph using DFS.
