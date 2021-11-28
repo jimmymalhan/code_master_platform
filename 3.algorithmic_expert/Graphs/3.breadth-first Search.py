@@ -18,10 +18,9 @@
 
 # Sample Output:
 # ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
-
 ####################################
 """
-Explain the solution:
+Explain the Solution:
 
 
 ##################
