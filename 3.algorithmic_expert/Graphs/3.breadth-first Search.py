@@ -3,8 +3,6 @@
 # Problem Name: Breadth-first Search 
 
 # Problem Description:
-# BFS is a search algorithm that starts at the root node and explores as far as possible along each branch before backtracking.
-
 # You're given a Node class that has a name and an array of optional children nodes. When put together, nodes form a acyclic tree-like structure. Implement the breadthFirstSearch method on the Node class, which takes in an empty array, traverses the tree using the Breadth-first Search approach (specifically navigating the tree from left to right), stores all of the nodes' names in the array, and returns it.
 
 # Sample Input:
@@ -21,18 +19,18 @@
 ####################################
 """
 Explain the Solution:
-
+1. The Breadth-First Search algorithm works by traversing a graph level by level i.e before traversing any Node's children Nodes, its sibling nodes must be traversed first.
+2. Using a queue to store all of the future Nodes that you will need to explore as you traverse the graph. 
+  - By adding Nodes children Nodes to the queue everytime you explore them an by using FIFO property of the queue, you can traverse the graph in a BFS manner. - - Don't forget to add every Nodes' name to eh array as you traverse the graph.
 
 ##################
 Detailed explanation of the Solution:
-Create a queue and store all future nodes as you visit them. By adding Nodes' children to the queue, everytime you visit them and using FIFO.
-
-create the queue
-while the queue is not empty
-current = pop the first node from the queue - FIFO
-append the current node to the array
-for each child of the current node
-add the child to the queue
+create the queue as list for self
+while the length of queue is greater than 0:
+    initialize current = pop the first index from the queue - FIFO
+    append the current.name(node) to the array
+    for each child of the current.children(node)
+        add the child to the queue
 return the array
 """
 ####################################
