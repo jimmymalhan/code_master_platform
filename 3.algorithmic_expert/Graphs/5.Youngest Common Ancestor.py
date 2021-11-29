@@ -3,7 +3,7 @@
 # Problem Name: Youngest Common Ancestor
 
 # Problem Description:
-# You're given three inputs, all of which are instances of an AncestralTree class that have an ancestor property pointing to their youngest ancestor. The first input is the top ancestor in an ancestral tree(i.e  the only instance that has no ancestors --its property points to None/null). and the other two inputs are descendants of the ancestral tree.
+# You're given three inputs, all of which are instances of an AncestralTree class that have an ancestor property pointing to their youngest ancestor. The first input is the top ancestor in an ancestral tree(i.e  the only instance that has no ancestors -- its property points to None/null). and the other two inputs are descendants of the ancestral tree.
 
 # Write a function that returns the youngest common ancestor of the two descendants.
 
@@ -32,8 +32,8 @@
 ####################################
 """
 Explain the Solution:
-Start by finding the two input descendants' depths in the ancestral tree. If one of them is deeper, iterate up through its ancestors until you reach the depth of the higher descendant.
-Then iterate up through both descendants' ancestors in tandem/parallel until you find the first common ancestor. 
+1. Start by finding the two input descendants' depths in the ancestral tree. If one of them is deeper, iterate up through its ancestors until you reach the depth of the higher descendant.
+2. Then iterate up through both descendants' ancestors in tandem/parallel until you find the first common ancestor. 
 Note that at this point, one of the descendants will be the ancestor of the lower descendant that is at the same level as the higher descendant. 
 
 ##################
@@ -41,24 +41,24 @@ Detailed explanation of the Solution:
 function of getYoungestCommonAncestor for topAncestor, descendantOne, descendantTwo
     initialize depthOne is equal to getDescendantDepth for descendantOne, topAncestor # get the depth of descendantOne
     initialize depthTwo is equal to getDescendantDepth for descendantTwo, topAncestor # get the depth of descendantTwo
-    if depthOne is greater than depthTwo
-        return backtrackAncestralTree for descendantOne, descendantTwo, depthOne - depthTwo #return the first common ancestor
+    if depthOne is greater than depthTwo # if descendantOne is deeper
+        return backtrackAncestralTree for descendantOne, descendantTwo, depthOne - depthTwo # return the first common ancestor
     else:
         return backtrackAncestralTree for descendantTwo, descendantOne, depthTwo - depthOne #return the first common ancestor
 
 
 function of getDescendantDepth for descendant, topAncestor
     initialize depth is equal to 0
-    while descendant is not equal to topAncestor
+    while descendant is not equal to topAncestor # while the descendant is not the top ancestor
         increment depth by 1
         descendant is equal descendant.ancestor # getParent of descendant
     return depth
 
 function of backtrackAncestralTree for lowerDescendant, higherDescendant, diff
-    while diff is greater than 0
+    while diff is greater than 0 # while the difference is greater than 0
         lowerDescendant is equal to lowerDescendant.ancestor # get the parent of the lowerDescendant
         decrement diff by 1
-    while lowerDescendant is not equal to higherDescendant
+    while lowerDescendant is not equal to higherDescendant # while the lower descendant is not the higher descendant
         lowerDescendant is equal to lowerDescendant.ancestor # get the parent of the lowerDescendant
         higherDescendant is equal to higherDescendant.ancestor # get the parent of the higherDescendant
     return lowerDescendant
