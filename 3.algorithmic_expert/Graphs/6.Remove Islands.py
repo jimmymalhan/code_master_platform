@@ -152,9 +152,9 @@ function for removeIsIslands for matrix
             isBorder is equal to rowIsBorder or colIsBorder # to check if row or col is border
             if not isBorder # if the position is not a border
                 continue
-            if matrix[row][col] is not equal to 1
+            if matrix[row][col] is not equal to 1 # if the position is not a 1
                 continue
-            changeOnesConnectedToBorderToTwos for matix, row, col # change all ones connected to border to twos using DFS
+            changeOnesConnectedToBorderToTwos for matix, row, col # change all 1s connected to border to 2s using DFS
 
     loop for row in range to len of matrix
         loop for col in range to len of matrix for row
