@@ -28,7 +28,8 @@
 # 1) 0 -> 1 -> 2 -> 0
 # 2) 0 -> 1 -> 4 -> 2 -> 0
 # 3) 1 -> 2 -> 0 -> 1
-# Thse are just 3 examples; there are more.
+# These are just 3 examples; there are more.
+
 ####################################
 """
 Explanation:
@@ -42,6 +43,24 @@ Explanation:
 eg - 0 -> 1 -> 2 -> 0
 - self loop - 0 -> 0, represents a cycle
 
+# DFS - tree edge
+0 -> ancester
+1, 2, 3, 4, 5 -> descendants
+
+# 0 -> 1 -> 2 -> 0 shows a back edge and cycle, so return True
+# 4 -> 2 shows cross edge but no cycle, so return False
+# 0 -> 3 shows a forward edge and cycle
+    |----->0--|
+    |      |  |
+    |      1  |
+    |   /  |  | \ 
+    |<-2   3<-|   4
+       ^----------|
+                  5
+
+    # Back Edge shows cycle
+
+##################
 Example the Solution:
 - When traversing a graph using DFS, a back edge is an edge from a node to one of its ancestors in the DFS tree, and a back edge denotes the presence of a cycle.  How can you determine if a graph has any back edges?
 - To find back edges, you'll need to keep track of which nodes you've already visited and which nodes are ancestors of the current node in the DFS tree. There a few ways to do this, but one approach is to recursively traverse the graph and to keep track of which nodes have been visited in general and which nodes have visited in the current recursion stack; you can do so with two separate data structures. If you reach a node that has an edge to a nnode that's already in the recursion stack, then you've detected a back edge, and there's a cycle in the graph.
