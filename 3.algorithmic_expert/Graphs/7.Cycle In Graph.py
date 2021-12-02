@@ -43,12 +43,23 @@ Explanation:
 eg - 0 -> 1 -> 2 -> 0
 - self loop - 0 -> 0, represents a cycle
 
-# DFS - tree edge
+# edges = [
+#    [1, 3],    # vertex 0 is connected to vertex 1 and vertex 3
+#    [2, 3, 4], # vertex 1 is connected to vertex 2, 3, and 4
+#    [0],       # vertex 2 is connected to vertex 0
+#    [],        # vertex 3 is not connected to any other vertex
+#    [2, 5],    # vertex 4 is connected to vertex 2 and vertex 5
+#    [],        # vertex 5 is not connected to any other vertex
+#    ]
+
+# DFS looks like this:
 0 -> ancester
 1, 2, 3, 4, 5 -> descendants
+    (Ancestor to descendants is a CYCLE)
 
-# 0 -> 1 -> 2 -> 0 shows a back edge and cycle, so return True
-# 4 -> 2 shows cross edge but no cycle, so return False
+# 0 -> 1 # tree edge - it allows to discover the descendants which is not in the tree.
+# 0 -> 1 -> 2 -> 0 shows a back edge and cycle(ancestor and descendant), so return True
+# 4 -> 2 shows cross edge but no cycle(), so return False
 # 0 -> 3 shows a forward edge and cycle
     |----->0--|
     |      |  |
