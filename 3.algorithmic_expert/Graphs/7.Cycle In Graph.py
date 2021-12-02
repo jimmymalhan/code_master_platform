@@ -41,28 +41,36 @@ Detailed explanation of the Solution:
 
 """
 ####################################
-
+# O(v + e) time and O(v) space, where v is the number of vertices and e is the number of edges in the graph.
 def cycleInGraph(edges):
-    # Fill this in.
+    numberOfNodes = len(edges) 
+    visited = [False for _ in range(numberOfNodes)]
+    currentlyInStack = [False for _ in range(numberOfNodes)] # This is to check if the node is in the stack or not.
+
+    for node in range(numberOfNodes):
+        if visited[node]:# If the node is already visited, then it's not a cycle.
+            continue
+
+        containsCycle = isNodeInCycle(node, edges, visited, currentlyInStack) # If the node is not visited, then we need to check if it contains a cycle.
+        if containsCycle:
+            return True
+    
     return False
 
-    def dfs(node, visited, parent):
-        if node in visited:
-            return False
-        visited.add(node)
-        for neighbor in edges[node]:
-            if neighbor == parent:
-                continue
-            if neighbor in visited:
-                return True
-            if dfs(neighbor, visited, node):
-                return True
-        return False
+def isNodeInCycle(node, edges, visited, currentlyInStack): # This function returns true if the node contains a cycle.
+    visited[node] = True # Mark the node as visited.
+    currentlyInStack[node] = True # Mark the node as in the stack.
 
-    visited = set()
-    for node in range(len(edges)):
-        if dfs(node, visited, -1):
+    neighbors = edges[node] # Get the neighbors of the node.
+    for neighbor in neighbors: # For each neighbor, check if it contains a cycle.
+        if not visited[neighbor]: # If the neighbor is not visited, then we need to check if it contains a cycle.
+            containsCycle = isNodeInCycle(neighbor, edges, visited,  currentlyInStack) # If the neighbor is not visited, then we need to check if it contains a cycle.
+            if containsCycle:
+                return True
+        elif currentlyInStack[neighbor]: # If the neighbor is visited, then we need to check if it's in the stack.
             return True
+    
+    currentlyInStack[node] = False # Mark the node as not in the stack.
     return False
 
 def main():
