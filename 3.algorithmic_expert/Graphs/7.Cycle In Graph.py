@@ -61,21 +61,21 @@ eg - 0 -> 1 -> 2 -> 0
 # 0 -> 1 -> 2 -> 0 shows a back edge and cycle(ancestor and descendant), so return True
 # 4 -> 2 shows cross edge but no cycle(), so return False
 # 0 -> 3 shows a forward edge and cycle
-    |----->0--|
-    |      |  |
-    |      1  |
-    |   /  |  | \ 
-    |<-2   3<-|   4
-       ^----------|
-                  5
+                dfs(0)
+                /   \
+            df(1)   dfs(3)
+           /  |  \
+    dfs(2) dfs(3) dfs(4)
+                    |
+                    dfs(5)
 
     # Back Edge shows cycle
 
 ##################
 Example the Solution:
-- When traversing a graph using DFS, a back edge is an edge from a node to one of its ancestors in the DFS tree, and a back edge denotes the presence of a cycle.  How can you determine if a graph has any back edges?
-- To find back edges, you'll need to keep track of which nodes you've already visited and which nodes are ancestors of the current node in the DFS tree. There a few ways to do this, but one approach is to recursively traverse the graph and to keep track of which nodes have been visited in general and which nodes have visited in the current recursion stack; you can do so with two separate data structures. If you reach a node that has an edge to a nnode that's already in the recursion stack, then you've detected a back edge, and there's a cycle in the graph.
-- You can also detect a back edge by performing a 3-color DFS. Each node is colored white to start; recursively traverse through the graph, coloring the current node grey and then calling the recursive traversal function on all of its neighbors. After traversing all the neighbors, color the current node black to signify that it's been visited. IF you ever find an edge to a node that's grey, you've found a back edge, and there's a cycle in the graph.
+- 1a. When traversing a graph using DFS, a back edge is an edge from a node to one of its ancestors in the DFS tree, and a back edge denotes the presence of a cycle.  How can you determine if a graph has any back edges?
+- 1b. To find back edges, you'll need to keep track of which nodes you've already visited and which nodes are ancestors of the current node in the DFS tree. There a few ways to do this, but one approach is to recursively traverse the graph and to keep track of which nodes have been visited in general and which nodes have visited in the current recursion stack; you can do so with two separate data structures. If you reach a node that has an edge to a node that's already in the recursion stack, then you've detected a back edge, and there's a cycle in the graph.
+-2a. You can also detect a back edge by performing a 3-color DFS. Each node is colored white to start; recursively traverse through the graph, coloring the current node grey and then calling the recursive traversal function on all of its neighbors. After traversing all the neighbors, color the current node black to signify that it's been visited. IF you ever find an edge to a node that's grey, you've found a back edge, and there's a cycle in the graph.
 - O(v + e) time and O(v) space, where v is the number of vertices and e is the number of edges in the graph.
 
 ##################
