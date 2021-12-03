@@ -1,5 +1,3 @@
-# Problem Link: https://www.algoexpert.io/questions/Breadth-first%20Search
-
 # Problem Name: Breadth-first Search 
 
 # Problem Description:

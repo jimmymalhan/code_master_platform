@@ -1,5 +1,3 @@
-# Problem Link: 
-
 # Problem Name: 
 
 # Problem Description:

@@ -1,5 +1,3 @@
-# Problem Link: https://www.algoexpert.io/questions/Youngest%20Common%20Ancestor
-
 # Problem Name: Youngest Common Ancestor
 
 # Problem Description:

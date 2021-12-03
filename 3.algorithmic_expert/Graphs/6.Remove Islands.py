@@ -1,5 +1,3 @@
-# Problem Link: https://www.algoexpert.io/questions/Remove%20Islands
-
 # Problem Name: Remove Islands
 
 # Problem Description:
