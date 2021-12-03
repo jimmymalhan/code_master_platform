@@ -1,5 +1,3 @@
-# Problem Link: https://www.algoexpert.io/questions/Cycle%20In%20Graph
-
 # Problem Name: Cycle In Graph
 
 # Problem Description:
@@ -32,7 +30,7 @@
 
 ####################################
 """
-Explanation:
+Explanation of the question:
 - Graph is directed and unweighted.
 
 - Directed means that if there is a path from A to B, you can't go from B to A.
@@ -75,12 +73,6 @@ eg - 0 -> 1 -> 2 -> 0
 Explanation on the Solution:
 - 1a. When traversing a graph using DFS, a back edge is an edge from a node to one of its ancestors in the DFS tree, and a back edge denotes the presence of a cycle.  How can you determine if a graph has any back edges?
 - 1b. To find back edges, you'll need to keep track of which nodes you've already visited and which nodes are ancestors of the current node in the DFS tree. There a few ways to do this, but one approach is to recursively traverse the graph and to keep track of which nodes have been visited in general and which nodes have visited in the current recursion stack; you can do so with two separate data structures. If you reach a node that has an edge to a node that's already in the recursion stack, then you've detected a back edge, and there's a cycle in the graph.
--2a. You can also detect a back edge by performing a 3-color DFS. Each node is colored white to start; recursively traverse through the graph, coloring the current node grey and then calling the recursive traversal function on all of its neighbors. After traversing all the neighbors, color the current node black to signify that it's been visited. IF you ever find an edge to a node that's grey, you've found a back edge, and there's a cycle in the graph.
-- O(v + e) time and O(v) space, where v is the number of vertices and e is the number of edges in the graph.
-
-##################
-Detailed explanation of the Solution:
-
 """
 ####################################
 # O(v + e) time and O(v) space, where v is the number of vertices and e is the number of edges in the graph.
@@ -106,24 +98,58 @@ def isNodeInCycle(node, edges, visited, currentlyInStack): # This function retur
     neighbors = edges[node] # Get the neighbors of the node.
     for neighbor in neighbors: # For each neighbor, check if it contains a cycle.
         if not visited[neighbor]: # If the neighbor is not visited, then we need to check if it contains a cycle.
-            containsCycle = isNodeInCycle(neighbor, edges, visited,  currentlyInStack) # If the neighbor is not visited, then we need to check if it contains a cycle.
+            containsCycle = isNodeInCycle(neighbor, edges, visited,  currentlyInStack)
             if containsCycle:
                 return True
+
         elif currentlyInStack[neighbor]: # If the neighbor is visited, then we need to check if it's in the stack.
             return True
     
     currentlyInStack[node] = False # Mark the node as not in the stack.
     return False
+"""
+##################
+Explanation on the Solution:
+- This is a 3-color DFS.
+- Each node is colored white to start; recursively traverse through the graph, coloring the current node grey and then calling the recursive traversal function on all of its neighbors. After traversing all the neighbors, color the current node black to signify that it's been visited. IF you ever find an edge to a node that's grey, you've found a back edge, and there's a cycle in the graph.
 
-    # Explanation on the Solution:
-    # This is a 3-color DFS.
-    # Each node is colored white to start; recursively traverse through the graph, coloring the current node grey and then calling the recursive traversal function on all of its neighbors. After traversing all the neighbors, color the current node black to signify that it's been visited. IF you ever find an edge to a node that's grey, you've found a back edge, and there's a cycle in the graph.
+##################
+Detailed explanation of the Solution:
+intialize  WHITE,GRAY,BLACK = 0,1,2
 
-    # O(v + e) time and O(v) space, where v is the number of vertices and e is the number of edges in the graph.
+create a function cycleInGraph(edges)
+    initialize numberOfNode to len(edges)
+    initialize colors to [WHITE]*numberOfNodes
+    loop through the nodes in the graph(range(numberOfNodes))
+        if colors[node] != WHITE:
+            continue
+        initialize containsCycle to traverseAndColorNodes(node,edges,colors)
+        if containsCycle:
+            return True
+    return False
+
+create a function traverseAndColorNodes(node,edges,colors)
+    initialize colors[node] to GRAY
+    intialize neighbors to edges[node]
+    loop for each neighbor in neighbors
+        intialize neighborColor to be colors[neighbor]
+        if neighborColor is equalized to GRAY:
+            return True
+        if neighborColor is equalized to BLACK:
+            continue
+        intialize containsCycle to be traverseAndColorNodes(neighbor,edges,colors)
+        if containsCycle:
+            return True
+    intialize colors[node] to BLACK
+    return False
+
+O(v + e) time and O(v) space, where v is the number of vertices and e is the number of edges in the graph.
+"""
+
 WHITE, GRAY, BLACK = 0, 1, 2
 def cycleInGraph_solution2(edges):
     numberOfNodes = len(edges)
-    colors = [WHITE for _ in range(numberOfNodes)]
+    colors = [WHITE]*numberOfNodes
     
     for node in range(numberOfNodes):
         if colors[node] != WHITE:

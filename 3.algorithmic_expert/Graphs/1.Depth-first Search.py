@@ -1,5 +1,3 @@
-# Problem Link: https://www.algoexpert.io/questions/Depth-first%20Search
-
 # Problem Name: Depth-first Search
 
 # Problem Description:

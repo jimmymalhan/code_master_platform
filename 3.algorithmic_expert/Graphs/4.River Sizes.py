@@ -1,5 +1,3 @@
-# Problem Link: https://www.algoexpert.io/questions/River%20Sizes
-
 # Problem Name: River Sizes
 
 # Problem Description:

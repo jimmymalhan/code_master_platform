@@ -1,5 +1,3 @@
-# Problem Link: https://www.algoexpert.io/questions/Single%20Cycle%20Check
-
 # Problem Name: Single Cycle Check 
 
 # Problem Description:
