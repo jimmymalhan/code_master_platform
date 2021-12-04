@@ -111,7 +111,8 @@ def isNodeInCycle(node, edges, visited, currentlyInStack): # This function retur
 ##################
 Explanation on the Solution:
 - This is a 3-color DFS.
-- Each node is colored white to start; recursively traverse through the graph, coloring the current node grey and then calling the recursive traversal function on all of its neighbors. After traversing all the neighbors, color the current node black to signify that it's been visited. IF you ever find an edge to a node that's grey, you've found a back edge, and there's a cycle in the graph.
+- Each node is colored white to start; recursively traverse through the graph, coloring the current node gray and then calling the recursive traversal function on all of its neighbors.
+- After traversing all the neighbors, color the current node black to signify that it's been visited. IF you ever find an edge to a node that's gray, you've found a back edge, and there's a cycle in the graph.
 
 ##################
 Detailed explanation of the Solution:
@@ -121,7 +122,7 @@ create a function cycleInGraph(edges)
     initialize numberOfNode to len(edges)
     initialize colors to [WHITE]*numberOfNodes
     loop through the nodes in the graph(range(numberOfNodes))
-        if colors[node] != WHITE:
+        if colors[node] is not equal to WHITE:
             continue
         initialize containsCycle to traverseAndColorNodes(node,edges,colors)
         if containsCycle:
@@ -132,10 +133,10 @@ create a function traverseAndColorNodes(node,edges,colors)
     initialize colors[node] to GRAY
     intialize neighbors to edges[node]
     loop for each neighbor in neighbors
-        intialize neighborColor to be colors[neighbor]
-        if neighborColor is equalized to GRAY:
+        intialize neighborColor to be colors[neighbor] # get the color of the neighbor
+        if neighborColor is equalized to GRAY: # if the neighbor is gray, then there is a cycle
             return True
-        if neighborColor is equalized to BLACK:
+        if neighborColor is equalized to BLACK: # if the neighbor is black, then it's not a cycle.
             continue
         intialize containsCycle to be traverseAndColorNodes(neighbor,edges,colors)
         if containsCycle:
