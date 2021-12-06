@@ -27,16 +27,16 @@ Explain the Solution:
 Detailed explanation of the Solution:
 function hasSingleCycle(array)
     initialize - numElementsVisited , currentIdx = 0, 0
-    while numElementsVisited is less than array: #Condition - element at index 0 cannot be jumped through more than once and 
-    if numElementsVisited is greater than 0 and currentIdx is equilized to 0 # clause - (n+1)th element jump must be the first element you visited i.e index 0
-        return False
-    increment the numElementsVisited
-    intialize currentIdx = self.getNextIndex of the currentIdx, self.array using (helper function)
+    while numElementsVisited is less than length of an array: #Condition - element at index 0 cannot be jumped through more than once
+        if numElementsVisited is greater than 0 and currentIdx is equilized to 0 # clause - (n+1)th element jump must be the first element you visited i.e index 0
+            return False
+        increment the numElementsVisited
+        intialize currentIdx = getNextIndex of the currentIdx, array using (helper function)
     return currentIdx is equilized to 0 # if we have visited all elements and we are back at index 0
 
-function getNextIndex(self, currentIdx, array):
-  jump = array at currentIdx
-  nextIdx = (currentIdx + jump) % len(self.array) # make sure you don't go out of bounds
+function getNextIndex(currentIdx, array):
+  initialize jump to be equal to the array at currentIdx # value of the current element
+  nextIdx is equal to (currentIdx + jump) % len(array) # make sure you don't go out of bounds
   return nextIdx if nextIdx is greater than and equal to 0 else nextIdx + length of the array
 """
 ####################################
