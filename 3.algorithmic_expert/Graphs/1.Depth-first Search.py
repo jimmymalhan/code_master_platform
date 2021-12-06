@@ -29,7 +29,7 @@ Detailed explanation of the Solution:
 function depthFirstSearch(self, array)
 append rootNode in the array
 loop through leafnodes
-    call DFS on all children
+    call DFS on all children on array
 return array
 """
 ####################################
