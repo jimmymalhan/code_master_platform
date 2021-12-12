@@ -20,8 +20,8 @@
 ####################################
 """
 Explain the Solution:
-1. The Depth-First Search algorithm works by traversing the graph branch by branch, starting at the root node. Before traversiing any Node;s sibling Nodes, its children nodes must be traversed first.
-2. Start at the root Node and try simply calling the depthFirstSearch method on all children Nodes of each child Node.Add the name of the child Node to the array at every call of depthFirstSearch.
+1. The Depth-First Search algorithm works by traversing the graph branch by branch, starting at the root node. Before traversing any Node's sibling Nodes, its children nodes must be traversed first.
+2. Start at the root Node and try simply calling the depthFirstSearch method on all children Nodes of each child Node. Add the name of the child Node to the array at every call of depthFirstSearch.
 # O(v + e) time | O(v) space, where v is the number of vertices and e is the number of edges
 
 ##################
