@@ -43,6 +43,17 @@
 ####################################
 """
 Explain the solution:
+- 1. The brute force approach is to simply iterate through the entire matrix and change the negative neighbors to positive. But, it look at the same elements in matrix multiple times which is not optimal.
+
+- 2. Once a positive value has been found and you can change its neighbors to positives, this positive value can no longer lead to the conversion of any negative values. Instead, its neighbors(that you just changed to positives) have the possibility of changing their own neighbors to positives. After you change a negatuve value to positive, you should store its position so that you can check if it can flip any of its neighbors in the next next pass of the matrix using BFS.
+
+- 2 queue process:
+- implementing a BFS, starting from all the positive-value positions in the array. Initialize a queue that stores the positions of all the positive values, iterate through the queue, dequeue elements out, and consider all of their neighbors. If any of their neighbors are negative, change them to positive, and store their positions in a secondary queue. Once the first queue is empty, Increment your number of passes, and iterate through the second queue you created(the one with the positions of negatives that were changed to positive). Repeat this process until no values are converted during a pass.
+
+- 1 queue process:
+- Differentiate the values that were already positive when the current pass started from the values that were changed to positive during the current pass.
+
+# O(w * h) time | O(w * h) space where - w is the width of the matrix and h is the height of the matrix
 
 ##################
 Detailed explanation of the Solution:
@@ -50,14 +61,16 @@ Detailed explanation of the Solution:
 """
 ####################################
 
-class writeTheSolution:
-    def __init__(self):
-        pass
-
-    def solution(self):
-        pass
-def main():
+def minimumPassesOfMatrix(matrix):
     pass
 
-if __name__ == '__main__':
+def main():
+    matrix = [
+        [0, -1, -3, 2, 0],
+        [1, -2, 5, -1, -3],
+        [3, 0, 0, -4, -1],
+    ]
+    print(minimumPassesOfMatrix(matrix)) # 3
+
+if __name__ == "__main__":
     main()
