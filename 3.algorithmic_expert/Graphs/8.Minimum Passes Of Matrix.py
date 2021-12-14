@@ -61,16 +61,25 @@ Detailed explanation of the Solution:
 """
 ####################################
 
-def minimumPassesOfMatrix(matrix):
-    pass
+def minimumPassesOfMatrix1(matrix):
+    passes = convertNegatives(matrix)
+    return passes - 1 if not containsNegative(matrix) else - 1
 
+def convertNegatives(matrix):
+    nextPassQueue = getAllPositivePositions(matrix)
+    passes = 0
+    while len(nextPassQueue) > 0:
+        currentPassQueue = nextPassQueue
+        nextPassQueue = []
+        while len(currentPassQueue) > 0:
+            # In Python, popping elements
 def main():
     matrix = [
         [0, -1, -3, 2, 0],
         [1, -2, 5, -1, -3],
         [3, 0, 0, -4, -1],
     ]
-    print(minimumPassesOfMatrix(matrix)) # 3
+    print(minimumPassesOfMatrix1(matrix)) # 3
 
 if __name__ == "__main__":
     main()
