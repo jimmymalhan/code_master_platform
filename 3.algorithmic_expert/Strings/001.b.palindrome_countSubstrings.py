@@ -14,7 +14,7 @@ class Solution:
     def isPal(self,s):
         return s==s[::-1]
 
-    def countSubstrings(self, s: str) -> int:
+    def countSubstrings_optimized(self, s: str) -> int:
 	    L, r = len(s), 0 # L is the length of the string, r is the number of palindromes
 	    for i in range(L): 
 	    	for a,b in [(i,i),(i,i+1)]: # a and b are the start and end indices of the substring
@@ -25,5 +25,6 @@ class Solution:
 def main():
     stringName = Solution()
     print(stringName.countSubstrings("aaa"))
+    print(stringName.countSubstrings_optimized("aaa"))
 
 main()
