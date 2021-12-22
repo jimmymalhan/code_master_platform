@@ -47,6 +47,21 @@ class MyClass:
             rightIdx -= 1
         return True
 
+# def countPalindromes(string):
+#     count = 0
+#     for i in range(len(string)):
+#         for j in range(i, len(string)):
+#             if MyClass(string[i:j+1]).isPalindromeOptimized():
+#                 count += 1
+#     return count
+
+def countPalindromes(string):
+    count = 0
+    for i in range(len(string)):
+        for j in range(i, len(string)):
+            if MyClass(string[i:j+1]).isPalindromeOptimized():
+                count += 1
+    return count
 
 def main():
     stringName = MyClass("abcdcbA ##$@$  ^##^$")
@@ -54,23 +69,7 @@ def main():
     print(stringName.isPalindrome_quickSol())
     print(stringName.isPalindrome_recursion())
     print(stringName.isPalindromeOptimized())
-    print(stringName.countPalindromes())
+    print(countPalindromes("daata")) # 7
 
 if __name__ == '__main__':
 	main()
-
-############################################################################################################################
-# count palidromes in a string
-
-def isPalindrome(s):
-    return s == s[::-1]
-
-def countPalindromes(s):
-    count = 0
-    for i in range(len(s)): # i = 0, 1, 2, 3
-        for j in range(i, len(s)): # j = 0, 1, 2, 3, 4
-            if isPalindrome(s[i:j+1]): # s[i:j+1] = s[0:4] = "toco"
-                count += 1
-    return count
-
-print(countPalindromes("daata"))
