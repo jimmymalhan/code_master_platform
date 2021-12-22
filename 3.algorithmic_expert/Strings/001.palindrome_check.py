@@ -47,29 +47,33 @@ class MyClass:
             rightIdx -= 1
         return True
 
-# def countPalindromes(string):
-#     count = 0
-#     for i in range(len(string)):
-#         for j in range(i, len(string)):
-#             if MyClass(string[i:j+1]).isPalindromeOptimized():
-#                 count += 1
-#     return count
-
-def countPalindromes(string):
-    count = 0
-    for i in range(len(string)):
-        for j in range(i, len(string)):
-            if MyClass(string[i:j+1]).isPalindromeOptimized():
-                count += 1
-    return count
-
 def main():
     stringName = MyClass("abcdcbA ##$@$  ^##^$")
     print(stringName.isPalindrome_bruteforce())
     print(stringName.isPalindrome_quickSol())
     print(stringName.isPalindrome_recursion())
     print(stringName.isPalindromeOptimized())
-    print(countPalindromes("daata")) # 7
 
 if __name__ == '__main__':
 	main()
+#####################################################
+# Count the number of substrings of s that contain exactly k distinct characters.
+# O(n^2) time | O(n) space
+
+class Solution:
+    def countSubstrings(self, s):
+        count = 0
+        for i in range(len(s)):
+            for j in range(i+1,len(s)+1):
+                if self.isPal(s[i:j]):
+                    count+=1
+        return count
+    
+    def isPal(self,s):
+        return s==s[::-1]
+
+def main():
+    stringName = Solution()
+    print(stringName.countSubstrings("aaa")) # 7
+
+main()
