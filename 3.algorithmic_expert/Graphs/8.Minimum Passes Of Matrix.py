@@ -47,11 +47,13 @@ Explain the solution:
 
 - 2. Once a positive value has been found and you can change its neighbors to positives, this positive value can no longer lead to the conversion of any negative values. Instead, its neighbors(that you just changed to positives) have the possibility of changing their own neighbors to positives. After you change a negative value to positive, you should store its position so that you can check if it can flip any of its neighbors in the next next pass of the matrix using BFS.
 
-- 2 queue process:
-- Implementing a BFS, starting from all the positive-value positions in the array. Initialize a queue that stores the positions of all the positive values, iterate through the queue, dequeue elements out, and consider all of their neighbors. If any of their neighbors are negative, change them to positive, and store their positions in a secondary queue. Once the first queue is empty, Increment your number of passes, and iterate through the second queue you created(the one with the positions of negatives that were changed to positive). Repeat this process until no values are converted during a pass.
+    - TWO queue process:
+    - Implementing a BFS, starting from all the positive-value positions in the array. Initialize a queue that stores the positions of all the positive values, iterate through the queue, dequeue elements out, and consider all of their neighbors. If any of their neighbors are negative, change them to positive, and store their positions in a secondary queue. Once the first queue is empty, Increment your number of passes, and iterate through the second queue you created(the one with the positions of negatives that were changed to positive). Repeat this process until no values are converted during a pass.
 
-- 1 queue process:
+3- ONE queue process:
 - Differentiate the values that were already positive when the current pass started from the values that were changed to positive during the current pass.
+
+    Meaning -> which values are processing in the current pass and which values are processing in the next pass.
 
 # O(w * h) time | O(w * h) space where - w is the width of the matrix and h is the height of the matrix
 
@@ -60,8 +62,8 @@ Detailed explanation of the Solution:
 
 """
 ####################################
-
-def minimumPassesOfMatrix1(matrix):
+# Two queue process
+def minimumPassesOfMatrix_2_queue(matrix):
     passes = convertNegatives(matrix)
     return passes - 1 if not containsNegative(matrix) else - 1
 
@@ -108,13 +110,81 @@ def getAdjacentPositions(row, col, matrix):
 	adjacentPositions = []
 	
 	if row > 0:
-		adjacentPositions.append([row - 1, col])
+		adjacentPositions.append([row - 1, col]) # up
 	if row < len(matrix) - 1:
-		adjacentPositions.append([row + 1, col])
+		adjacentPositions.append([row + 1, col]) # down
 	if col > 0:
-		adjacentPositions.append([row, col - 1])
+		adjacentPositions.append([row, col - 1]) # left
 	if col < len(matrix[0]) - 1:
-		adjacentPositions.append([row, col + 1])
+		adjacentPositions.append([row, col + 1]) # right
+	
+	return adjacentPositions
+
+def containsNegative(matrix):
+	for row in matrix:
+		for value in row:
+			if value < 0:
+				return True
+	return False
+
+####################################
+
+# One queue process
+# O(w * h) time | O(w * h) space where - w is the width of the matrix and h is the height of the matrix
+def minimumPassesOfMatrix_1_queue(matrix):
+    passes = convertNegatives(matrix)
+    return passes - 1 if not containsNegative(matrix) else - 1
+
+def convertNegatives(matrix):
+    queue = getAllPositivePositions(matrix)
+	
+    passes = 0
+    
+    while len(queue) > 0:
+        currentSize = len(queue)
+		
+        while len(queue) > 0:
+            # In Python, popping elements from the start of a list is an O(n) operation.
+            # To make this an O(1) operation, we could use the `deque` object.
+            # For our time complexity analysis, we'll assume this runs in O(1) time.
+            # Also, for this particular solution, we could actually just turn this queue into a stack and replace `.pop(0)` with the constant-time `.pop()` operation.
+            currentRow, currentCol = queue.pop(0)
+            
+            adjacentPositions = getAdjacentPositions( currentRow, currentCol, matrix)
+            for position in adjacentPositions:
+                row, col = position
+                
+                value = matrix[row][col]
+                if value < 0:
+                    matrix[row][col] *= -1
+                    queue.append([row, col])
+				
+                currentSize -= 1
+        passes += 1
+		
+    return passes
+
+def getAllPositivePositions(matrix):
+	positivePositions = []
+
+	for row in range(len(matrix)):
+		for col in range(len(matrix[row])):
+			value = matrix[row][col]
+			if value > 0:
+				positivePositions.append([row, col])
+	return positivePositions
+
+def getAdjacentPositions(row, col, matrix):
+	adjacentPositions = []
+	
+	if row > 0:
+		adjacentPositions.append([row - 1, col]) # up
+	if row < len(matrix) - 1:
+		adjacentPositions.append([row + 1, col]) # down
+	if col > 0:
+		adjacentPositions.append([row, col - 1]) # left
+	if col < len(matrix[0]) - 1:
+		adjacentPositions.append([row, col + 1]) # right
 	
 	return adjacentPositions
 
@@ -131,7 +201,8 @@ def main():
         [1, -2, 5, -1, -3],
         [3, 0, 0, -4, -1],
     ]
-    print(minimumPassesOfMatrix1(matrix))
+    print(minimumPassesOfMatrix_2_queue(matrix)) # two queue process
+    # print(minimumPassesOfMatrix_1_queue(matrix)) # one queue process
 
 if __name__ == "__main__":
     main()
