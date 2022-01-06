@@ -43,25 +43,52 @@ Explain the solution:
 ##################
 Detailed explanation of the Solution:
 
+create a class called SuffixTrie:
+    initialize function takes in a string:
+        initialize the class with root as an empty hash table
+        initialize the class with a endSymbol variable that is set to "*"
+        create a method called populateSuffixTrieFrom with a parameter of string
+
+    initialize function populateSuffixTrieFrom takes in a string:
+        iterate as i through the string one character at a time
+        use Helper function insertSubsStringStartingAt with the parameter of the string and the current character(i)
+
+    initialize function insertSubsStringStartingAt takes in a string and a character:
 """
 ####################################
 
 class SuffixTrie:
     def __init__(self, string):
-        self.root = {}
+        self.root = {} 
         self.endSymbol = "*"
         self.populateSuffixTrieFrom(string)
-
+# Creation
     def populateSuffixTrieFrom(self, string):
-        # Write your code here.
-        pass
+        for i in range(len(string)):
+            self.insertSubstringStartingAt(string, i) #insert the substring starting at each character and ending at the end of string into the trie
 
+    def insertSubstringStartingAt(self, string, i):
+        node = self.root
+        for j in range(i, len(string)):#iterate through the string starting at the index i
+            letter = string[j] #get the letter at the index j
+            if letter not in node:
+                node[letter] = {} #if the letter is not in the node, add it to the node and map it to an empty hash table
+            node = node[letter] #move to the next node
+        node[self.endSymbol] = True
+
+# Searching
     def contains(self, string):
-        # Write your code here.
-        pass
+        node = self.root #start at the root node
+        for letter in string:
+            if letter not in node: #if the current letter is not in the node, return false
+                return False
+            node = node[letter] #move to the next node
+        return self.endSymbol in node #if the endSymbol is in the node, return true
 
 def main():
-    pass
+    string = "babc"
+    trie = SuffixTrie(string)
+    print(trie.root)
 
 if __name__ == '__main__':
     main()
