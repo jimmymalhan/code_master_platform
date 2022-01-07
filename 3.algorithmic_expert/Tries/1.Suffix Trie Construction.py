@@ -49,11 +49,29 @@ create a class called SuffixTrie:
         initialize the class with a endSymbol variable that is set to "*"
         create a method called populateSuffixTrieFrom with a parameter of string
 
+# Creation:
     initialize function populateSuffixTrieFrom takes in a string:
-        iterate as i through the string one character at a time
-        use Helper function insertSubsStringStartingAt with the parameter of the string and the current character(i)
+        iterate as i through the string one character at a time:
+            use Helper function insertSubsStringStartingAt with the parameter of the string and the current character(i)
 
-    initialize function insertSubsStringStartingAt takes in a string and a character:
+    initialize function insertSubsStringStartingAt takes in a string and a character(i):
+        create a variable called node that is set to the root of the trie
+        iterate as j through the string starting at the character(i) and ending at the end of the string:
+            create a variable called letter that is set to the current string[j]
+            if the letter is not in the node:
+                create a new hash table and set it to the node[letter]
+            create a variable called node that is set to the node[letter]
+        node[self.endSymbol] = True # insert the endSymbol "*" at the end of the string
+
+# Searching:
+    initialize function contains takes in a string:
+        create a variable called node that is set to the root of the trie
+        iterate as letter through the string:
+            if the letter is not in the node:
+                return False
+            create a variable called node that is set to the node[letter]
+        return self.endSymbol in node # return True if the endSymbol "*" is in the node
+
 """
 ####################################
 
@@ -61,7 +79,7 @@ class SuffixTrie:
     def __init__(self, string):
         self.root = {} 
         self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
+        self.populateSuffixTrieFrom(string) #call the populateSuffixTrieFrom function with the string as a parameter
 # Creation
     def populateSuffixTrieFrom(self, string):
         for i in range(len(string)):
@@ -73,7 +91,7 @@ class SuffixTrie:
             letter = string[j] #get the letter at the index j
             if letter not in node:
                 node[letter] = {} #if the letter is not in the node, add it to the node and map it to an empty hash table
-            node = node[letter] #move to the next node
+            node = node[letter] # this is the node that we are currently at
         node[self.endSymbol] = True
 
 # Searching
@@ -83,7 +101,7 @@ class SuffixTrie:
             if letter not in node: #if the current letter is not in the node, return false
                 return False
             node = node[letter] #move to the next node
-        return self.endSymbol in node #if the endSymbol is in the node, return true
+        return self.endSymbol in node #return True if the endSymbol "*" is in the node
 
 def main():
     string = "babc"
