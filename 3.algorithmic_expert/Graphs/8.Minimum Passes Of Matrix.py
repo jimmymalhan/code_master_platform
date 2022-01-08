@@ -7,6 +7,7 @@
 
 # Note that the 0 value is neither positive nor negative, meaning that a 0 can't convert an adjacent negative to a positive.
 
+####################################
 # A single pass through the matrix involves converting integers that can be converted at a particular point in the time. For example, consider the following input matrix:
 
 # [

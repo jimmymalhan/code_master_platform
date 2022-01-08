@@ -12,6 +12,7 @@
 #     /
 #    B
 
+####################################
 # Sample Input:
 # // The nodes are from the ancestral tree shown above.
 # topAncestor = node A

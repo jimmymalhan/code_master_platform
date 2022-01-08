@@ -8,6 +8,7 @@
 # Write a function that returns a modified version of the input matrix, where all the islands are removed. You remove an island by replacing it with 0s.
 # Naturally, you're allowed to change the input matrix.
 
+####################################
 # Sample Input:
 # matrix = [
 #     [1, 0, 0, 0, 0, 0],

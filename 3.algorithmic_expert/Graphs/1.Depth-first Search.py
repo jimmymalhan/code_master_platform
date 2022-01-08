@@ -5,6 +5,7 @@
 
 # Implement the depthFirstSearch method on the Node class, which takes in an empty array, traverses the tree using the Depth-First Search approach (specifically navigating the tree from left to right), stores all of the nodes' names in the array, and returns it.
 
+####################################
 # Sample Input:
 # graph = A
 #       / | \
