@@ -10,6 +10,7 @@
 
 # Also note that this graph may contain self-loops. A self-loop is an edge that has the same destination and origin; in other words, it's an edge that connects a vertex to itself. For the purpose of this question, a self-loop is considered a cycle.
 
+####################################
 # Sample Input:
 # edges = [
 #    [1, 3],    # vertex 0 is connected to vertex 1 and vertex 3
