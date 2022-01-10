@@ -28,11 +28,11 @@ Explain the Solution:
 Detailed explanation of the Solution:
 function hasSingleCycle(array)
     initialize - numElementsVisited , currentIdx = 0, 0
-    while numElementsVisited is less than length of an array: #Condition - element at index 0 cannot be jumped through more than once
-        if numElementsVisited is greater than 0 and currentIdx is equilized to 0 # clause - (n+1)th element jump must be the first element you visited i.e index 0
+    while numElementsVisited is less than length of an array: #Condition 2a - element at index 0 cannot be jumped through more than once
+        if numElementsVisited is greater than 0 and currentIdx is equilized to 0 #Condition 2b - (n+1)th element jump must be the first element you visited i.e index 0
             return False
         increment the numElementsVisited
-        intialize currentIdx = getNextIndex of the currentIdx, array using (helper function)
+        intialize currentIdx = getNextIndex with the parameters of currentIdx & array (helper function)
     return currentIdx is equilized to 0 # if we have visited all elements and we are back at index 0
 
 function getNextIndex(currentIdx, array):
