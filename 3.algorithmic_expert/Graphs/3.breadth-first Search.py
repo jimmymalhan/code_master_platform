@@ -20,17 +20,19 @@
 Explain the Solution:
 1. The Breadth-First Search algorithm works by traversing a graph level by level i.e before traversing any Node's children Nodes, its sibling nodes must be traversed first.
 2. Using a queue to store all of the future Nodes that you will need to explore as you traverse the graph. 
-  - By adding Nodes children Nodes to the queue everytime you explore them an by using FIFO property of the queue, you can traverse the graph in a BFS manner. - - Don't forget to add every Nodes' name to eh array as you traverse the graph.
+  - By adding children Nodes to the queue everytime you explore them an by using FIFO property of the queue, you can traverse the graph in a BFS manner.
+  - Don't forget to add every Nodes' name to the array as you traverse the graph.
 
 ##################
 Detailed explanation of the Solution:
-create the queue as list for self
-while the length of queue is greater than 0:
-    initialize current = pop the first index from the queue - FIFO
-    append the current.name(node) to the array
-    for each child of the current.children(node)
-        add the child to the queue
-return the array
+function breadthFirstSearch with parameter array:
+    create the queue as list for self
+    while the length of queue is greater than 0: # while queue is not empty
+        initialize current = pop the first index from the queue - FIFO
+        append the current.name to the array # current.name is the name of the current Node
+        for each child of the current.children: # current.children is the list of children of the current Node
+            append the child to the queue
+    return the array
 """
 ####################################
 
