@@ -58,8 +58,8 @@ create a class called SuffixTrie:
         iterate as j through the string starting at the character(i) and ending at the end of the string:
             create a variable called letter that is set to the current string[j]
             if the letter is not in the node:
-                create a new hash table and set it to the node[letter]
-            create a variable called node that is set to the node[letter]
+                create a new hash table and set it to the node[letter] # this is the first time we've seen this letter
+            create a variable called node that is set to the node[letter] # this is the node we're currently at
         node[self.endSymbol] = True # insert the endSymbol "*" at the end of the string
 
 # Searching:
