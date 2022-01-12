@@ -103,12 +103,12 @@ class Node:
 
 def test_tree():
     dt = DecisionTree()
-    left0, right0 = dt.add_split(None, "X1", 3)
-    dt.set_leaf_value(right0, False)
-    left1, right1 = dt.add_split(left0, "X2", 1)
-    dt.set_leaf_value(left1, False)
-    dt.set_leaf_value(right1, True)
-    print(dt.evaluate({"X1": 4, "X2": 7}))
+    left0, right0 = dt.add_split(None, "X1", 3) # X1 < 3
+    dt.set_leaf_value(right0, False) # N
+    left1, right1 = dt.add_split(left0, "X2", 1) # X2 < 1
+    dt.set_leaf_value(left1, False) # N
+    dt.set_leaf_value(right1, True) # Y
+    print(dt.evaluate({"X1": 4, "X2": 7})) # N
 
 if __name__ == "__main__":
     test_tree()
