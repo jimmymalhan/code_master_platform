@@ -21,6 +21,10 @@
 
 # Note: In real life, we would probably grow a decision tree via some machine learning algorithm. In this exercise, however, we will manually create the tree that we want. We can grow a decision tree by starting with a single-leaf tree and recursively splitting the leaves of the tree. We do this by associating a split condition to a node, creating two new leaves below it, and associating a return value to each of those leaves.
 
+# class DecisionTree:
+    # add split method
+    # add set_leaf_value method
+    # add evaluate method
 
 class DecisionTree:
     def __init__(self):
