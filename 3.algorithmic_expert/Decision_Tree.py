@@ -59,25 +59,23 @@ class Node:
         self.right = None
 
     def set_leaf_value(self, value):
-        # assign the value to the leaf node
-        return self.value == value
+        self.value = value
 
     def evaluate(self, signals):
         if signals[self.feature] < self.value:
             return self.left.evaluate(signals)
         else:
-            return self.right.evaluate(signals) if self.right else self.value
+            return self.right.evaluate(signals)
 
 
-def test_decision_tree():
+def test_tree():
     dt = DecisionTree()
-    root = Node(None, None, None)
-    dt.root = root
-    left, right = dt.add_split(root, 0, 3)
-    dt.set_leaf_value(left, "Y")
-    dt.set_leaf_value(right, "N")
-    assert dt.evaluate({0: 2}) == "Y"
-    assert dt.evaluate({0: 8}) == "N"
+    left0, right0 = dt.add_split(None, "X1", 3)
+    dt.set_leaf_value(right0, False)
+    left1, right1 = dt.add_split(left0, "X2", 1)
+    dt.set_leaf_value(left1, False)
+    dt.set_leaf_value(right1, True)
+    print(dt.evaluate({"X1": 4, "X2": 7}))
 
 if __name__ == "__main__":
-    test_decision_tree()
+    test_tree()
