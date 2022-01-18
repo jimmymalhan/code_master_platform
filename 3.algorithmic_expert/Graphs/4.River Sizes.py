@@ -37,8 +37,7 @@
 stacks = depth first search
 
 Explain the Solution:
-1. Return the sizes of the rivers horizontally and vertically adjacent 1s in as traversing the matrix. Treat matrix as a graph where each 
-element is a node with upto 4 neighbors nodes(left, right, top, bottom) and traverse the graph using DFS.
+1. Return the sizes of the rivers horizontally and vertically adjacent 1s in as traversing the matrix. Treat matrix as a graph where each element is a node with upto 4 neighbors nodes(left, right, top, bottom) and traverse the graph using DFS.
 2. While traversing the matrix, anytime you encounter a 1, traverse entire river that this `1` is part of (keep track of the size of the river) by node's neighboring nodes and their own neighboring nodes as long as they are 1s. if you encounter a 0, mark it as visited and continue.
 3. In order to prevent mistakenly calculating the size of the river multiple times, use auxiliary data structure "queue" to perform computation on unvisited nodes only.
 O(wh) Time | O(wh) Space - width, height of matrix
@@ -98,7 +97,7 @@ def riverSizes(matrix):
 
     # iterate through the matrix row by row and check if the element is 1 # if it is 1, add it to the queue # if it is 0, add it to the queue
     for i in range(len(matrix)): # iterate through the rows
-        for j in range(len(matrix[i])): # iterate through the rows
+        for j in range(len(matrix[i])): # iterate through the rows for i
             if visited[i][j]: # if the node has been visited, continue or if visited[i][j] == True
                 continue
             traverseNode(i, j, matrix, visited, sizes) # if the node has not been visited, traverse the node
