@@ -76,16 +76,19 @@ Detailed explanation of the Solution:
         add the currentRiverSize to the sizes
 
 # function ​- getUnvisitedNeighbors(i, j, matrix, visited):
-    initialize unvisitedNeighbors as empty list
+    unvisitedNeighbors is equal to [] # list to store the neighbors
+    numRows is equal to lenOfMatrix
+    numCols is equal to lenOfMatrix for row
 
-    - if i is greater than 0 and not visited[i-1][j]: #(node has not been visited ABOVE the node)
-        ​add [i-1, j] to the unvisitedNeighbors
-    - if i is less than the length of the (matrix) -1 and not visited[i+1][j]: #(node has not been visited BELOW the node)
-        ​add [i+1, j] to the unvisitedNeighbors
-    - if j is greater than 0 and not visited[i][j-1]: #(node has not been visited LEFT of the node)
-        ​add [i, j-1] to the unvisitedNeighbors
-    - if j is less than the (length of the matrix at index [0]) -1 and not visited[i][j+1]: # (node has not been visited RIGHT of the node)
-        ​add [i, j+1] to the unvisitedNeighbors
+    if i-1 is greater than and equal to 0: # UP # check if the row is not on the border
+        unvisitedNeighbors.append([i - 1, j]) # push the neighbor into the neighbors list
+    if i+1 is less than numRows: # DOWN # check if the row is not on the border
+        unvisitedNeighbors.append([i + 1, j]) # push the neighbor into the neighbors list
+    if j-1 is greater than and equal to 0: # LEFT # check if the column is not on the border
+        unvisitedNeighbors.append([i, j - 1]) # push the neighbor into the neighbors list
+    if j+1 is less than numCols: # RIGHT # check if the column is not on the border
+        unvisitedNeighbors.append([i, j + 1]) # push the neighbor into the neighbors list
+
     return unvisitedNeighbors
 """
 ####################################
