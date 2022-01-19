@@ -123,15 +123,19 @@ def traverseNode(i, j, matrix, visited, sizes): # i and j are rows
         sizes.append(currentRiverSize) # add the river size to the sizes array
 
 def getUnvisitedNeighbors(i, j, matrix, visited):
-    unvisitedNeighbors = [] # holds the unvisited neighbors
-    if i > 0 and not visited[i - 1][j]: # if the row is greater than 0 and the node has not been visited ABOVE the node
-        unvisitedNeighbors.append([i - 1, j]) # add the node to the unvisited neighbors
-    if i < len(matrix) - 1 and not visited[i + 1][j]: # if the row is less than the length of the matrix and the node has not been visited BELOW the node
-        unvisitedNeighbors.append([i + 1, j]) # add the node to the unvisited neighbors
-    if j > 0 and not visited[i][j - 1]: # if the row is greater than 0 and the node has not been visited to the LEFT of the node
-        unvisitedNeighbors.append([i, j - 1]) # add the node to the unvisited neighbors 
-    if j < len(matrix[0]) - 1 and not visited[i][j + 1]:# if the row is less than the length of the matrix and the node has not been visited to the RIGHT of the node
-        unvisitedNeighbors.append([i, j + 1]) # add the node to the unvisited neighbors
+    unvisitedNeighbors = []
+    numRows = len(matrix)
+    numCols = len(matrix[i])
+
+    if i - 1 >= 0: # UP # check if the row is not on the border
+        unvisitedNeighbors.append((i - 1, j)) # push the neighbor into the neighbors list
+    if i + 1 < numRows: # DOWN # check if the row is not on the border
+        unvisitedNeighbors.append((i + 1, j))
+    if j - 1 >= 0: # LEFT # check if the col is not on the border
+        unvisitedNeighbors.append((i, j - 1)) #
+    if j + 1 < numCols: # RIGHT # check if the col is not on the border
+        unvisitedNeighbors.append((i, j + 1))
+        
     return unvisitedNeighbors
 
 def main():
