@@ -48,19 +48,19 @@ Detailed explanation of the Solution:
     Initialize sizes as list to hold the rivers
     Initializing visited as "2D matrix to False" - False for value in row and for row in matrix
 
-    loop as i for range len in the matrix 
-        loop as j in range of len matrix for i
-    if visited i j: # if the node has been visited, continue or if visited[i][j] == True
-        continue
-    traverseNode for i, j, matrix, visited, sizes # if the node has not been visited, traverse the node
-    return the sizes # of the array as initialized before
+    loop as i for range len in the matrix:
+        loop as j in range of len matrix for i:
+            if visited i j: # if the node has been visited, continue or if visited[i][j] == True
+                continue
+            traverseNode for i, j, matrix, visited, sizes # if the node has not been visited, traverse the node
+    return sizes # of the array as initialized before
 
 # function - traverseNode(i, j, matrix, visited, sizes)
     intialize the currentRiverSize to be 0
     initialize nodesToExplore to be [[i, j]] # queue
 
     while there is length of nodesToExplore: # while there are nodes to explore
-        initialize current Node to pop the element in the nodesToExplore # pop first element from the queue
+        initialize currentNode to pop the element in the nodesToExplore # pop first element from the queue
         initialize i as currentNode for first index # get the row
         initialize j as currentNode for second index # get the row
         if visited i j: # if the node has been visited
@@ -69,28 +69,27 @@ Detailed explanation of the Solution:
         if matrix i j equilized to 0 # if the node is 0
             continue
         increment currentRiverSize by 1 #  this will add it to the queue
-        initialize unvisitedNeighbors for getUnvisitedNeighbors for i, j, matrix, visited # get the unvisited neighbors
-        iterate through the unvisitedNeighbors as neighbor # iterate through the unvisited neighbors
-        append neighbor to the nodesToExplore # add the neighbor to the queue
-    if the currentRiverSize is greater than the 0
-        add the currentRiverSize to the sizes # add the river size to the sizes
+        initialize unvisitedNeighbors equal to getUnvisitedNeighbors for i, j, matrix, visited # get the unvisited neighbors
+        iterate through the unvisitedNeighbors as neighbor:
+            append neighbor to the nodesToExplore # add the neighbor to the queue
+    if the currentRiverSize is greater than the 0:
+        add the currentRiverSize to the sizes
 
-# function ​- getUnvisitedNeighbors(i, j, matrix, visited)
+# function ​- getUnvisitedNeighbors(i, j, matrix, visited):
     initialize unvisitedNeighbors as empty list
 
-    - if i(row) is greater than 0 and not visited[i-1][j](node has not been visited ABOVE the node)
-    ​add [i-1, j] to the unvisitedNeighbors
-    - if i(row) is less than the length of the matrix -1 and not visited[i+1][j](node has not been visited BELOW the node)
-    ​add [i+1, j] to the unvisitedNeighbors
-    - if j(row) is greater than 0 and not visited[i][j-1](node has not been visited LEFT of the node)
-    ​add [i, j-1] to the unvisitedNeighbors
-    - if j(row) is less than the length of the matrix at index [0] -1 and not visited[i][j+1](node has not been visited RIGHT of the node)
-    ​add [i, j+1] to the unvisitedNeighbors
-    return the unvisitedNeighbors
+    - if i is greater than 0 and not visited[i-1][j]: #(node has not been visited ABOVE the node)
+        ​add [i-1, j] to the unvisitedNeighbors
+    - if i is less than the length of the (matrix) -1 and not visited[i+1][j]: #(node has not been visited BELOW the node)
+        ​add [i+1, j] to the unvisitedNeighbors
+    - if j is greater than 0 and not visited[i][j-1]: #(node has not been visited LEFT of the node)
+        ​add [i, j-1] to the unvisitedNeighbors
+    - if j is less than the (length of the matrix at index [0]) -1 and not visited[i][j+1]: # (node has not been visited RIGHT of the node)
+        ​add [i, j+1] to the unvisitedNeighbors
+    return unvisitedNeighbors
 """
 ####################################
 
-# Solution 1:
 def riverSizes(matrix):
     sizes = [] # holds the sizes of the rivers
     visited = [[False for value in row] for row in matrix] # initializing visited as "2D matrix to False" - False for value in row and for row in matrix
@@ -118,7 +117,7 @@ def traverseNode(i, j, matrix, visited, sizes): # i and j are rows
             continue
         currentRiverSize += 1 # increment the river size # if the node is 1, add it to the queue
         unvisitedNeighbors = getUnvisitedNeighbors(i, j, matrix, visited)
-        for neighbor in unvisitedNeighbors: # iterate through the unvisited neighbors
+        for neighbor in unvisitedNeighbors:
             nodesToExplore.append(neighbor) # add the neighbor to the queue
     if currentRiverSize > 0: # if the river size is greater than 0
         sizes.append(currentRiverSize) # add the river size to the sizes array
