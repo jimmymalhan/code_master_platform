@@ -141,25 +141,25 @@ Its same space complexity as we need to perform DFS on the matrix using Stack. S
     - It has better Average Space Complexity than the other two solutions
 
 ##################
-Detailed explanation of the Solution:
-function for removeIsIslands for matrix
-    loop for row in range to len of matrix
-        loop for col in range to len of matrix for row
+Detailed explanation of the Solution -
+function for removeIsIslands for matrix:
+    loop for row in range to len of matrix:
+        loop for col in range to len of matrix for row:
             rowIsBorder is equal to row is equalized to 0 or row is equalized to len of matrix - 1 # to check if row is border
             colIsBorder is equal to col is equalized to 0 or col is equalized to len of matrix for row - 1 # to check if col is border
             isBorder is equal to rowIsBorder or colIsBorder # to check if row or col is border
-            if not isBorder # if the position is not a border
+            if not isBorder: # if the position is not a border
                 continue
-            if matrix[row][col] is not equal to 1 # if the position is not a 1
+            if matrix[row][col] is not equal to 1: # if the position is not a 1
                 continue
             changeOnesConnectedToBorderToTwos for matix, row, col # change all 1s connected to border to 2s using DFS
 
-    loop for row in range to len of matrix
-        loop for col in range to len of matrix for row
+    loop for row in range to len of matrix:
+        loop for col in range to len of matrix for row:
             color is equal to matrix[row][col] # color of the current position
-            if color is equalized to 1
+            if color is equalized to 1:
                 matrix[row][col] is equal to 0 # change color to 0
-            if color is equalized to 2
+            if color is equalized to 2:
                 matrix for row,col is equal to 1 # change color to 1
     return matrix
 
@@ -170,9 +170,9 @@ function changeOnesConnectedToBorderToTwos for matrix, startRow, startCol
         currentRow, currentCol = currentPosition # get the row and col of the current position
         matrix for [currentRow][currentCol] is equal to 2 # mark the current position as 2
         neighbors is equal to getNeighbors for matrix, currentRow, currentCol # get the neighbors of the current position
-        loop for neighbor in neighbors
+        loop for neighbor in neighbors:
             row, col = neighbor # get the row and col of the neighbor
-            if matrix for [row][col] is not equal to 1
+            if matrix for [row][col] is not equal to 1:
                 continue # skip the neighbor if it is not a 1    
             append the neighbor to the stack
 
