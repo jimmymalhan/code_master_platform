@@ -18,6 +18,7 @@ class Solution:
     def maximumGood(self, statements: List[List[int]]) -> int:
         ans, n = 0, len(statements)
         for person in itertools.product([0, 1], repeat=n): # use itertools to create a list only contains 0 or 1
+            print(person)
             valid = True                                   # initially, we think the `person` list is valid
             for i in range(n):
                 if not person[i]: continue                 # only `good` person's statement can lead to a contradiction, we don't care what `bad` person says
@@ -31,4 +32,4 @@ class Solution:
             if valid: 
                 ans = max(ans, sum(person))                # count sum only when valid == True
         return ans
-print(Solution().maximumGood([[2,1,2],[1,2,2],[2,0,2]])) # 3
+print(Solution().maximumGood([[2,1,2],[1,2,2],[2,0,2]])) # 2
