@@ -42,9 +42,7 @@ class Solution:
             else:
                 negatives.append(val)
         for i in range(len(positives)):
-            print(positives[i])
             ans.append(positives[i])
-            print(negatives[i])
             ans.append(negatives[i])
         return ans
 
