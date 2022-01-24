@@ -7,7 +7,6 @@
 
 # Note that the 0 value is neither positive nor negative, meaning that a 0 can't convert an adjacent negative to a positive.
 
-####################################
 # A single pass through the matrix involves converting integers that can be converted at a particular point in the time. For example, consider the following input matrix:
 
 # [
@@ -46,7 +45,7 @@
 Explain the solution:
 - 1. The brute force approach is to simply iterate through the entire matrix and change the negative neighbors to positive. But, it look at the same elements in matrix multiple times which is not optimal.
 
-- 2. Once a negative value has been found and you can change its neighbors to positives, this positive value can no longer lead to the conversion of any negative values. Instead, its neighbors (that you just changed to positives) have the possibility of changing their own neighbors to positives. After you change a negative value to positive, you should store its position so that you can check if it can flip any of its neighbors in the next next pass of the matrix using BFS.
+- 2. Once a negative value has been found and you can change its neighbors to positives, this positive value can no longer lead to the conversion of any negative values. Instead, its neighbors (that you just changed to positives) have the possibility of changing their own neighbors to positives. After you change a negative value to positive, you should store its position so that you can check if it can flip any of its neighbors in the next pass of the matrix using BFS.
 
     - TWO queue process:
     - Implementing a BFS, starting from all the positive-value positions in the array. Initialize a queue that stores the positions of all the positive values, iterate through the queue, dequeue elements out, and consider all of their neighbors. If any of their neighbors are negative, change them to positive, and store their positions in a secondary queue. Once the first queue is empty, Increment your number of passes, and iterate through the second queue you created(the one with the positions of negatives that were changed to positive). Repeat this process until no values are converted during a pass.
@@ -156,18 +155,20 @@ def getAllPositivePositions(matrix):
 	return positivePositions
 
 def getAdjacentPositions(row, col, matrix):
-	adjacentPositions = []
+    adjacentPositions = []
+    numRows = len(matrix)
+    numCols = len(matrix[row])
 	
-	if row > 0:
-		adjacentPositions.append([row - 1, col]) # up
-	if row < len(matrix) - 1:
-		adjacentPositions.append([row + 1, col]) # down
-	if col > 0:
-		adjacentPositions.append([row, col - 1]) # left
-	if col < len(matrix[0]) - 1:
-		adjacentPositions.append([row, col + 1]) # right
-	
-	return adjacentPositions
+    if row > 0:
+    	adjacentPositions.append([row - 1, col]) # up
+    if row < numRows:
+    	adjacentPositions.append([row + 1, col]) # down
+    if col > 0:
+    	adjacentPositions.append([row, col - 1]) # left
+    if col < len(matrix[row]):
+    	adjacentPositions.append([row, col + 1]) # right
+
+    return adjacentPositions
 
 def containsNegative(matrix):
 	for row in matrix:
