@@ -132,7 +132,7 @@ def convertNegatives(matrix):
             # For our time complexity analysis, we'll assume this runs in O(1) time.
             # Also, for this particular solution, we could actually just turn this queue into a stack and replace `.pop(0)` with the constant-time `.pop()` operation.
             
-            adjacentPositions = getAdjacentPositions( currentRow, currentCol, matrix)
+            adjacentPositions = getAdjacentPositions(currentRow, currentCol, matrix)
             for position in adjacentPositions:
                 row, col = position # get the row and col of the adjacent position
                 
