@@ -57,17 +57,18 @@ Detailed explanation of the Solution:
 
 create a function for minimumPassesOfMatrix for matrix:
     intialize a variable passes equal to convertNegatives for matrix
-    return passes - 1 if not containsNegative for matrix # if there is no negative value in the matrix, return -1
+    return passes - 1 if not containsNegative for matrix else -1 # if there is no negative value in the matrix, return -1
 
 create a function for convertNegatives for matrix:
     nextPassQueue equal to getAllPositivePositions for matrix
+    
     passes equal to 0
 
-    while length of nextPassQueue is greater than 0:
+    while length of nextPassQueue is greater than 0:# while there are still +ve values in the matrix
         currentPassQueue equal to nextPassQueue # set the current pass queue to the next pass queue
         nextPassQueue equal to [] # reset the next pass queue
 
-        while length of currentPassQueue is greater than 0: # while there are still values in the current pass queue
+        while length of currentPassQueue is greater than 0: # while there are still +ve values in the current pass queue
             currentRow, currentCol equal to currentPassQueue.pop(0) # In Python, popping elements from the start of a list is an O(n) operation. # To make this an O(1) operation, we could use the `deque` object. # For our time complexity analysis, we'll assume this runs in O(1) time. # Also, for this particular solution, we could actually just turn this queue into a stack and replace `.pop(0)` with the constant-time `.pop()` operation.
 
             adjacentPositions equal to getAdjacentPositions for currentRow, currentCol, matrix # get the adjacent positions of the current position
@@ -103,7 +104,7 @@ create a function for getAdjacentPositions for row, col, matrix:
     return adjacentPositions
 
 create a function for containsNegative for matrix:
-    for row in range of matrix:
+    for row in matrix:
         for value in row:
             if value < 0:
                 return True
@@ -122,7 +123,7 @@ def convertNegatives(matrix):
     
     while len(nextPassQueue) > 0:        # while there are still positive values in the matrix
         currentPassQueue = nextPassQueue # set the current pass queue to the next pass queue
-        nextPassQueue = []               # reset the next pass queue      
+        nextPassQueue = []               # reset the nextPassQueue
 		
         while len(currentPassQueue) > 0: # while there are still values in the current pass queue
             currentRow, currentCol = currentPassQueue.pop(0)
