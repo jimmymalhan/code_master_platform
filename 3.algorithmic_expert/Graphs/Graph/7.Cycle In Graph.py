@@ -117,23 +117,27 @@ Explanation on the Solution:
 
 ##################
 Detailed explanation of the Solution:
+WHITE - not visited ; continue traversing
+GRAY - visited but not in the stack ; return False
+BLACK - visited and in the stack ; return True (contains cycle)
+
 intialize  WHITE,GRAY,BLACK = 0,1,2
 
-create a function cycleInGraph(edges)
-    initialize numberOfNode to len(edges)
+create a function cycleInGraph(edges):
+    initialize numberOfNodes to len(edges)
     initialize colors to [WHITE]*numberOfNodes
-    loop through the nodes in the graph(range(numberOfNodes))
-        if colors[node] is not equal to WHITE:
+    loop through as node in the range(numberOfNodes):
+        if colors[node] is not equal to WHITE: # If the node is already visited, then it's not a cycle.
             continue
-        initialize containsCycle to traverseAndColorNodes(node,edges,colors)
+        initialize containsCycle = traverseAndColorNodes(node,edges,colors)
         if containsCycle:
             return True
     return False
 
-create a function traverseAndColorNodes(node,edges,colors)
-    initialize colors[node] to GRAY
-    intialize neighbors to edges[node]
-    loop for each neighbor in neighbors
+create a function traverseAndColorNodes(node,edges,colors): # This function returns true if the node contains a cycle.
+    initialize colors[node] = GRAY
+    intialize neighbors = edges[node]
+    loop for each neighbor in neighbors: # For each neighbor, check if it contains a cycle.
         intialize neighborColor to be colors[neighbor] # get the color of the neighbor
         if neighborColor is equalized to GRAY: # if the neighbor is gray, then there is a cycle
             return True
@@ -148,13 +152,17 @@ create a function traverseAndColorNodes(node,edges,colors)
 O(v + e) time and O(v) space, where v is the number of vertices and e is the number of edges in the graph.
 """
 
+# WHITE - not visited ; continue traversing
+# GRAY - visited but not in the stack ; return False
+# BLACK - visited and in the stack ; return True (contains cycle)
+
 WHITE, GRAY, BLACK = 0, 1, 2
 def cycleInGraph_solution2(edges):
     numberOfNodes = len(edges)
-    colors = [WHITE]*numberOfNodes
+    colors = [WHITE]*numberOfNodes # This is to check if the node is in the stack or not.
     
     for node in range(numberOfNodes):
-        if colors[node] != WHITE:
+        if colors[node] != WHITE: # If the node is already visited, then it's not a cycle.
             continue
     
         containsCycle = traverseAndColorNodes(node, edges, colors)
@@ -166,21 +174,21 @@ def cycleInGraph_solution2(edges):
 def traverseAndColorNodes(node, edges, colors):
     colors[node] = GRAY
 
-    neighbors = edges[node]
+    neighbors = edges[node] # Get the neighbors of the node.
     for neighbor in neighbors:
-        neighborColor = colors[neighbor]
+        neighborColor = colors[neighbor] # get the color of the neighbor
 
-        if neighborColor == GRAY:
+        if neighborColor == GRAY: # if the neighbor is gray, then there is a cycle
             return True
 
-        if neighborColor == BLACK:
+        if neighborColor == BLACK: # if the neighbor is black, then it's not a cycle.
             continue
 
         containsCycle = traverseAndColorNodes(neighbor, edges, colors)
         if containsCycle:
             return True
             
-    colors[node] = BLACK
+    colors[node] = BLACK # Mark the node as not in the stack.
     return False
 
 

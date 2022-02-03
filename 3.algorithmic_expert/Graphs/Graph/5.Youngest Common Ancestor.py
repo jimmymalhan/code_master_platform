@@ -1,7 +1,7 @@
 # Problem Name: Youngest Common Ancestor
 
 # Problem Description:
-# You're given three inputs, all of which are instances of an AncestralTree class that have an ancestor property pointing to their youngest ancestor. The first input is the top ancestor in an ancestral tree(i.e  the only instance that has no ancestors -- its property points to None/null). and the other two inputs are descendants of the ancestral tree.
+# You're given three inputs, all of which are instances of an AncestralTree class that have an ancestor property pointing to their youngest ancestor. The first input is the top ancestor in an ancestral tree (i.e  the only instance that has no ancestors -- its property points to None/null) and the other two inputs are descendants of the ancestral tree.
 
 # Write a function that returns the youngest common ancestor of the two descendants.
 
@@ -45,15 +45,14 @@ function of getYoungestCommonAncestor for topAncestor, descendantOne, descendant
     else:
         return backtrackAncestralTree for descendantTwo, descendantOne, depthTwo - depthOne #return the first common ancestor
 
-
 function of getDescendantDepth for descendant, topAncestor
-    initialize depth is equal to 0
+    initialize depth is equal to 0:
     while descendant is not equal to topAncestor # while the descendant is not the top ancestor
         increment depth by 1
         descendant is equal descendant.ancestor # getParent of descendant
     return depth
 
-function of backtrackAncestralTree for lowerDescendant, higherDescendant, diff
+function of backtrackAncestralTree for lowerDescendant, higherDescendant, diff:
     while diff is greater than 0 # while the difference is greater than 0
         lowerDescendant is equal to lowerDescendant.ancestor # get the parent of the lowerDescendant
         decrement diff by 1
