@@ -3,7 +3,7 @@
 # Problem Description:
 # Given a directed graph, check whether it contains a cycle or not.
 
-# You're given an array of integers where each integer represents a jump of of its value in the array. For instance, 2 represents a jump of two indices forward in the array, the integer -3 represents a jump of three indices backward in the array.
+# You're given an array of integers where each integer represents a jump of its value in the array. For instance, 2 represents a jump of two indices forward in the array, the integer -3 represents a jump of three indices backward in the array.
 
 # If a jump spills past the array's bounds, it wraps over to the other side. For instance, a jump of -1 at index 0 brings us to the last index in the array. Similarly, a jump of 1 at the last index in the array brings us to index 0.
 
