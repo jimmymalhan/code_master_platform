@@ -15,14 +15,7 @@ Detailed explanation of the Solution:
 """
 ####################################
 
-class writeTheSolution:
-    def __init__(self):
-        pass
-
-    def solution(self):
-        pass
-def main():
+def solution(self):
     pass
 
-if __name__ == '__main__':
-    main()
+print(solution())
