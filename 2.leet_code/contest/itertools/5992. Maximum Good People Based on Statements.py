@@ -13,6 +13,7 @@
 
 from typing import List
 import itertools
+# itertools is a module that contains functions that operate on iterables.
 
 class Solution:
     def maximumGood(self, statements: List[List[int]]) -> int:
