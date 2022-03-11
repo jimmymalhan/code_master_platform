@@ -1,7 +1,7 @@
 # Problem Name: Multi String Search
 
 # Problem Description: 
-# Writw a function that takes in a big string and an array of small strings, all of which are smaller in length than the big string. The function should return an array of booleans, where each boolean represents whther the small string at that index in the array of small strings is contained in the big string.
+# Write a function that takes in a big string and an array of small strings, all of which are smaller in length than the big string. The function should return an array of booleans, where each boolean represents whether the small string at that index in the array of small strings is contained in the big string.
 
 ####################################
 # Sample Input #1:
@@ -35,7 +35,10 @@ Detailed explanation of the Solution:
 """
 ####################################
 
-def solution(self):
-    pass
-
-print(solution())
+# brute force solution  
+def multiStringSearchBruteForce(bigString, smallStrings):
+# Iterate through each small string and check if it is in the big string.
+    result = []
+    for smallString in smallStrings:
+        result.append(bigString.find(smallString) != -1) # If the small string is not in the big string, the find method returns -1.
+    return result
