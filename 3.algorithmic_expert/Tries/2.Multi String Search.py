@@ -42,7 +42,7 @@ create a function multiStringSearchOptimized that takes in two parameters: bigSt
 
 create findSmallStringsIn function that takes in four parameters: string, startIdx, trie, and containedStrings.
 	currentNode is equal to trie.root
-	loop for i in range(startIdx, len(string)):
+	loop for i in range(startIdx, len(string)): # loop through each character in the big string starting at the startIdx.
 		currentChar is equal to string[i]
 		if currentChar not in currentNode: # if the current character is not in the current node, break out of the loop.
 			break
