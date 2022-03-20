@@ -38,7 +38,7 @@
 """
 Explain the solution:
 - You can divide this question into two separate problems: one part involves traversing
-the boggle board in such a way that allows you to contrcut strings letter by letter;
+the boggle board in such a way that allows you to construct strings letter by letter;
 the other part involves actually comparing the strings you construct in the board
 against the words in the list that you're given. For the second part, what data 
 structure lends itself very well to matching characters tu multiple strings at once?
