@@ -74,63 +74,63 @@ Detailed explanation of the Solution:
 
 # O(nm*8^s + ws) time | O(nm + ws) space 
 def boggleBoard(board, words):
-    trie = Trie()
-    for word in words:
-        trie.add(word)
-    finalWords = {}
-    visited = [[False for letter in row] for row in board]
-    for i in range(len(board)):
-        for j in range(len(board[i])):
-            explore(i, j, board, trie.root, visited, finalWords)
-    return list(finalWords.keys())
+    trie = Trie() # create a trie
+    for word in words: 
+        trie.add(word) # add each word to the trie
+    finalWords = {} # create a dictionary to store the final words
+    visited = [[False for letter in row] for row in board] # create a visited matrix
+    for i in range(len(board)): # for each row
+        for j in range(len(board[i])): # for each column
+            explore(i, j, board, trie.root, visited, finalWords) # explore the board
+    return list(finalWords.keys()) # return the final words
 
 def explore(i, j, board, trieNode, visited, finalWords):
-    if visited[i][j]:
+    if visited[i][j]: # if we've already visited this node, return
         return
-    letter = board[i][j]
-    if letter not in trieNode:
+    letter = board[i][j] # get the letter at this node
+    if letter not in trieNode: # if the letter isn't in the trie, return
         return
-    visited[i][j] = True
-    trieNode = trieNode[letter]
-    if '*' in trieNode:
-        finalWords[trieNode['*']] = True
-    neighbors = getNeighbors(i, j, board)
-    for neighbor in neighbors:
-        explore(neighbor[0], neighbor[1], board, trieNode, visited, finalWords)
-    visited[i][j] = False
+    visited[i][j] = True # mark this node as visited
+    trieNode = trieNode[letter] # get the trie node corresponding to this letter
+    if '*' in trieNode: # if we've reached the end of a word, add it to the final words
+        finalWords[trieNode['*']] = True # add the word to the final words
+    neighbors = getNeighbors(i, j, board) # get the neighbors of this node
+    for neighbor in neighbors: # for each neighbor
+        explore(neighbor[0], neighbor[1], board, trieNode, visited, finalWords) # explore it
+    visited[i][j] = False # mark this node as unvisited
 
 def getNeighbors(i, j, board):
     neighbors = []
-    if i > 0 and j > 0:
-        neighbors.append((i-1, j-1))
-    if i > 0 and j < len(board[0]) - 1:
+    if i > 0 and j > 0: # top left
+        neighbors.append((i-1, j-1)) # add the neighbor
+    if i > 0 and j < len(board[0]) - 1: # top right
         neighbors.append((i-1, j+1))
-    if i < len(board) - 1 and j < len(board[0]) - 1:
+    if i < len(board) - 1 and j < len(board[0]) - 1: # bottom right
         neighbors.append((i+1, j+1))
-    if i < len(board) - 1 and j > 0:
+    if i < len(board) - 1 and j > 0: # bottom left
         neighbors.append((i+1, j-1))
-    if i > 0:
+    if i > 0: # top
         neighbors.append((i-1, j))
-    if i < len(board) - 1:
+    if i < len(board) - 1: # bottom
         neighbors.append((i+1, j))
-    if j > 0:
+    if j > 0: # left
         neighbors.append((i, j-1))
-    if j < len(board[0]) - 1:
+    if j < len(board[0]) - 1: # right
         neighbors.append((i, j+1))
     return neighbors
 
-class Trie:
+class Trie: # trie data structure
     def __init__(self):
         self.root = {}
         self.endSymbol = '*'
 
     def add(self, word):
-        current = self.root
+        current = self.root # start at the root
         for letter in word:
-            if letter not in current:
-                current[letter] = {}
-            current = current[letter]
-        current[self.endSymbol] = word
+            if letter not in current: # if the letter isn't in the trie
+                current[letter] = {} # add it
+            current = current[letter] # move down the trie
+        current[self.endSymbol] = word # mark the end of the word
 
 
 print(boggleBoard([["t", "h", "i", "s", "i", "s", "a"],
