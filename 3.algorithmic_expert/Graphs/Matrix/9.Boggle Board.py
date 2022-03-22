@@ -96,7 +96,7 @@ def explore(i, j, board, trieNode, visited, finalWords):
         finalWords[trieNode['*']] = True # add the word to the final words
     neighbors = getNeighbors(i, j, board) # get the neighbors of this node
     for neighbor in neighbors: # for each neighbor
-        explore(neighbor[0], neighbor[1], board, trieNode, visited, finalWords) # explore it
+        explore(neighbor[0], neighbor[1], board, trieNode, visited, finalWords) # explore it for all visited neighbors
     visited[i][j] = False # mark this node as unvisited
 
 def getNeighbors(i, j, board):
