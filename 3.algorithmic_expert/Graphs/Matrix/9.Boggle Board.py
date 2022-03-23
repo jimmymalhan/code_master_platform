@@ -41,7 +41,7 @@ Explain the solution:
 the boggle board in such a way that allows you to construct strings letter by letter;
 the other part involves actually comparing the strings you construct in the board
 against the words in the list that you're given. For the second part, what data 
-structure lends itself very well to matching characters tu multiple strings at once?
+structure lends itself very well to matching characters to multiple strings at once?
 
 - Try creating a trie out of the input list of words. This will allow you to compare
 letters in the boggle board against all input words in constant time. How can you 
@@ -58,7 +58,7 @@ track of visited nodes in an auxiliary data structure?
 - Keeping in mind that you only want to mark nodes as visited in a single branch of 
 the graph that you're traversing (i.e, you don't want the state of visited nodes in
 one branch of the graph to spill into the state of another branch of the graph), try
-marking any node you traverse as unvisited  at the end of the recursive call that 
+marking any node you traverse as unvisited at the end of the recursive call that 
 actually traverses it, after traversing through all of the nodes's neighbors and 
 performing the same actions on them recursively.
 
@@ -79,7 +79,7 @@ function boggleBoard(board, words):
             explore(i, j, board, trie.root, visited, finalWords) # explore the board
     return list(finalWords.keys())
 
-function explore(i, j, board, node, visited, finalWords):
+function explore(i, j, board, trieNode, visited, finalWords):
     if visited[i][j]: # if the node has been visited, return nothing
         return
     letter is equal to board[i][j] # get the letter at the current node
@@ -90,7 +90,7 @@ function explore(i, j, board, node, visited, finalWords):
     if '*' in trieNode: # if the trieNode contains a wildcard, add the word to the finalWords dictionary
         finalWords[trieNode['*']] = True
     neighbors is equal to getNeighbors(i, j, board) # get the neighbors of the node
-    loop for neighbor in neighbors: # for each neighbor
+    loop for neighbor in neighbors:
         explore(neighbor[0], neighbor[1], board, trieNode, visited, finalWords) # explore the neighbor
     visited[i][j] is equal to False # mark the node as unvisited
 
@@ -125,7 +125,7 @@ class Trie:
             if letter not in current: # if the letter is not in the trie
                 current[letter] = {} # add the letter to the trie
             current = current[letter] # move to the next node
-        current[self.endSymbol] = True # mark the end of the word
+        current[self.endSymbol] = word # mark the end of the word
 
 """
 ####################################
@@ -153,7 +153,7 @@ def explore(i, j, board, trieNode, visited, finalWords):
     if '*' in trieNode: # if we've reached the end of a word, add it to the final words
         finalWords[trieNode['*']] = True # add the word to the final words
     neighbors = getNeighbors(i, j, board) # get the neighbors of this node
-    for neighbor in neighbors: # for each neighbor
+    for neighbor in neighbors:
         explore(neighbor[0], neighbor[1], board, trieNode, visited, finalWords) # explore it for all visited neighbors
     visited[i][j] = False # mark this node as unvisited
 
