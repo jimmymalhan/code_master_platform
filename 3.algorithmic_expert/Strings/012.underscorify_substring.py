@@ -16,7 +16,7 @@
 Explain the solution:
 1. The first thing you need to do to solve this question is to get the locations of all instances of the substring in the main string. Try traversing the main string one character at a time and calling whatever substring-matching function to built into the language you're working in. Store a 2D array of locations, where each subarray holds the starting and ending indices of a specific instance of the substring in the main string.
 
-2. The second thing you need to do is to "collapse" the 2D array mentioned in Hint #1. In essence, you need to merge the location of substrings that overlap each other or sit next to each other. Traverse the 2D array mentioned in Hint #1 and build a new 2D arrat that holds these "collapsed" locations.
+2. The second thing you need to do is to "collapse" the 2D array mentioned in Hint #1. In essence, you need to merge the location of substrings that overlap each other or sit next to each other. Traverse the 2D array mentioned in Hint #1 and build a new 2D array that holds these "collapsed" locations.
 
 3. Finally, you need to create a new string with underscores added in the correct positions. Construct this new string by traversing the main string and 2D array mentioned in Hint #2 at the same time. You might have to keep track of when you are "in between" underscores in order to correctly traverse the 2D array.
 
@@ -31,7 +31,7 @@ Detailed explanation of the Solution:
 
 def underscorifySubstring(string, substring):
     locations = collapse(getLocations(string, substring)) # locations is a 2D array 
-    return underscorify(string, locations)
+    return underscorify(string, locations) # return the underscored string
 
 def getLocations(string, substring):
     locations = [] 
@@ -41,11 +41,11 @@ def getLocations(string, substring):
         if nextIdx != -1: # if the next index is not -1, then there is a substring or substring is found
             locations.append([nextIdx, nextIdx + len(substring)]) # append the start and end indices of the substring
             startIdx = nextIdx + 1 # start the search from the next index
-        else: # if the next index is -1, then there is no substring or substring is not found, so break out of the loop
+        else:
             break
     return locations
 
-def collapse(locations):
+def collapse(locations): # collapse means merge overlapping locations
     if not len(locations): # if there are no locations, return the empty array
         return locations
     newLocations = [locations[0]] # start with the first location
