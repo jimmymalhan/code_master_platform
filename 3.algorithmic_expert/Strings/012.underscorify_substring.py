@@ -28,7 +28,56 @@ Explain the solution:
 
 ##################
 Detailed explanation of the Solution:
+function underscorifySubstring takes two parameters(string, substring):
+    locations is equal to collapse(getLocations(string, substring)) # locations is a 2D array # gives O(n + m) time # getlocation function is passed to collapse function
+    return underscorify with arguments(string, locations)
 
+function getLocations takes two parameters(string, substring):
+    locations = [] is a 2D array that stores the locations of the substring(startIdx, endIdx) # # [[0,4], [8,12], [19,23]]
+    startIdx = 0
+    while startIdx < len(string):
+        nextIdx = string.find(substring, startIdx) # find the next startIndex of the substring
+        if nextIdx != -1: # substring is found
+            locations.append([nextIdx, nextIdx + len(substring)]) # append the start and end index of the substring
+            startIdx = nextIdx + 1 # start the search from the next index
+        else:
+            break
+    return locations
+
+function collapse takes one parameter(locations): #collapse consecutive substring locations
+    if not len(locations):
+        return locations
+    newLocations = [locations[0]] # start with the first sub-array location # [[0, 4]]
+    previous = newLocations[0] # previous is the first sub-array location # [0, 4]
+    loop for i in range(1, len(locations)): # iterate through the rest of the locations
+        current = locations[i] # current is the next location # [14, 18], [18, 22], [33, 37]
+        if current[0] <= previous[1]: # if the current location starts before the previous location ends
+            previous[1] = current[1] # update the end index of the previous location
+        else:
+            newLocations.append(current) # otherwise, add the current location to the new locations
+            previous = current # update the previous location
+    return newLocations
+
+function underscorify takes two parameters(string, locations):
+    locationsIdx = 0
+    stingIdx = 0
+    inBetweenUnderscores = False # initial value is False
+    finalChars = [] # keep track of the final characters
+    i = 0 # keep track of the index of the string
+    while stringIdx < len(string) and locationsIdx < len(locations): # iterate through the string and the locations
+        if stringIdx == locations[locationsIdx][i]: # if the string index is equal to the start index of the next location
+            finalChars.append("_") # add an underscore to the final characters
+            inBetweenUnderscores = not inBetweenUnderscores # set inBetweenUnderscores to True
+            if not inBetweenUnderscores: # if inBetweenUnderscores is False
+                locationsIdx += 1 # increment the locations index
+            i = 0 if i == 1 else 1 # switch the index to the other location
+        finalChars.append(string[stringIdx]) # add the current character to the final characters
+        stringIdx += 1 # increment the string index
+    if locationsIdx < len(locations): # if there are still locations left
+        finalChars.append("_") # add an underscore to the final characters
+    elif stringIdx < len(string): # if there are still characters left
+        finalChars.append(string[stringIdx:]) # add the remaining characters to the final characters
+    return "".join(finalChars) # return the final characters as a string
 """
 ####################################
 
@@ -39,7 +88,7 @@ def underscorifySubstring(string, substring):
     return underscorify(string, locations) # return the underscored string
 
 def getLocations(string, substring):
-    locations = [] # 2D array stores the locations of the substring(startIdx, endIdx)
+    locations = [] # 2D array stores the locations of the substring(startIdx, endIdx) # # [[0,4], [8,12], [19,23]]
     startIdx = 0
     while startIdx < len(string): 
         nextIdx = string.find(substring, startIdx) # find the next startIndex of the substring 
@@ -53,10 +102,10 @@ def getLocations(string, substring):
 def collapse(locations): #collapse consecutive substring locations
     if not len(locations):
         return locations
-    newLocations = [locations[0]] # start with the first sub-array location
-    previous = newLocations[0] # previous is the first sub-array location
+    newLocations = [locations[0]] # start with the first sub-array location # [[0, 4]]
+    previous = newLocations[0] # previous is the first sub-array location # [0, 4]
     for i in range(1, len(locations)): # iterate through the rest of the locations
-        current = locations[i] # current is the next location
+        current = locations[i] # current is the next location # [14, 18], [18, 22], [33, 37]
         if current[0] <= previous[1]: # if the current location starts before the previous location ends
             previous[1] = current[1] # update the end index of the previous location
         else:
@@ -74,7 +123,7 @@ def underscorify(string, locations):
         if stringIdx == locations[locationsIdx][i]: # if you are at the start of a location # [[0,4], [8,12], [19,23]]
             finalChars.append("_") # add an underscore
             inBetweenUnderscores = not inBetweenUnderscores # flip the boolean to True
-            if not inBetweenUnderscores: # if you are not in between underscores
+            if not inBetweenUnderscores: # if inBetweenUnderscores is False
                 locationsIdx += 1 # increment the locations index
             i = 0 if i == 1 else 1 # flip the index to 0 or 1
         finalChars.append(string[stringIdx]) # add the current character to the final characters
