@@ -33,7 +33,7 @@ function underscorifySubstring takes two parameters(string, substring):
     return underscorify with arguments(string, locations)
 
 function getLocations takes two parameters(string, substring):
-    locations = [] is a 2D array that stores the locations of the substring(startIdx, endIdx) # # [[0,4], [8,12], [19,23]]
+    locations = [] # is a 2D array that stores the locations of the substring(startIdx, endIdx) # # [[0,4], [8,12], [19,23]]
     startIdx = 0
     while startIdx < len(string):
         nextIdx = string.find(substring, startIdx) # find the next startIndex of the substring
@@ -61,7 +61,7 @@ function collapse takes one parameter(locations): #collapse consecutive substrin
 function underscorify takes two parameters(string, locations):
     locationsIdx = 0
     stingIdx = 0
-    inBetweenUnderscores = False # initial value is False
+    inBetweenUnderscores = False # initial Boolean is set to False
     finalChars = [] # keep track of the final characters
     i = 0 # keep track of the index of the string
     while stringIdx < len(string) and locationsIdx < len(locations): # iterate through the string and the locations
