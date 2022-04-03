@@ -22,7 +22,7 @@
 Explain the solution:
 1. Start by checking if the pattern starts with an "x". If it doesn't, consider generating a new pattern that swaps all "x"s with "y"s and vice versa; this might greatly simplify the rest of your algorithm. Make sure to keep track of whether or not you do this swap, as your final answer will be affected by it.
 
-2. Use a hash table to store the number of "x"s and "y"s that appear in the pattern, and keep track of the position of the first "y". Knowing how many "x"s and "y"s appear in the pattern, paired with the length of the main string which you have access to, will allow you ti quickly test out various possible lengths for "x" and "y". Knowing whether the first "y" appears in the pattern will allow you to actually generate potential substrings.
+2. Use a hash table to store the number of "x"s and "y"s that appear in the pattern, and keep track of the position of the first "y". Knowing how many "x"s and "y"s appear in the pattern, paired with the length of the main string which you have access to, will allow you to quickly test out various possible lengths for "x" and "y". Knowing whether the first "y" appears in the pattern will allow you to actually generate potential substrings.
 
 3. Traverse the main string and try different combinations of substrings that could represent "x" and "y". For each potential combination, map the new pattern mentioned in Hint #1 and see if it match the main string.
 
@@ -35,48 +35,48 @@ Detailed explanation of the Solution:
 ####################################
 
 def patternMatcher(pattern, string):
-    if len(pattern) > len(string):
+    if len(pattern) > len(string): # If the pattern is longer than the string, it can't match.
         return []
-    newPattern = getNewPattern(pattern)
-    didSwitch = newPattern[0] != pattern[0]
-    counts = {"x": 0, "y": 0}
-    firstYPos = getCountsAndFirstYPos(newPattern, counts)
-    if counts["y"] != 0:
+    newPattern = getNewPattern(pattern) # Get the new pattern that swaps "x"s with "y"s.
+    didSwitch = newPattern[0] != pattern[0] # If the first character of the new pattern is not the same as the first character of the original pattern, we need to swap "x"s and "y"s.
+    counts = {"x": 0, "y": 0} # Keep track of the number of "x"s and "y"s in the pattern.
+    firstYPos = getCountsAndFirstYPos(newPattern, counts) # # updates the counts and the position of the first "y" in the pattern.
+    if counts["y"] != 0: # If there are "y"s in the pattern, we need to make sure that the first "y" appears in the pattern.
         for lenOfX in range(1, len(string)):
             lenOfY = (len(string) - lenOfX * counts["x"]) / counts["y"] # lenOfY is the length of the substring that could represent "y"
-            if lenOfY <= 0 or lenOfY % 1 != 0:
+            if lenOfY <= 0 or lenOfY % 1 != 0: # validate that lenOfY is a positive integer - if it is not, continue to the next iteration.
                 continue
-            lenOfY = int(lenOfY)
-            yIdx = firstYPos * lenOfX
-            x = string[:lenOfX]
-            y = string[yIdx :  yIdx + lenOfY]
-            potentialMatch = map(lambda char: x if char == "x" else y, newPattern)
-            if string == "".join(potentialMatch):
-                return [x, y] if not didSwitch else [y, x]
+            lenOfY = int(lenOfY) # Convert lenOfY to an integer.
+            yIdx = firstYPos * lenOfX # The index of the first "y" in the pattern.
+            x = string[:lenOfX] # The substring that could represent "x". eg. "go"
+            y = string[yIdx :  yIdx + lenOfY] # The substring that could represent "y". eg. "powerranger"
+            potentialMatch = map(lambda char: x if char == "x" else y, newPattern) # Map the new pattern to the substring that could represent "x" and "y". eg. "go" and "powerranger"
+            if string == "".join(potentialMatch): # If the substring that could represent "x" and "y" matches the main string, return the substring that could represent "x" and "y".
+                return [x, y] if not didSwitch else [y, x] # If we swapped "x"s and "y"s, return the substring that could represent "y" and "x" in the correct order.
 
-    else:
-        lenOfX = len(string) / counts["x"]
-        if lenOfX % 1 == 0:
-            lenOfX = int(lenOfX)
-            x = string[:lenOfX]
-            potentialMatch = map(lambda char: x, newPattern)
-            if string == "".join(potentialMatch):
+    else: # If there are no "y"s in the pattern, we can just check if the pattern matches the main string.
+        lenOfX = len(string) / counts["x"] # lenOfX is the length of the substring that could represent "x"
+        if lenOfX % 1 == 0: # If lenOfX is a positive integer, we can check if the pattern matches the main string.
+            lenOfX = int(lenOfX) # Convert lenOfX to an integer.
+            x = string[:lenOfX] # The substring that could represent "x". eg. "go"
+            potentialMatch = map(lambda char: x, newPattern) # Map the new pattern to the substring that could represent "x". eg. "go"
+            if string == "".join(potentialMatch): # If the substring that could represent "x" matches the main string, return the substring that could represent "x".
                 return [x, ""] if not didSwitch else ["", x]
-    return []
+    return [] # If the pattern doesn't match the main string, return an empty array.
 
-def getNewPattern(pattern):
-    patternLetters = list(pattern)
-    if patternLetters[0] == "x":
+def getNewPattern(pattern): # Get the new pattern that swaps "x"s with "y"s.
+    patternLetters = list(pattern) # Convert the pattern to a list of characters.
+    if patternLetters[0] == "x": # If the first character is an "x", swap all "x"s with "y"s.
         return patternLetters
-    else:
-        return list(map(lambda char: "x" if char == "y" else "y", patternLetters))
+    else: # If the first charavyer is not an "x", swap all "y"s with "x"s.
+        return list(map(lambda char: "x" if char == "y" else "y", patternLetters)) # Swap all "x"s with "y"s.
 
-def getCountsAndFirstYPos(pattern, counts):
-    firstYPos = None
+def getCountsAndFirstYPos(pattern, counts): # updates the counts and the position of the first "y" in the pattern.
+    firstYPos = None #
     for i, char in enumerate(pattern):
-        counts[char] += 1
-        if char == "y" and firstYPos is None:
-            firstYPos = i
+        counts[char] += 1 # increment the count of the current character if it is an "x" or "y".
+        if char == "y" and firstYPos is None: # If the current character is an "y" and the first "y" position hasn't been set, set it to the current index.
+            firstYPos = i # Set the first "y" position to the current index.
     return firstYPos
 
 print(patternMatcher("xxyxxy", "gogopowerrangergogopowerranger"))
