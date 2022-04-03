@@ -18,8 +18,8 @@ class Solution:
 	    L, r = len(s), 0 # L is the length of the string, r is the number of palindromes
 	    for i in range(L): 
 	    	for a,b in [(i,i),(i,i+1)]: # a and b are the start and end indices of the substring
-	    		while a >= 0 and b < L and s[a] == s[b]: a -= 1; b += 1
-	    		r += (b-a)//2
+	    		while a >= 0 and b < L and s[a] == s[b]: a -= 1; b += 1 # while the start and end indices are valid and the characters are equal
+	    		r += (b-a)//2 # add the number of palindromes
 	    return r
 
 def main():
