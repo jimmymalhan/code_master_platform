@@ -21,6 +21,7 @@
 """
 Explain the solution:
 1. Start by checking if the pattern starts with an "x". If it doesn't, consider generating a new pattern that swaps all "x"s with "y"s and vice versa; this might greatly simplify the rest of your algorithm. Make sure to keep track of whether or not you do this swap, as your final answer will be affected by it.
+ - Example: We need the pattern = "xxyxxy". If the Pattern is provided = "yyxxyy" , we need to swap "x"s with "y"s to get the new pattern = "xxyxxy".
 
 2. Use a hash table to store the number of "x"s and "y"s that appear in the pattern, and keep track of the position of the first "y". Knowing how many "x"s and "y"s appear in the pattern, paired with the length of the main string which you have access to, will allow you to quickly test out various possible lengths for "x" and "y". Knowing whether the first "y" appears in the pattern will allow you to actually generate potential substrings.
 
@@ -66,17 +67,26 @@ def patternMatcher(pattern, string):
 
 def getNewPattern(pattern): # Get the new pattern that swaps "x"s with "y"s.
     patternLetters = list(pattern) # Convert the pattern to a list of characters.
-    if patternLetters[0] == "x": # If the first character is an "x", swap all "x"s with "y"s.
+    if patternLetters[0] == "x": # If the first character is an "x", just return the pattern.
         return patternLetters
-    else: # If the first charavyer is not an "x", swap all "y"s with "x"s.
+    else: # If the first character is not an "x", swap all "y"s with "x"s.
         return list(map(lambda char: "x" if char == "y" else "y", patternLetters)) # Swap all "x"s with "y"s.
 
-def getCountsAndFirstYPos(pattern, counts): # updates the counts and the position of the first "y" in the pattern.
-    firstYPos = None #
+def getCountsAndFirstYPos(pattern, counts): # updates the counts of "x" and "y" and the position of the first "y" in the pattern.
+    firstYPos = None
+    # counts = {"x": 0, "y": 0} # defined in the main function.
     for i, char in enumerate(pattern):
         counts[char] += 1 # increment the count of the current character if it is an "x" or "y".
+        # print(counts) # {'x': 1, 'y': 0}
+                        # {'x': 2, 'y': 0}
+                        # {'x': 2, 'y': 1}
+                        # {'x': 3, 'y': 1}
+                        # {'x': 4, 'y': 1}
+                        # {'x': 4, 'y': 2}
         if char == "y" and firstYPos is None: # If the current character is an "y" and the first "y" position hasn't been set, set it to the current index.
+            # print(firstYPos) # None
             firstYPos = i # Set the first "y" position to the current index.
+            # print(firstYPos) # 2
     return firstYPos
 
 print(patternMatcher("xxyxxy", "gogopowerrangergogopowerranger"))
