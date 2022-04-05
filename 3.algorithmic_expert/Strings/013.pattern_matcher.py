@@ -44,14 +44,22 @@ def patternMatcher(pattern, string):
     firstYPos = getCountsAndFirstYPos(newPattern, counts) # # updates the counts and the position of the first "y" in the pattern.
     if counts["y"] != 0: # If there are "y"s in the pattern, we need to make sure that the first "y" appears in the pattern.
         for lenOfX in range(1, len(string)):
-            lenOfY = (len(string) - lenOfX * counts["x"]) / counts["y"] # lenOfY is the length of the substring that could represent "y"
+            # print(lenOfX) # 1, 2
+            lenOfY = (len(string) - lenOfX * counts["x"]) / counts["y"] # lenofY needs to be even number. Result is in float.
+            #(30 - 1 * 4) / 2 = 26/2 = 13.0
+            #(30 - 2 * 4) / 2 = 22/2 = 11.0
             if lenOfY <= 0 or lenOfY % 1 != 0: # validate that lenOfY is a positive integer - if it is not, continue to the next iteration.
                 continue
-            lenOfY = int(lenOfY) # Convert lenOfY to an integer.
+            # print(lenOfY) # 13
+            lenOfY = int(lenOfY) # Convert lenOfY from float to an integer.
+            # print(lenOfY) # 13, 11
             yIdx = firstYPos * lenOfX # The index of the first "y" in the pattern.
-            x = string[:lenOfX] # The substring that could represent "x". eg. "go"
-            y = string[yIdx :  yIdx + lenOfY] # The substring that could represent "y". eg. "powerranger"
-            potentialMatch = map(lambda char: x if char == "x" else y, newPattern) # Map the new pattern to the substring that could represent "x" and "y". eg. "go" and "powerranger"
+            # print(yIdx) # 2, 4
+            x = string[:lenOfX] # The substring that could represent "x".
+            # print(x) # g, go
+            y = string[yIdx:yIdx + lenOfY] # The substring that could represent "y". eg. "powerranger"
+            # print(y) # gopowerranger, powerranger
+            potentialMatch = map(lambda char: x if char == "x" else y, newPattern) # check if the new pattern matches the string.
             if string == "".join(potentialMatch): # If the substring that could represent "x" and "y" matches the main string, return the substring that could represent "x" and "y".
                 return [x, y] if not didSwitch else [y, x] # If we swapped "x"s and "y"s, return the substring that could represent "y" and "x" in the correct order.
 
@@ -60,7 +68,7 @@ def patternMatcher(pattern, string):
         if lenOfX % 1 == 0: # If lenOfX is a positive integer, we can check if the pattern matches the main string.
             lenOfX = int(lenOfX) # Convert lenOfX to an integer.
             x = string[:lenOfX] # The substring that could represent "x". eg. "go"
-            potentialMatch = map(lambda char: x, newPattern) # Map the new pattern to the substring that could represent "x". eg. "go"
+            potentialMatch = map(lambda char: x, newPattern) # check if the substring that could represent "x" matches the main string. eg. "go"
             if string == "".join(potentialMatch): # If the substring that could represent "x" matches the main string, return the substring that could represent "x".
                 return [x, ""] if not didSwitch else ["", x]
     return [] # If the pattern doesn't match the main string, return an empty array.
