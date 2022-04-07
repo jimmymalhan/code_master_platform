@@ -23,6 +23,8 @@ Explain the solution:
 
 # Start by sorting both arrays, as per Hint #2. Put a pointer at the begining of both arrays and evaluate the absolute difference of the pointer-numbers. If the difference is equal to zero, then you've found the closest pair; otherwise, increment the pointer of the smaller of the two numbers to find a potentially better pair. Continue until you get a pair with a difference of zero or until one of the pointers get out of range of its array.
 
+# O(nlog(n) + mlog(m)) time | O(1) space - where n is the length of the first input array and m is the length of the second input array
+
 ##################
 Detailed explanation of the Solution:
 function smallestDifference(arrayOne, arrayTwo):
