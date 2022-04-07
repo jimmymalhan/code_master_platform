@@ -29,7 +29,7 @@ Explain the solution:
 Detailed explanation of the Solution:
 function smallestDifference(arrayOne, arrayTwo):
     intialize idxOne and idxTwo to 0
-    intialize smallest and current to float("inf")
+    intialize smallest and current to float("inf") #smallest is the smallest difference between two numbers and current is the current difference between two numbers
     intialize smallestPair to empty array
     while idxOne < len(arrayOne) and idxTwo < len(arrayTwo): # while both pointers are still in range of their arrays
         initialize firstNum and secondNum to the values of the array at the current index
@@ -41,8 +41,8 @@ function smallestDifference(arrayOne, arrayTwo):
             idxTwo += 1
         else:
             return [firstNum, secondNum] # if the numbers are equal, return the pair
-        if smallest > current:
-            smallest = current # update smallest to current
+        if smallest is greater that current:
+            intialize smallest to current # update smallest to current
             initialize smallestPair to [firstNum, secondNum]
     return smallestPair
 
@@ -50,12 +50,11 @@ function smallestDifference(arrayOne, arrayTwo):
 ####################################
 
 def smallestDifference(arrayOne, arrayTwo):
-    idxOne,idxTwo = 0, 0
-    smallest, current = float("inf"), float("inf")
+    idxOne, idxTwo = 0, 0
+    smallest, current = float("inf"), float("inf") #smallest is the smallest difference between two numbers and current is the current difference between two numbers
     smallestPair = []
     while idxOne < len(arrayOne) and idxTwo < len(arrayTwo): # while both pointers are still in range of their arrays
-        firstNum = arrayOne[idxOne]
-        secondNum = arrayTwo[idxTwo]
+        firstNum, secondNum = arrayOne[idxOne], arrayTwo[idxTwo]
         if firstNum < secondNum:
             current = secondNum - firstNum
             idxOne += 1
