@@ -50,6 +50,7 @@ function smallestDifference(arrayOne, arrayTwo):
 ####################################
 
 def smallestDifference(arrayOne, arrayTwo):
+    arrayOne.sort(), arrayTwo.sort()
     idxOne, idxTwo = 0, 0
     smallest, current = float("inf"), float("inf") #smallest is the smallest difference between two numbers and current is the current difference between two numbers
     smallestPair = []
