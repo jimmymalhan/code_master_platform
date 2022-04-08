@@ -49,15 +49,18 @@ function smallestDifference(arrayOne, arrayTwo):
 """
 ####################################
 
+# O(nlog(n) + mlog(m)) time | O(1) space - where n is the length of the first input array and m is the length of the second input array.
+# nlog(n) is the time to sort the first array and mlog(m) is the time to sort the second array.
+# O(1) space is used because sorting is done in place.
 def smallestDifference(arrayOne, arrayTwo):
     arrayOne.sort(), arrayTwo.sort()
     idxOne, idxTwo = 0, 0
     smallest, current = float("inf"), float("inf") #smallest is the smallest difference between two numbers and current is the current difference between two numbers
     smallestPair = []
-    while idxOne < len(arrayOne) and idxTwo < len(arrayTwo): # while both pointers are still in range of their arrays
+    while idxOne < len(arrayOne) and idxTwo < len(arrayTwo): # while both pointers are still in range of their arrays begining at the beginning of the arrays
         firstNum, secondNum = arrayOne[idxOne], arrayTwo[idxTwo]
         if firstNum < secondNum:
-            current = secondNum - firstNum
+            current = secondNum - firstNum # update current to the difference between the two numbers
             idxOne += 1
         elif secondNum < firstNum:
             current = firstNum - secondNum
