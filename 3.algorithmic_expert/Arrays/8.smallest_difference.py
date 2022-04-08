@@ -28,6 +28,7 @@ Explain the solution:
 ##################
 Detailed explanation of the Solution:
 function smallestDifference(arrayOne, arrayTwo):
+    sort(arrayOne), sort(arrayTwo) in place
     intialize idxOne and idxTwo to 0
     intialize smallest and current to float("inf") #smallest is the smallest difference between two numbers and current is the current difference between two numbers
     intialize smallestPair to empty array
@@ -35,15 +36,15 @@ function smallestDifference(arrayOne, arrayTwo):
         initialize firstNum and secondNum to the values of the array at the current index
         if firstNum < secondNum:
             current = secondNum - firstNum
-            idxOne += 1
+            increment idxOne
         elif secondNum < firstNum:
             current = firstNum - secondNum
-            idxTwo += 1
-        else:
+            increment idxTwo
+        else: # if the numbers are equal, return the pair
             return [firstNum, secondNum] # if the numbers are equal, return the pair
         if smallest is greater that current:
             intialize smallest to current # update smallest to current
-            initialize smallestPair to [firstNum, secondNum]
+            initialize smallestPair is equal to [firstNum, secondNum]
     return smallestPair
 
 """
