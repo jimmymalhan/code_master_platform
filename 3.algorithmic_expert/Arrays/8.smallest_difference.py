@@ -55,7 +55,7 @@ function smallestDifference(arrayOne, arrayTwo):
 def smallestDifference(arrayOne, arrayTwo):
     arrayOne.sort(), arrayTwo.sort()
     idxOne, idxTwo = 0, 0
-    smallest, current = float("inf"), float("inf") #smallest is the smallest difference between two numbers and current is the current difference between two numbers
+    smallest, current = float("inf"), float("inf") # keep track of the smallest difference and the current difference
     smallestPair = []
     while idxOne < len(arrayOne) and idxTwo < len(arrayTwo): # while both pointers are still in range of their arrays begining at the beginning of the arrays
         firstNum, secondNum = arrayOne[idxOne], arrayTwo[idxTwo]
