@@ -11,10 +11,20 @@
   
 ####################################
 # Sample Input:
-# Sample Output:
+#   redShirtSpeeds = [5, 5, 3, 9, 2]
+#   blueShirtSpeeds = [3, 6, 7, 2, 1]
+#   fastest = true
+
+# Sample Output: 32
+
 ####################################
 """
 Explain the solution:
+- The brute-force approach to solve this problem is to generate every possible set of pairs of riders and to determine the total speed that each of these sets generates. This solution does not work but, it isn't optimal. Can you think of better way to solve this problem?
+
+- Try looking at the input arrays in sorted order. How might this help you solve the problem?
+
+- When generating the maximum total speed, you want to pair the slowest red-shirt riders with the fastest blue-shirt riders and vice versa,
 
 ##################
 Detailed explanation of the Solution:
