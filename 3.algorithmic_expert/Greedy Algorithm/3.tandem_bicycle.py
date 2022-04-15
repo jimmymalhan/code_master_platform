@@ -24,15 +24,60 @@ Explain the solution:
 
 - Try looking at the input arrays in sorted order. How might this help you solve the problem?
 
-- When generating the maximum total speed, you want to pair the slowest red-shirt riders with the fastest blue-shirt riders and vice versa,
+- When generating the maximum total speed, you want to pair the slowest red-shirt riders with the fastest blue-shirt riders and vice versa, so as to always take advantage of the largest speeds. When generating the minimum total speed, you want to pair the fastest red-shirt riders with the fastest blue-shirt riders, so as to "eliminate" a large speed by pairing it with a another large(larger) speed.
+
+- Sort the input arrays in place, and follow the strategy discussed in Hint #3. With the inputs sorted, you can find the slowest and largest speeds from each shirt color in constant time.
+
+- O(n(log(n)) time | O(1) space - where n is the length of the tandem bicycles
 
 ##################
 Detailed explanation of the Solution:
 
+create a function of tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
+    sort the redShirtSpeeds and blueShirtSpeeds arrays in place
+    if not fastest:
+        call the function reverseArrayInPlace(redShirtSpeeds)
+
+    totalSpeed is initialized to 0
+    for idx in range(len(redShirtSpeeds)):
+        rider1 = redShirtSpeeds[idx] # array in sorted ascending order
+        rider2 = blueShirtSpeeds[len(blueShirtSpeeds) - 1 - idx] # Reverse the blueShirtSpeeds array in descending order
+        totalSpeed += max(rider1, rider2)
+
+    return totalSpeed
+
+create a function of reverseArrayInPlace(array):
+    start = 0
+    end = len(array) - 1
+    while start < end:
+        array[start], array[end] = array[end], array[start]
+        start += 1
+        end -= 1
 """
 ####################################
 
-def solution(self):
-    pass
+def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
+    redShirtSpeeds.sort()
+    blueShirtSpeeds.sort()
 
-print(solution())
+    if not fastest:
+        reverseArrayInPlace(redShirtSpeeds)
+
+    totalSpeed = 0
+    for idx in range(len(redShirtSpeeds)):
+        rider1 = redShirtSpeeds[idx] # array in sorted ascending order
+        rider2 = blueShirtSpeeds[len(blueShirtSpeeds) - 1 - idx] # Reverse the blueShirtSpeeds array in descending order
+        totalSpeed += max(rider1, rider2)
+
+    return totalSpeed
+
+
+def reverseArrayInPlace(array):
+    start = 0
+    end = len(array) - 1
+    while start < end:
+        array[start], array[end] = array[end], array[start]
+        start += 1
+        end -= 1
+
+print(tandemBicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True))
