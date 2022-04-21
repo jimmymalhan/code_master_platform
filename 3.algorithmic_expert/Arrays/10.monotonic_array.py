@@ -31,9 +31,10 @@ Detailed explanation of the Solution:
 create function called isMonotonic that takes in an array of integers:
     if len of array is less than or equal to 2, return True # if the array is empty or has only one element, it is monotonic.
 
-    inititalize direction equal by subtracting second element from first element.
+    inititalize direction equal by subtracting second element's index from first element's index.
     iterate through the array from index 2 to the end of the array:
-        if direction is equal to 0: # if the array is entirely non-increasing or non-decreasing or equal
+        if direction is equalized to 0: # if the array is entirely non-increasing or non-decreasing or equal.
+            
             direction is equal to subtracting the current element from the previous one.
             continue # continue to the next iteration of the loop.
         if breaksDirection for direction, array[i-1], array[i]:
