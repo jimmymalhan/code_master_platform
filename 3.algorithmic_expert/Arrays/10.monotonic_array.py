@@ -28,35 +28,28 @@ Explain the solution:
 
 ##################
 Detailed explanation of the Solution:
-create function called isMonotonic that takes in an array of integers:
-    if len of array is less than or equal to 2, return True # if the array is empty or has only one element, it is monotonic.
+create function called isMonotonic that takes in an arrays:
+    initialize a variable called isNonDecreasing equal to True
+    initialize a variable called isNonIncreasing equal to True
+    iterate through the array from left to right once starting at index 1:
+        if the current element is less than the previous element:
+            set isNonDecreasing to False
+        if the current element is greater than the previous element:
+            set isNonIncreasing to False
 
-    inititalize direction equal by subtracting second element's index from first element's index.
-    iterate through the array from index 2 to the end of the array:
-        if direction is equalized to 0: # if the array is entirely non-increasing or non-decreasing or equal.
-            
-            direction is equal to subtracting the current element from the previous one.
-            continue # continue to the next iteration of the loop.
-        if breaksDirection for direction, array[i-1], array[i]:
-            return False # if the direction breaks, return False.
-    return True # if the loop completes, return True.
-
-function breaksDirection takes in a direction, previousInt, and currentInt:
-    difference is equal to currentInt - previousInt # difference between the current and previous integers.
-    if direction is greater than 0: # if the array is non-decreasing
-        return difference is less than 0 # if the difference is negative, the array is not monotonic.
-    return difference is greater than 0 # if the difference is positive, the array is not monotonic.
-
+    return isNonDecreasing or isNonIncreasing # if the array is entirely non-decreasing or entirely non-increasing, return True
 """
 ####################################
+
+# Solution1 checks if the array is either non-increasing or non-decreasing.
 
 def isMonotonic(array):
     if len(array) <= 2: # If the array is empty or has only one element, it is monotonic.
         return True
 
-    direction = array[1] - array[0] # initialize direction to the trend of the array because we know that the first two elements are the only ones that can break the trend.
+    direction = array[1] - array[0] # direction is a way to establish the trend of the array (increasing or decreasing).
     for i in range(2, len(array)):
-        if direction == 0: # If the array is entirely non-increasing or non-decreasing or equal
+        if direction == 0: # If the array is equalized entirely non-increasing or non-decreasing
             direction = array[i] - array[i - 1] # updating direction by subtracting the current element from the previous one.
             continue
         if breaksDirection(direction, array[i -1], array[i]):
@@ -70,3 +63,20 @@ def breaksDirection(direction, previousInt, currentInt):
     return difference > 0 # If the difference is positive, the array is not monotonic.
 
 print(isMonotonic([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
+
+
+# Solution1 checks if the array is non-increasing ONLY
+
+def isMonotonic2(array):
+    isNonDecreasing = True
+    isNonIncreasing = True
+
+    for i in range(1, len(array)):
+        if array[i] < array[i - 1]:
+            isNonDecreasing = False
+        if array[i] > array[i - 1]:
+            isNonIncreasing = False
+    return isNonDecreasing or isNonIncreasing # If the array is equalized entirely non-increasing or non-decreasing
+
+
+print(isMonotonic2([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
