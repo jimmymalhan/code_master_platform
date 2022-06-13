@@ -47,8 +47,8 @@ def longestPeak(array):
 # 1. We start a loop where we start at index 1. This is because we need to check the peak first.
 # 2. We check if the current index is a peak. 
 # 3. If the index is not a peak, we move to the next index.
-    longestPeakLength=0
-    i=1
+    longestPeakLength= 0
+    i= 1
     while i<len(array) - 1:
         isPeak = array[i- 1] < array[i]and array[i] > array[i+1] # 2. We check if the current index is a peak. 
 
@@ -77,4 +77,4 @@ def longestPeak(array):
         i = rightIdx
     return longestPeakLength
 
-print(longestPeak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+print(longestPeak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3])) # 6 # Because 0, 10, 6, 5, -1, -3 is the longest peak.
