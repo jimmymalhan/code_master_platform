@@ -44,13 +44,13 @@ Detailed explanation of the Solution:
 ####################################
 
 def longestPeak(array):
-# 1. We start a loop where we start at index 1. This is because we need to check the peak first.
+# 1. Starting from second value, to check if the peak is greater than the left and right index.
 # 2. We check if the current index is a peak. 
 # 3. If the index is not a peak, we move to the next index.
-    longestPeakLength= 0
-    i= 1
-    while i<len(array) - 1:
-        isPeak = array[i- 1] < array[i]and array[i] > array[i+1] # 2. We check if the current index is a peak. 
+    longestPeakLength = 0
+    i = 1 # Starting from second value, to check if the peak is greater than the left and right index.
+    while i < len(array) - 1:
+        isPeak = array[i - 1] < array[i] and array[i] > array[i + 1]
 
         if not isPeak:
             i += 1
