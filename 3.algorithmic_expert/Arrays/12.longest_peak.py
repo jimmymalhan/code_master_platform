@@ -26,19 +26,25 @@ Explain the solution:
 - O(n) time and O(1) space - where n is the length of the array.
 
 ##################
-Detailed explanation of the Solution:
-1. We start a loop where we start at index 1. This is because we need to check the peak first.
-2. We check if the current index is a peak. 
-3. If the index is not a peak, we move to the next index.
-4. If the index is a peak, we check if the left and right index are greater than the current index.
-5. If the left and right index are greater than the current index, we check if the left index is greater than the left index of the current index. 
-6. If the left index is greater than the left index of the current index, we check if the right index is greater than the right index of the current index.
-7. If the right index is greater than the right index of the current index, we check if the current peak length is greater than the current peak length.
-8. If the current peak length is greater than the current peak length, we set the current peak length to the current peak length.
-9. We then move to the right index of the current index.
-10. We then loop back to 1 and check if the index is a peak.
-11. We continue this loop until we reach the end of the array.
-12. We return the current peak length.
+Detailed explanation of the Solution
+create function longestPeak with parameter array:
+    create variable longestPeakLength and set it to 0
+    create variable i and set it to 1 # Starting from second value, to check if the peak is greater than the left and right index.
+    while i is less than the length of the array - 1:
+        create variable isPeak and set it to array[i - 1] < array[i] and array[i] > array[i + 1] #check if the peak is greater than the left and right index
+        if isPeak is not true:
+            i += 1
+            continue
+        create variable leftIdx and set it to i - 2  #check if the left index is greater than the left index of the current index
+        while leftIdx is greater than or equal to 0 and array[leftIdx] < array[leftIdx + 1]: #check if the left index is greater than the left index of the current index
+            leftIdx -= 1
+        create variable rightIdx and set it to i + 2 #check if the right index is greater than the right index of the current index
+        while rightIdx is less than the length of the array and array[rightIdx] < array[rightIdx - 1]: #check if the right index is greater than the right index of the current index
+            rightIdx += 1
+        create variable currentPeakLength and set it to rightIdx - leftIdx - 1 #check if the current peak length is greater than the current peak length
+        create variable longestPeakLength and set it to max(longestPeakLength,currentPeakLength) #check if the current peak length is greater than the current peak length
+        i = rightIdx #move to the right index of the current index
+    return longestPeakLength
 
 """
 ####################################
@@ -65,7 +71,7 @@ def longestPeak(array):
         while leftIdx >= 0 and array[leftIdx] < array[leftIdx + 1]:
             leftIdx -= 1
         rightIdx = i + 2
-        while rightIdx < len(array)and array[rightIdx] < array[rightIdx - 1]:
+        while rightIdx < len(array) and array[rightIdx] < array[rightIdx - 1]:
             rightIdx += 1
 # 8. If the current peak length is greater than the current peak length, we set the current peak length to the current peak length.
 # 9. We then move to the right index of the current index.
