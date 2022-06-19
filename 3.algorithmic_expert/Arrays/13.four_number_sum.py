@@ -16,6 +16,11 @@
 ####################################
 """
 Explain the solution:
+- Using four for loops to calculate the sums of all possible quadruplets in the array would generate an algorithm that runs in O(n^4) time, where n is the length of the array. Can you come up with something faster fewer for loops?
+
+- You can calculate the sums of every pair of numbers in the array in O(n^2) time using just two for loops. Then, assuming that you've stored all of these sums in a hash table, you fairly easily find which two sums can be paired to add up to the target sum: the numbers summing up to these two sums constitute candidates for valid quadruplets; you just have to make sure that no number was used to generate both of the two sums.
+
+- You can do everything described in Hint #2 with just two siblings for loops nested inside a third for loop. Your goal is to create a hash table mapping the sums of every pair of numbers in the array to an array of arrays, with each subarray representing the indicies of each pair summing up to that number 
 
 ##################
 Detailed explanation of the Solution:
@@ -44,6 +49,3 @@ def fourNumberSum(array, targetSum):
     return quadruplets
 
 print(fourNumberSum([7, 6, 4, -1, 1, 2], 16))
-
-
-
