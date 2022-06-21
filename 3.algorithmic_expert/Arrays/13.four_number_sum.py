@@ -49,3 +49,4 @@ def fourNumberSum(array, targetSum):
     return quadruplets
 
 print(fourNumberSum([7, 6, 4, -1, 1, 2], 16))
+
