@@ -48,5 +48,5 @@ def fourNumberSum(array, targetSum):
                     right -= 1
     return quadruplets
 
-print(fourNumberSum([7, 6, 4, -1, 1, 2], 16))
+print(fourNumberSum([7, 6, 4, -1, 1, 2], 16)) # [[7, 6, 4, -1], [7, 6, 1, 2]]
 
