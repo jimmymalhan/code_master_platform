@@ -37,6 +37,12 @@ function breadthFirstSearch with parameter array:
 ####################################
 
 import unittest
+
+from collections import *
+from heapq import *
+from itertools import *
+from bisect import *
+from functools import *
 class Node:
     def __init__(self, name):
         self.children = [] # list of children
@@ -57,6 +63,15 @@ class Node:
             for child in current.children: # for each child in current node
                 queue.append(child) # add child to queue
         return array
+
+    def breadthFirstSearch2(self, array):
+        queue = deque([self])
+        while queue:
+            current = queue.popleft()
+            array.append(current.name)
+            for child in current.children:
+                queue.append(child)
+        return array
     
 def main():
     root = Node("A")
@@ -64,20 +79,21 @@ def main():
     root.addChild("E").addChild("F").addChild("G")
     root.addChild("H").addChild("I").addChild("J")
     print(root.breadthFirstSearch([]))
+    print(root.breadthFirstSearch2([]))
 
 if __name__ == "__main__":
     main()
 
-class Test(unittest.TestCase):
-    def test_node(self):
-        root = Node("A")
-        root.addChild("B").addChild("C").addChild("D")
-        root.addChild("E").addChild("F").addChild("G")
-        root.addChild("H").addChild("I").addChild("J")
-        self.assertEqual(root.breadthFirstSearch([]), ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"])
+# class Test(unittest.TestCase):
+#     def test_node(self):
+#         root = Node("A")
+#         root.addChild("B").addChild("C").addChild("D")
+#         root.addChild("E").addChild("F").addChild("G")
+#         root.addChild("H").addChild("I").addChild("J")
+#         self.assertEqual(root.breadthFirstSearch([]), ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"])
 
-def main():
-    unittest.main()
+# def main():
+#     unittest.main()
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
