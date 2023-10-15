@@ -9,6 +9,8 @@
 3. Execute `chmod +x install_packages.sh` to make the Bash script executable.
 
 4. Run `./install_packages.sh` to install or update required packages in your current virtual environment.
+or 
+`pip install -r requirements.txt`
 
 5. To update the list of installed packages, run `pip freeze > requirements.txt`.
 
