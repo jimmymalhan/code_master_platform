@@ -1,8 +1,8 @@
 # Project To-Do List
 
-## Core Logic
-- [ ] **To-Do 1:** Draft a flowchart or outline of the core logic you intend to implement.
-- [ ] **To-Do 2:** Start coding the main functions, keeping them clean, efficient, and well-commented.
+- clean up the code to add classess
+- add unit tests
+- 
 
 ## Multi-Threading and Asynchronous Programming
 - [ ] **To-Do 1a:** Install Python's threading library for multi-threading.
@@ -53,6 +53,5 @@
 - [ ] **To-Do 18:** Build and run your Docker container.
 
 
-# next steps:
-I understand that the JSON data may be too large to display in the terminal. If you've successfully obtained the data and it's too large to print, you can proceed with processing the data using the calculate_sessions function as you initially planned. Once you have processed the data and generated the sessions, you can proceed with posting the results to the provided API endpoint.
-
+# Clean up:
+- remove redudant packages
