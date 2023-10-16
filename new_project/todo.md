@@ -51,3 +51,8 @@
 - [ ] **To-Do 16:** Install Docker if you haven't.
 - [ ] **To-Do 17:** Create a Dockerfile for your application.
 - [ ] **To-Do 18:** Build and run your Docker container.
+
+
+# next steps:
+I understand that the JSON data may be too large to display in the terminal. If you've successfully obtained the data and it's too large to print, you can proceed with processing the data using the calculate_sessions function as you initially planned. Once you have processed the data and generated the sessions, you can proceed with posting the results to the provided API endpoint.
+
