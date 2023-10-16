@@ -50,3 +50,32 @@ def calculate_sessions(sorted_events):
         sessions_by_user[visitor_id].append(current_session)
         
     return {"sessionsByUser": dict(sessions_by_user)}
+
+# Unit Test
+def test_calculate_sessions():
+    sorted_events = [
+        {"visitorId": "A", "timestamp": 1, "url": "/page1"},
+        {"visitorId": "A", "timestamp": 2, "url": "/page2"},
+        {"visitorId": "A", "timestamp": 602000, "url": "/page3"},
+    ]
+    sessions = calculate_sessions(sorted_events)
+    expected_sessions = {
+        "sessionsByUser": {
+            "A": [
+                {
+                    "duration": 1,
+                    "pages": ["/page1", "/page2"],
+                    "startTime": 1,
+                },
+                {
+                    "duration": 0,
+                    "pages": ["/page3"],
+                    "startTime": 602000,
+                },
+            ]
+        }
+    }
+    assert sessions == expected_sessions
+
+if __name__ == "__main__":
+    test_calculate_sessions()

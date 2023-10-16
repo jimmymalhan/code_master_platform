@@ -1,43 +1,40 @@
 import json
-from calculate_sessions import calculate_sessions
 import requests
+import unittest
+from calculate_sessions import calculate_sessions
 
-# Function to fetch data from the API, calculate sessions, and send the result back to the API
+# Function to fetch data from the API
+def fetch_data(api_url):
+    response = requests.get(api_url)
+    return response
+
+# Function to send data to the API
+def send_data(api_url, data):
+    response = requests.post(api_url, json=data)
+    return response
+
+# Function to process data, calculate sessions, and send results to the API
 def main():
     print("Fetching data from API...")
-
-    # API endpoint URL for GET
     api_url = "https://candidate.hubteam.com/candidateTest/v3/problem/dataset?userKey=874713a5428a69b5b646581a25ba"
+    response = fetch_data(api_url)
 
-    # Make the GET request
-    response = requests.get(api_url)
-
-    # Check if the GET request was successful (status code 200)
     if response.status_code == 200:
         print("Successfully fetched data from API.")
         
-        # Parse the JSON response
         actual_data = response.json()
-        
-        # Sort the events by visitorId and timestamp
         sorted_events = sorted(actual_data['events'], key=lambda x: (x['visitorId'], x['timestamp']))
         
-        # Calculate the sessions
         calculated_sessions = calculate_sessions(sorted_events)
         
-        # Save to JSON file (Optional)
         with open("calculated_sessions.json", "w") as json_file:
             json.dump(calculated_sessions, json_file, indent=4)
         
         print("Calculated sessions and saved to calculated_sessions.json.")
         
-        # API endpoint URL for POST
         api_post_url = "https://candidate.hubteam.com/candidateTest/v3/problem/result?userKey=874713a5428a69b5b646581a25ba"
+        response = send_data(api_post_url, calculated_sessions)
         
-        # Make the POST request
-        response = requests.post(api_post_url, json=calculated_sessions)
-        
-        # Check the response
         if response.status_code == 200:
             print("Successfully sent data to API. Received 200 OK.")
         elif response.status_code == 400:
@@ -50,3 +47,13 @@ def main():
 # Entry point of the script
 if __name__ == "__main__":
     main()
+
+# Unit Tests
+class TestRunAll(unittest.TestCase):
+    def test_fetch_data(self):
+        api_url = "https://candidate.hubteam.com/candidateTest/v3/problem/dataset?userKey=874713a5428a69b5b646581a25ba"
+        response = fetch_data(api_url)
+        self.assertEqual(response.status_code, 200)
+
+if __name__ == "__main__":
+    unittest.main()
