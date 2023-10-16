@@ -22,6 +22,13 @@
 
 This will set up your environment and update the package list.
 
+What Happens When You Run refactored_run_all_with_comments.py:
+It fetches raw event data from an API.
+It sorts the events by visitorId and timestamp.
+It calls the SessionCalculator class from refactored_calculate_sessions_with_comments.py to calculate the sessions based on the sorted events.
+It saves the calculated sessions to a JSON file named calculated_sessions.json.
+It sends the calculated session data back to an API via an HTTP POST request.
+
 ---
 
 # Analytics Sessions Project

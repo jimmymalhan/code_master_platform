@@ -55,3 +55,4 @@
 
 # Clean up:
 - remove redudant packages
+- in the end re-run the project
