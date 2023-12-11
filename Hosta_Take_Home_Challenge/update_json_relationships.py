@@ -15,7 +15,14 @@ Date: 12/10/2023
 import json
 import csv
 import concurrent.futures
+import logging
+import chardet
+import os
+import subprocess
+import sys
 
+# Setup logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 class JSONFileHandler:
     def __init__(self, filepath):
         self.filepath = filepath
@@ -30,7 +37,7 @@ class JSONFileHandler:
             with open(self.filepath, 'r') as file:
                 return json.load(file)
         except IOError as e:
-            print(f"Error reading file {self.filepath}: {e}")
+            logging.error(f"Error reading file {self.filepath}: {e}")
             return None
 
     def update_relationships(self, parent_mapping, image_id_mapping):
@@ -59,9 +66,9 @@ class JSONFileHandler:
         try:
             with open(new_filepath, 'w') as file:
                 json.dump(self.data, file, indent=4)
-            print(f"Updated JSON file saved as {new_filepath}.")
+            logging.info(f"Updated JSON file saved as {new_filepath}.")
         except IOError as e:
-            print(f"Error writing file {new_filepath}: {e}")
+            logging.error(f"Error writing file {new_filepath}: {e}")
 
 class CSVFileHandler:
     def __init__(self, filepath):
@@ -71,7 +78,7 @@ class CSVFileHandler:
         # Detect the encoding of the CSV file
         encoding = self.detect_encoding()
         if encoding is None:
-            print(f"Failed to detect encoding for file {self.filepath}")
+            logging.error(f"Failed to detect encoding for file {self.filepath}")
             return []
 
         try:
@@ -79,7 +86,7 @@ class CSVFileHandler:
                 csv_reader = csv.DictReader(csvfile, delimiter='\t')  # Adjust delimiter if necessary
                 return list(csv_reader)
         except IOError as e:
-            print(f"Error reading file {self.filepath}: {e}")
+            logging.error(f"Error reading file {self.filepath}: {e}")
             return []
 
     def detect_encoding(self):
@@ -93,7 +100,7 @@ class CSVFileHandler:
                 detector.close()
                 return detector.result['encoding']
         except IOError as e:
-            print(f"Error reading file {self.filepath}: {e}")
+            logging.error(f"Error reading file {self.filepath}: {e}")
             return None
 
 def find_parent_child_relationships(csv_data):
@@ -114,10 +121,6 @@ def find_parent_child_relationships(csv_data):
             if 'Image' in key and value:
                 image_id_mapping[value] = object_id
 
-    # Debugging: Print the mappings
-    print("Parent Mapping:", parent_mapping)
-    print("Image ID Mapping:", image_id_mapping)
-
     return parent_mapping, image_id_mapping
 
 def process_json_file(json_path, parent_mapping, image_id_mapping):
@@ -126,7 +129,14 @@ def process_json_file(json_path, parent_mapping, image_id_mapping):
     """
     json_handler = JSONFileHandler(json_path)
     if json_handler.data:
-        new_json_path = f"updated_{json_path}"
+        # Extract the original filename without extension
+        original_filename = os.path.splitext(os.path.basename(json_path))[0]
+
+        # Customize the new filename format as needed
+        new_filename = f"updated_{original_filename}.json"
+
+        new_json_path = os.path.join(os.path.dirname(json_path), new_filename)
+
         if json_handler.update_relationships(parent_mapping, image_id_mapping):
             json_handler.save_json(new_json_path)
         else:
@@ -134,22 +144,44 @@ def process_json_file(json_path, parent_mapping, image_id_mapping):
     else:
         print(f"Failed to read data from {json_path}.")
 
+def run_tests():
+    """
+    Run the test script using pytest.
+    """
+    test_command = "pytest test_update_json_relationships.py"
+    test_result = subprocess.call(test_command, shell=True)
+    if test_result != 0:
+        logging.error("Test failed. Exiting.")
+        sys.exit(1)
+    else:
+        logging.info("Test passed. Proceeding with data processing.")
+
+
 def main():
-    csv_file_path = 'EXP_ObjectID_HostID.csv'
-    csv_handler = CSVFileHandler(csv_file_path)
+    # Run the test script before proceeding
+    run_tests()
+
+    # Specify the correct CSV file name
+    csv_filename = 'EXP_ObjectID_HostID.csv'  # Update with the correct CSV file name
+
+    # Build the full path to the CSV file
+    csv_path = os.path.join('.', csv_filename)
+
+    csv_handler = CSVFileHandler(csv_path)
     csv_data = csv_handler.read_csv()
+    if not csv_data:
+        logging.error("No CSV data found. Exiting.")
+        sys.exit(1)
+
     parent_mapping, image_id_mapping = find_parent_child_relationships(csv_data)
 
-    json_file_paths = [
-        '3d3fde25-fc47-47ad-bda4-0b438196045b.json',
-        '763fdd40-9408-45bb-b532-3f90b5c7c5d1.json',
-        'b73070b3-7625-4975-872a-967b2297a458.json'
-    ]
+    # Assuming JSON files are listed in a directory
+    json_files = [file for file in os.listdir('.') if file.endswith('.json')]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(process_json_file, path, parent_mapping, image_id_mapping) for path in json_file_paths]
+        futures = [executor.submit(process_json_file, file, parent_mapping, image_id_mapping) for file in json_files]
         for future in concurrent.futures.as_completed(futures):
-            future.result()  # This will raise exceptions from threads, if any
+            future.result()
 
 if __name__ == "__main__":
     main()
