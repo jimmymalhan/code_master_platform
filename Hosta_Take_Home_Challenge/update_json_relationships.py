@@ -14,7 +14,7 @@ Date: 12/10/2023
 
 import json
 import csv
-import chardet # pip install chardet
+import concurrent.futures
 
 class JSONFileHandler:
     def __init__(self, filepath):
@@ -119,34 +119,37 @@ def find_parent_child_relationships(csv_data):
     print("Image ID Mapping:", image_id_mapping)
 
     return parent_mapping, image_id_mapping
-def main():
-    # Main function to orchestrate the updating process
-    json_file_paths = [
-        '3d3fde25-fc47-47ad-bda4-0b438196045b.json',
-        '763fdd40-9408-45bb-b532-3f90b5c7c5d1.json',
-        'b73070b3-7625-4975-872a-967b2297a458.json'
-    ]  # List of JSON file paths
-    csv_file_path = 'EXP_ObjectID_HostID.csv'  # Path to the CSV file
 
+def process_json_file(json_path, parent_mapping, image_id_mapping):
+    """
+    Function to process each JSON file in a separate thread.
+    """
+    json_handler = JSONFileHandler(json_path)
+    if json_handler.data:
+        new_json_path = f"updated_{json_path}"
+        if json_handler.update_relationships(parent_mapping, image_id_mapping):
+            json_handler.save_json(new_json_path)
+        else:
+            print(f"No updates were made to the JSON file {json_path}.")
+    else:
+        print(f"Failed to read data from {json_path}.")
+
+def main():
+    csv_file_path = 'EXP_ObjectID_HostID.csv'
     csv_handler = CSVFileHandler(csv_file_path)
     csv_data = csv_handler.read_csv()
     parent_mapping, image_id_mapping = find_parent_child_relationships(csv_data)
 
-    for json_path in json_file_paths:
-        json_handler = JSONFileHandler(json_path)
-        if json_handler.data and csv_data:
-            print(f"Processing JSON file: {json_path}")
-            updated = json_handler.update_relationships(parent_mapping, image_id_mapping)  # Corrected: Pass both mappings
-            if updated:
-                new_json_path = f"updated_{json_path}"
-                json_handler.save_json(new_json_path)
-                print(f"Updated JSON file saved as {new_json_path}.")
-            else:
-                print(f"No updates were made to the JSON file {json_path}.")
-        else:
-            print(f"Failed to read data from {json_path} or CSV file.")
+    json_file_paths = [
+        '3d3fde25-fc47-47ad-bda4-0b438196045b.json',
+        '763fdd40-9408-45bb-b532-3f90b5c7c5d1.json',
+        'b73070b3-7625-4975-872a-967b2297a458.json'
+    ]
 
-
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(process_json_file, path, parent_mapping, image_id_mapping) for path in json_file_paths]
+        for future in concurrent.futures.as_completed(futures):
+            future.result()  # This will raise exceptions from threads, if any
 
 if __name__ == "__main__":
     main()
