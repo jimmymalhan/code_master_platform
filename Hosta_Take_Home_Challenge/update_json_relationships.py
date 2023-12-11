@@ -31,14 +31,19 @@ class JSONFileHandler:
     def read_json(self):
         """
         Read a JSON file and return its contents as a dictionary.
-        Handles IOError if file reading fails.
+        Handles IOError if file reading fails or if the file is empty.
         """
         try:
             with open(self.filepath, 'r') as file:
-                return json.load(file)
+                try:
+                    return json.load(file)
+                except json.decoder.JSONDecodeError as json_error:
+                    logging.error(f"Error decoding JSON in file {self.filepath}: {json_error}")
+                    return None
         except IOError as e:
             logging.error(f"Error reading file {self.filepath}: {e}")
             return None
+
 
     def update_relationships(self, parent_mapping, image_id_mapping):
         """
