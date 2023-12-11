@@ -1,0 +1,1473 @@
+{
+  "image_info": {
+    "file_name": "3d3fde25-fc47-47ad-bda4-0b438196045b.jpeg",
+    "width": 640,
+    "height": 480,
+    "scale": 0.3125
+  },
+  "ops_3d": [
+    {
+      "supercategory": "interior_wall",
+      "unique_id": "831a631c-7584-11ec-8883-024c9a2c6118",
+      "item_id": 13,
+      "sqft": 159.75,
+      "imageIds": [
+        "13",
+        "49",
+        "3",
+        "3"
+      ]
+    },
+    {
+      "supercategory": "interior_wall",
+      "bottom_width_left": [
+        -2.07036941498518,
+        -1.274768941104412,
+        4.628948211669922
+      ],
+      "bottom_width_right": [
+        -1.6983999405056238,
+        -1.2760950904339552,
+        4.700436592102051
+      ],
+      "height_bottom": [
+        -1.3693542890250683,
+        -0.5800321660935879,
+        3.061613082885742
+      ],
+      "height_top": [
+        -2.07036941498518,
+        -1.274768941104412,
+        4.628948211669922
+      ],
+      "width": 1.0,
+      "height": 1.0,
+      "centre": [
+        -1.5097789793809293,
+        -0.8736989749665971,
+        3.7555287242597
+      ],
+      "unit": "SF",
+      "quantity": 1.0,
+      "quantity_field": "area",
+      "baseboard": false,
+      "chair_guard": false,
+      "wall_protection": false,
+      "molding": false,
+      "corner_guard": false,
+      "unique_id": "831d3ef2-7584-11ec-819b-663ba29d671e",
+      "wall_type": null,
+      "detections": [
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d3e2a-7584-11ec-819b-663ba29d671e"
+        }
+      ],
+      "detections_unocclude": [
+        {
+          "subcategory": "gypsum",
+          "material_proportion": 100,
+          "unique_id": "a4d7faac-e01b-4620-8d7d-8dd879c2f8ba",
+          "quantity": 1.0
+        }
+      ],
+      "item_id": 14,
+      "sqft": 1.0,
+      "imageIds": [
+        "14"
+      ]
+    },
+    {
+      "supercategory": "interior_wall",
+      "bottom_width_right": null,
+      "height_bottom": null,
+      "height_top": null,
+      "width": 12.0,
+      "height": 8.0,
+      "centre": [
+        0.2700135304391946,
+        -0.006759387895163162,
+        8.066814055408955
+      ],
+      "unit": "SF",
+      "quantity": 89.75,
+      "quantity_field": "area",
+      "baseboard": false,
+      "chair_guard": false,
+      "wall_protection": false,
+      "molding": false,
+      "corner_guard": false,
+      "unique_id": "831d4d3e-7584-11ec-819b-663ba29d671e",
+      "wall_type": null,
+      "detections": [
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d483e-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d4ca8-7584-11ec-819b-663ba29d671e"
+        }
+      ],
+      "detections_unocclude": [
+        {
+          "subcategory": "gypsum",
+          "material_proportion": 100,
+          "unique_id": "d060a9ff-2154-4419-a7de-bf4bed299b42",
+          "quantity": 87.75
+        }
+      ],
+      "item_id": 16,
+      "sqft": 89.75,
+      "imageIds": [
+        "16"
+      ]
+    },
+    {
+      "supercategory": "interior_wall",
+      "bottom_width_right": null,
+      "height_bottom": null,
+      "height_top": null,
+      "width": 21.0,
+      "height": 8.0,
+      "centre": [
+        2.559715332873189,
+        0.30239233510071817,
+        5.623891927129521
+      ],
+      "unit": "SF",
+      "quantity": 168.5,
+      "quantity_field": "area",
+      "baseboard": false,
+      "chair_guard": false,
+      "wall_protection": false,
+      "molding": false,
+      "corner_guard": false,
+      "unique_id": "831a3b8a-7584-11ec-8883-024c9a2c6118",
+      "wall_type": null,
+      "detections": [
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d578e-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d5b1c-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d5d56-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d5f54-7584-11ec-819b-663ba29d671e"
+        }
+      ],
+      "detections_unocclude": [
+        {
+          "subcategory": "gypsum",
+          "material_proportion": 100,
+          "unique_id": "f98b0e69-4cc3-4590-ac39-e12cd64e44b6",
+          "quantity": 151.75
+        }
+      ],
+      "item_id": 17,
+      "sqft": 168.5,
+      "imageIds": [
+        "17",
+        "47",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "supercategory": "interior_wall",
+      "bottom_width_left": [
+        -1.4710003696382046,
+        -1.3075558841228485,
+        6.973631381988525
+      ],
+      "bottom_width_right": [
+        0.6899124756455421,
+        -1.281266026198864,
+        7.208881378173828
+      ],
+      "height_bottom": [
+        -1.3776214141398668,
+        -0.9012476541101933,
+        6.591982841491699
+      ],
+      "height_top": [
+        -1.4710003696382046,
+        -1.3075558841228485,
+        6.973631381988525
+      ],
+      "width": 6.5,
+      "height": 1.0,
+      "centre": [
+        -0.4102936819977812,
+        -1.18011363381864,
+        7.5133795864225625
+      ],
+      "unit": "SF",
+      "quantity": 6.5,
+      "quantity_field": "area",
+      "baseboard": false,
+      "chair_guard": false,
+      "wall_protection": false,
+      "molding": false,
+      "corner_guard": false,
+      "unique_id": "831d665c-7584-11ec-819b-663ba29d671e",
+      "wall_type": null,
+      "detections": [
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d65b2-7584-11ec-819b-663ba29d671e"
+        }
+      ],
+      "detections_unocclude": [
+        {
+          "subcategory": "gypsum",
+          "material_proportion": 100,
+          "unique_id": "4742d6d1-6974-411d-85d9-593249f344bc",
+          "quantity": 6.25
+        }
+      ],
+      "item_id": 18,
+      "sqft": 6.5,
+      "imageIds": [
+        "18"
+      ]
+    },
+    {
+      "supercategory": "interior_wall",
+      "bottom_width_left": [
+        -0.08317524567246437,
+        0.6404493916779757,
+        4.258572578430176
+      ],
+      "bottom_width_right": [
+        0.7917691580951214,
+        0.5993766523897648,
+        3.7886524200439453
+      ],
+      "height_bottom": [
+        -0.1010965364985168,
+        1.4697881075553596,
+        3.9816482067108154
+      ],
+      "height_top": [
+        -0.08317524567246437,
+        0.6404493916779757,
+        4.258572578430176
+      ],
+      "width": 3.0,
+      "height": 3.0,
+      "centre": [
+        0.5017017325109064,
+        1.4114617209144524,
+        5.550072694890398
+      ],
+      "unit": "SF",
+      "quantity": 8.5,
+      "quantity_field": "area",
+      "baseboard": true,
+      "chair_guard": false,
+      "wall_protection": false,
+      "molding": false,
+      "corner_guard": false,
+      "unique_id": "831d7246-7584-11ec-819b-663ba29d671e",
+      "wall_type": null,
+      "detections": [
+        {
+          "subcategory": "gypsum",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d70a2-7584-11ec-819b-663ba29d671e"
+        }
+      ],
+      "detections_unocclude": [
+        {
+          "subcategory": "gypsum",
+          "material_proportion": 100,
+          "unique_id": "40589c54-1dbb-490b-89aa-786d6851bd9e",
+          "quantity": 8.75
+        }
+      ],
+      "item_id": 19,
+      "sqft": 8.5,
+      "imageIds": [
+        "19"
+      ]
+    },
+    {
+      "supercategory": "floor",
+      "thickness_top": null,
+      "thickness_bottom": null,
+      "thickness": null,
+      "level": 0,
+      "width": null,
+      "length": null,
+      "centre": [
+        0.26811958579982154,
+        1.4543660398264784,
+        4.682396622277711
+      ],
+      "unit": "SF",
+      "quantity": 225.75,
+      "quantity_field": "area",
+      "unique_id": "831a85e0-7584-11ec-8883-024c9a2c6118",
+      "detections": [
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d8362-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d8592-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d879a-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d89b6-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d8b50-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d8d44-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d8ee8-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d908c-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "tile",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d9230-7584-11ec-819b-663ba29d671e"
+        }
+      ],
+      "detections_unocclude": [
+        {
+          "subcategory": "tile",
+          "material_proportion": 100,
+          "unique_id": "13378b13-b29a-4093-8169-d9a27dce5a98",
+          "quantity": 225.75
+        }
+      ],
+      "item_id": 20,
+      "sqft": 225.75,
+      "perimeter": 65.75,
+      "totalArea": 250.25,
+      "imageIds": [
+        "20",
+        "50",
+        "4",
+        "4"
+      ]
+    },
+    {
+      "supercategory": "ceiling",
+      "height_bottom": [
+        1.8379839323461056,
+        1.1684326427057385,
+        6.7217698097229
+      ],
+      "height_top": [
+        2.116502031683922,
+        -1.2052303235977888,
+        7.525340557098389
+      ],
+      "thickness_top": null,
+      "thickness_bottom": null,
+      "width": null,
+      "height": 8.0,
+      "thickness": null,
+      "length": null,
+      "centre": [
+        0.1573973154998486,
+        -1.386173535404751,
+        4.394597725473083
+      ],
+      "unit": "SF",
+      "quantity": 236.0,
+      "quantity_field": "area",
+      "unique_id": "831a8ffe-7584-11ec-8883-024c9a2c6118",
+      "detections": [
+        {
+          "subcategory": "stucco",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d99f6-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "stucco",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d9ca8-7584-11ec-819b-663ba29d671e"
+        },
+        {
+          "subcategory": "stucco",
+          "width": null,
+          "height": null,
+          "centre": null,
+          "unit": "SF",
+          "quantity": null,
+          "quantity_field": "area",
+          "unique_id": "831d9eec-7584-11ec-819b-663ba29d671e"
+        }
+      ],
+      "detections_unocclude": [
+        {
+          "subcategory": "gypsum",
+          "material_proportion": 100,
+          "unique_id": "380aa24a-7789-4b8e-b6d2-87e0ea91df9e",
+          "quantity": 236.0
+        }
+      ],
+      "item_id": 21,
+      "sqft": 236.0,
+      "perimeter": 65.75,
+      "totalArea": 236.0,
+      "imageIds": [
+        "21",
+        "51",
+        "5",
+        "5"
+      ]
+    },
+    {
+      "supercategory": "island_countertop",
+      "subcategory": "granite",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": [
+        -0.27806008607149124,
+        1.1449532955884933,
+        8.374515533447266
+      ],
+      "bottom_width_right": [
+        1.8764734044671059,
+        1.1349637527018785,
+        7.748019218444824
+      ],
+      "depth_front": [
+        1.8764734044671059,
+        1.1349637527018785,
+        7.748019218444824
+      ],
+      "depth_back": [
+        1.3209309568628669,
+        0.7303971173241735,
+        7.956666469573975
+      ],
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 6.0,
+      "centre": [
+        0.8370219788125174,
+        0.9931513544144137,
+        8.012796793736658
+      ],
+      "unit": "LF",
+      "quantity": 3.0,
+      "quantity_field": "width",
+      "unique_id": "831aa462-7584-11ec-8883-024c9a2c6118",
+      "parent_structure": "floor",
+      "item_id": 22,
+      "imageIds": [
+        "22",
+        "56",
+        "11",
+        "11"
+      ]
+    },
+    {
+      "supercategory": "furniture",
+      "subcategory": "rug",
+      "height_bottom": [
+        -0.9380492893978953,
+        1.5837195795029402,
+        6.2374186515808105
+      ],
+      "height_top": [
+        -0.9380492893978953,
+        1.5837195795029402,
+        6.2374186515808105
+      ],
+      "bottom_width_left": [
+        -0.9380492893978953,
+        1.5837195795029402,
+        6.2374186515808105
+      ],
+      "bottom_width_right": [
+        -0.8751763142645359,
+        1.3923259545117617,
+        6.789246559143066
+      ],
+      "depth_front": [
+        -0.8751763142645359,
+        1.3923259545117617,
+        6.789246559143066
+      ],
+      "depth_back": [
+        -1.3346829991787672,
+        1.3611123654991388,
+        6.765917778015137
+      ],
+      "width": null,
+      "height": null,
+      "depth": null,
+      "centre": [
+        -0.9250759249911286,
+        1.5195781655537968,
+        6.632098124577449
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831daacc-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "floor",
+      "item_id": 23,
+      "imageIds": []
+    },
+    {
+      "supercategory": "base_cabinet_single",
+      "subcategory": "drawer_and_door-wood",
+      "height_bottom": [
+        -1.184920552186668,
+        1.184920552186668,
+        6.666805744171143
+      ],
+      "height_top": [
+        -1.4140189811587334,
+        0.48169877380132675,
+        7.955799102783203
+      ],
+      "bottom_width_left": [
+        -1.4519344065338373,
+        0.5426421519368887,
+        7.508994102478027
+      ],
+      "bottom_width_right": [
+        -1.4140189811587334,
+        0.48169877380132675,
+        7.955799102783203
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 1.0,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        -1.3980758793318349,
+        0.8446895093699641,
+        7.539357044143259
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dac16-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 24,
+      "imageIds": [
+        "24"
+      ]
+    },
+    {
+      "supercategory": "base_cabinet_single",
+      "subcategory": "drawer_and_door-wood",
+      "height_bottom": [
+        -1.2867610696703196,
+        1.2867610696703196,
+        6.722670078277588
+      ],
+      "height_top": [
+        -1.4519344065338373,
+        0.5426421519368887,
+        7.508994102478027
+      ],
+      "bottom_width_left": [
+        -1.1743024550378323,
+        0.4910719357430935,
+        5.46584415435791
+      ],
+      "bottom_width_right": [
+        -1.4519344065338373,
+        0.5426421519368887,
+        7.508994102478027
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        -1.3947083178425654,
+        0.8378574905937131,
+        6.84422439256447
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dada6-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 25,
+      "imageIds": [
+        "25"
+      ]
+    },
+    {
+      "supercategory": "base_cabinet_double",
+      "subcategory": "drawer_and_door-wood",
+      "height_bottom": [
+        -1.184920552186668,
+        1.184920552186668,
+        6.666805744171143
+      ],
+      "height_top": [
+        -1.39848031103611,
+        0.48169877380132675,
+        7.955799102783203
+      ],
+      "bottom_width_left": [
+        -1.39848031103611,
+        0.48169877380132675,
+        7.955799102783203
+      ],
+      "bottom_width_right": [
+        -0.29442715644836426,
+        0.5561401844024658,
+        8.37481689453125
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        -0.8417420412358967,
+        0.9618550112726333,
+        8.011999476347526
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831daf18-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 26,
+      "imageIds": [
+        "26"
+      ]
+    },
+    {
+      "supercategory": "base_cabinet_single",
+      "subcategory": "drawer_and_door-wood",
+      "depth_front": null,
+      "depth_back": null,
+      "width": 1.5,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        2.0072471726343077,
+        1.021965099063949,
+        7.425608809432932
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831db1c0-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 27,
+      "imageIds": [
+        "27"
+      ]
+    },
+    {
+      "supercategory": "base_cabinet_double",
+      "subcategory": "drawer_and_door-wood",
+      "height_bottom": [
+        1.5196885634213686,
+        1.347897682338953,
+        6.765917778015137
+      ],
+      "height_top": [
+        1.7573397569358349,
+        0.5605307845398784,
+        7.756534099578857
+      ],
+      "bottom_width_left": [
+        0.7747309803962708,
+        0.5894692242145538,
+        8.623092651367188
+      ],
+      "bottom_width_right": [
+        1.7573397569358349,
+        0.5605307845398784,
+        7.756534099578857
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        1.17142033283391,
+        0.9826250285084245,
+        7.439551406631536
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831db4f4-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 28,
+      "imageIds": [
+        "28"
+      ]
+    },
+    {
+      "supercategory": "countertop",
+      "subcategory": "granite",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": [
+        0.7747309803962708,
+        0.5726272463798523,
+        8.623092651367188
+      ],
+      "bottom_width_right": [
+        2.330804046243429,
+        0.514778807759285,
+        7.321298599243164
+      ],
+      "depth_front": [
+        2.330804046243429,
+        0.514778807759285,
+        7.321298599243164
+      ],
+      "depth_back": [
+        2.137193251401186,
+        0.36848159506917,
+        7.546503067016602
+      ],
+      "width": 4.5,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        1.5866968850692482,
+        0.42637997999505584,
+        7.938828146527024
+      ],
+      "unit": "LF",
+      "quantity": 4.5,
+      "quantity_field": "width",
+      "unique_id": "831db800-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 29,
+      "imageIds": [
+        "29"
+      ]
+    },
+    {
+      "supercategory": "countertop",
+      "subcategory": "granite",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": [
+        -1.4517802186310291,
+        0.6112758815288544,
+        6.520276069641113
+      ],
+      "bottom_width_right": [
+        -1.39848031103611,
+        0.45062143355607986,
+        7.955799102783203
+      ],
+      "depth_front": [
+        -1.39848031103611,
+        0.45062143355607986,
+        7.955799102783203
+      ],
+      "depth_back": [
+        -1.3967444468289614,
+        0.26604656130075455,
+        6.810791969299316
+      ],
+      "width": 7.0,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        -1.4070616978564996,
+        0.46051397357730806,
+        7.372363168652318
+      ],
+      "unit": "LF",
+      "quantity": 7.0,
+      "quantity_field": "width",
+      "unique_id": "831dbabc-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 30,
+      "imageIds": [
+        "30"
+      ]
+    },
+    {
+      "supercategory": "countertop",
+      "subcategory": "granite",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": [
+        -1.3967444468289614,
+        0.26604656130075455,
+        6.810791969299316
+      ],
+      "bottom_width_right": [
+        -0.3107842206954956,
+        0.35985541343688965,
+        8.37481689453125
+      ],
+      "depth_front": [
+        -0.3107842206954956,
+        0.5234260559082031,
+        8.37481689453125
+      ],
+      "depth_back": [
+        -0.3107842206954956,
+        0.35985541343688965,
+        8.37481689453125
+      ],
+      "width": 5.0,
+      "height": 3.0,
+      "depth": 2.0,
+      "centre": [
+        -0.9795159600011405,
+        0.36872215570089806,
+        8.20807581386347
+      ],
+      "unit": "LF",
+      "quantity": 5.0,
+      "quantity_field": "width",
+      "unique_id": "831dbdbe-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 31,
+      "imageIds": [
+        "31"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_double",
+      "subcategory": "wood",
+      "height_bottom": [
+        2.260191049426794,
+        -0.014581877738237381,
+        7.465921401977539
+      ],
+      "height_top": [
+        2.289185971021652,
+        -1.2447448717430234,
+        7.325395107269287
+      ],
+      "bottom_width_left": [
+        1.263708706945181,
+        -1.292759481817484,
+        7.43699836730957
+      ],
+      "bottom_width_right": [
+        2.289185971021652,
+        -1.2447448717430234,
+        7.325395107269287
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 1.5,
+      "height": 3.5,
+      "depth": 1.0,
+      "centre": [
+        1.8508435514538444,
+        -0.6612932207887952,
+        7.700266606546295
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dc106-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 32,
+      "imageIds": [
+        "32"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_single",
+      "subcategory": "wood",
+      "height_bottom": [
+        1.2920654080808163,
+        -0.07783526554703712,
+        7.970331192016602
+      ],
+      "height_top": [
+        1.2491833195090294,
+        -1.292759481817484,
+        7.43699836730957
+      ],
+      "bottom_width_left": [
+        0.7262693252414465,
+        -1.3072847854346037,
+        7.436997890472412
+      ],
+      "bottom_width_right": [
+        1.2491833195090294,
+        -1.292759481817484,
+        7.43699836730957
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 3.0,
+      "height": 3.5,
+      "depth": 1.0,
+      "centre": [
+        1.099290739468799,
+        -0.7508624411894793,
+        8.31370259419898
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dc354-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 33,
+      "imageIds": [
+        "33"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_double",
+      "subcategory": "wood",
+      "height_bottom": [
+        -0.26145341992378235,
+        -0.5555885173380375,
+        8.366509437561035
+      ],
+      "height_top": [
+        -0.26145341992378235,
+        -1.0784953571856022,
+        8.366509437561035
+      ],
+      "bottom_width_left": [
+        -0.26145341992378235,
+        -0.5555885173380375,
+        8.366509437561035
+      ],
+      "bottom_width_right": [
+        0.7578890025615692,
+        -0.5389432907104492,
+        8.623092651367188
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 2.5,
+      "height": 1.5,
+      "depth": 1.0,
+      "centre": [
+        0.24792179947808554,
+        -0.8165823930461674,
+        8.490406984850269
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dc49e-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 34,
+      "imageIds": [
+        "34"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_single",
+      "subcategory": "wood",
+      "height_bottom": [
+        -0.7915224730968475,
+        -0.1484104637056589,
+        8.442906379699707
+      ],
+      "height_top": [
+        -0.7584877908229828,
+        -1.1212428212165833,
+        8.442298889160156
+      ],
+      "bottom_width_left": [
+        -0.7915224730968475,
+        -0.1484104637056589,
+        8.442906379699707
+      ],
+      "bottom_width_right": [
+        -0.3107842206954956,
+        -0.13085651397705078,
+        8.37481689453125
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 1.25,
+      "height": 2.5,
+      "depth": 1.0,
+      "centre": [
+        -0.5511186384295488,
+        -0.6321479234097733,
+        8.419618025413822
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dc5d4-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 35,
+      "imageIds": [
+        "35"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_single",
+      "subcategory": "wood",
+      "height_bottom": [
+        -1.236256156116724,
+        -0.1605527475476265,
+        8.220300674438477
+      ],
+      "height_top": [
+        -1.232708364725113,
+        -1.1029495894908905,
+        8.304561614990234
+      ],
+      "bottom_width_left": [
+        -1.236256156116724,
+        -0.1605527475476265,
+        8.220300674438477
+      ],
+      "bottom_width_right": [
+        -0.7915224730968475,
+        -0.1484104637056589,
+        8.442906379699707
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 1.25,
+      "height": 2.5,
+      "depth": 1.0,
+      "centre": [
+        -1.0250683486393206,
+        -0.6319469348586301,
+        8.404171438359503
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dc70a-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 36,
+      "imageIds": [
+        "36"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_single",
+      "subcategory": "wood",
+      "height_bottom": [
+        -1.4224751591682434,
+        -0.14623576402664185,
+        6.806610107421875
+      ],
+      "height_top": [
+        -1.3776214141398668,
+        -0.9012476541101933,
+        6.591982841491699
+      ],
+      "bottom_width_left": [
+        -1.3776214141398668,
+        -0.9012476541101933,
+        6.591982841491699
+      ],
+      "bottom_width_right": [
+        -1.236256156116724,
+        -1.1078139580786228,
+        8.220300674438477
+      ],
+      "depth_front": null,
+      "depth_back": null,
+      "width": 1.25,
+      "height": 2.5,
+      "depth": 1.0,
+      "centre": [
+        -1.3794135962883016,
+        -0.6030012122017155,
+        7.71908249508677
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dc886-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 37,
+      "imageIds": [
+        "37"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_single",
+      "subcategory": "wood",
+      "height_bottom": [
+        -1.5055058151483536,
+        -0.1630964633077383,
+        6.423491477966309
+      ],
+      "height_top": [
+        -1.5055058151483536,
+        -0.9158493708819151,
+        6.423491477966309
+      ],
+      "bottom_width_left": [
+        -1.5055058151483536,
+        -0.9158493708819151,
+        6.423491477966309
+      ],
+      "bottom_width_right": [
+        -1.3776214141398668,
+        -0.9012476541101933,
+        6.591982841491699
+      ],
+      "depth_front": [
+        -1.5055058151483536,
+        -0.9158493708819151,
+        6.423491477966309
+      ],
+      "depth_back": [
+        -1.5667716767638922,
+        -0.8206899259239435,
+        5.45705509185791
+      ],
+      "width": 1.5,
+      "height": 2.5,
+      "depth": 1.0,
+      "centre": [
+        -1.4525584618721845,
+        -0.528065912459444,
+        6.5577284244757
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dca16-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 38,
+      "imageIds": [
+        "38"
+      ]
+    },
+    {
+      "supercategory": "upper_cabinet_double",
+      "subcategory": "wood",
+      "height_bottom": [
+        -1.157293883152306,
+        -0.2613244252279401,
+        3.185669183731079
+      ],
+      "height_top": [
+        -1.3476860588416457,
+        -0.6955799013376236,
+        3.709759473800659
+      ],
+      "bottom_width_left": [
+        -1.3476860588416457,
+        -0.6955799013376236,
+        3.709759473800659
+      ],
+      "bottom_width_right": [
+        -1.5941102765500546,
+        -0.879866061732173,
+        5.299899101257324
+      ],
+      "depth_front": [
+        -1.3476860588416457,
+        -0.6955799013376236,
+        3.709759473800659
+      ],
+      "depth_back": [
+        -1.3693542890250683,
+        -0.5800321660935879,
+        3.061613082885742
+      ],
+      "width": 2.5,
+      "height": 2.5,
+      "depth": 1.0,
+      "centre": [
+        -1.5508476307814465,
+        -0.5796290732831398,
+        4.702920089597288
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dcb6a-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 39,
+      "imageIds": [
+        "39"
+      ]
+    },
+    {
+      "supercategory": "ceiling_light",
+      "subcategory": "flush",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": null,
+      "bottom_width_right": null,
+      "depth_front": null,
+      "depth_back": null,
+      "width": null,
+      "height": null,
+      "depth": null,
+      "centre": [
+        0.18698077827177353,
+        -1.2621807059708707,
+        7.0853435305887436
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dcd36-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "ceiling",
+      "item_id": 40,
+      "imageIds": []
+    },
+    {
+      "supercategory": "special_equipment",
+      "subcategory": "microwave",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": null,
+      "bottom_width_right": null,
+      "depth_front": null,
+      "depth_back": null,
+      "width": null,
+      "height": null,
+      "depth": null,
+      "centre": [
+        0.2356354332869015,
+        -0.2652193407217662,
+        8.487018903096518
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dceee-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 41,
+      "imageIds": []
+    },
+    {
+      "supercategory": "reference_object",
+      "subcategory": "range",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": null,
+      "bottom_width_right": null,
+      "depth_front": null,
+      "depth_back": null,
+      "width": 2.5,
+      "height": 3.0,
+      "depth": 2.25,
+      "centre": [
+        0.0963352115954169,
+        0.9647931961631243,
+        7.652545551509939
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dd100-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 43,
+      "imageIds": [
+        "43"
+      ]
+    },
+    {
+      "supercategory": "reference_object",
+      "subcategory": "refrigerator-side_by_side",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": null,
+      "bottom_width_right": null,
+      "depth_front": null,
+      "depth_back": null,
+      "width": 3.0,
+      "height": 6.0,
+      "depth": 2.25,
+      "centre": [
+        -1.3270085322187213,
+        0.5731904835001295,
+        3.6732171997241347
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831aa1a6-7584-11ec-8883-024c9a2c6118",
+      "parent_structure": "interior_wall",
+      "item_id": 44,
+      "imageIds": [
+        "44",
+        "57",
+        "10",
+        "10"
+      ]
+    },
+    {
+      "supercategory": "reference_object",
+      "subcategory": "faceplate-outlet-one_gang",
+      "height_bottom": null,
+      "height_top": null,
+      "bottom_width_left": null,
+      "bottom_width_right": null,
+      "depth_front": null,
+      "depth_back": null,
+      "width": null,
+      "height": null,
+      "depth": null,
+      "centre": [
+        2.5144517929810615,
+        0.32118125558675575,
+        6.4768439001507225
+      ],
+      "unit": "EA",
+      "quantity": 1,
+      "quantity_field": "ea",
+      "unique_id": "831dd4d4-7584-11ec-819b-663ba29d671e",
+      "parent_structure": "interior_wall",
+      "item_id": 45,
+      "imageIds": []
+    }
+  ]
+}
