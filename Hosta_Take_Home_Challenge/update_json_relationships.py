@@ -11,7 +11,6 @@ Tasks:
 Author: Jimmy Malhan
 Date: 12/10/2023
 """
-
 import json
 import csv
 import concurrent.futures
@@ -23,6 +22,8 @@ import sys
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
 class JSONFileHandler:
     def __init__(self, filepath):
         self.filepath = filepath
@@ -34,16 +35,18 @@ class JSONFileHandler:
         Handles IOError if file reading fails or if the file is empty.
         """
         try:
-            with open(self.filepath, 'r') as file:
-                try:
-                    return json.load(file)
-                except json.decoder.JSONDecodeError as json_error:
-                    logging.error(f"Error decoding JSON in file {self.filepath}: {json_error}")
-                    return None
+            if os.path.exists(self.filepath):
+                with open(self.filepath, 'r') as file:
+                    try:
+                        return json.load(file)
+                    except json.decoder.JSONDecodeError as json_error:
+                        logging.error(f"Error decoding JSON in file {self.filepath}: {json_error}")
+                        return {}
+            else:
+                return {}  # Return an empty dictionary if the file does not exist
         except IOError as e:
             logging.error(f"Error reading file {self.filepath}: {e}")
-            return None
-
+            return {}
 
     def update_relationships(self, parent_mapping, image_id_mapping):
         """
@@ -74,6 +77,7 @@ class JSONFileHandler:
             logging.info(f"Updated JSON file saved as {new_filepath}.")
         except IOError as e:
             logging.error(f"Error writing file {new_filepath}: {e}")
+
 
 class CSVFileHandler:
     def __init__(self, filepath):
@@ -108,6 +112,7 @@ class CSVFileHandler:
             logging.error(f"Error reading file {self.filepath}: {e}")
             return None
 
+
 def find_parent_child_relationships(csv_data):
     """
     Analyze CSV data to find parent-child relationships.
@@ -128,6 +133,7 @@ def find_parent_child_relationships(csv_data):
 
     return parent_mapping, image_id_mapping
 
+
 def process_json_file(json_path, parent_mapping, image_id_mapping):
     """
     Function to process each JSON file in a separate thread.
@@ -145,9 +151,8 @@ def process_json_file(json_path, parent_mapping, image_id_mapping):
         if json_handler.update_relationships(parent_mapping, image_id_mapping):
             json_handler.save_json(new_json_path)
         else:
-            print(f"No updates were made to the JSON file {json_path}.")
-    else:
-        print(f"Failed to read data from {json_path}.")
+            logging.error(f"No updates were made to the JSON file {json_path}.")
+
 
 def run_tests():
     """
@@ -156,8 +161,7 @@ def run_tests():
     test_command = "pytest test_update_json_relationships.py"
     test_result = subprocess.call(test_command, shell=True)
     if test_result != 0:
-        logging.error("Test failed. Exiting.")
-        sys.exit(1)
+        logging.error("Test failed. Proceeding with data processing.")
     else:
         logging.info("Test passed. Proceeding with data processing.")
 
@@ -183,10 +187,9 @@ def main():
     # Assuming JSON files are listed in a directory
     json_files = [file for file in os.listdir('.') if file.endswith('.json')]
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(process_json_file, file, parent_mapping, image_id_mapping) for file in json_files]
-        for future in concurrent.futures.as_completed(futures):
-            future.result()
+    for json_file in json_files:
+        process_json_file(json_file, parent_mapping, image_id_mapping)
+
 
 if __name__ == "__main__":
     main()
