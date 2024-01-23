@@ -60,3 +60,26 @@ These are optional enhancements that you can consider based on your project's re
 - **gunicorn:** HTTP server for running Python web applications.
 - **Flask-Security:** Security extension for Flask web applications.
 - **SQLAlchemy:** SQL toolkit and Object-Relational Mapping (ORM) library for Python.
+
+# project structure
+
+.
+├── Dockerfile
+├── README.md
+├── app
+│   ├── __init__.py
+│   ├── api.py
+│   ├── crud.py
+│   ├── database.py
+│   ├── main.py
+│   ├── models.py
+│   ├── schemas.py
+│   └── utils.py
+├── create_tables.py
+├── requirements.txt
+├── test.db
+└── tests
+    ├── __init__.py
+    ├── conftest.py
+    ├── test_api.py
+    └── test_main.py
