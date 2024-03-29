@@ -1,22 +1,3 @@
-/**
- * Set Up the Node.js Project
- *
- * 1. This section explains the steps to set up a Node.js project for the MoodMe backend.
- *    It covers initializing a new Node.js project, installing necessary dependencies,
- *    and designing the database schema.
- *
- * Database Schema Design
- *
- * 2. Analyze the restaurants.json data structure and plan a MongoDB schema that corresponds to this structure.
- *    Mongoose can be used to define a model for the restaurant data, including types for nested objects like address
- *    and arrays like grades.
- *
- * Database Setup and Data Import
- *
- * 3. Set up a MongoDB database, either locally
- *    Write a script in Node.js that uses the Mongoose model to import the restaurants.json file into the MongoDB database.
- *    This script reads the JSON file, parses it into JavaScript objects, and inserts the data into the database.
- *
  * Develop the REST API
  *
  * 4. Create a basic server using Express.js and define a REST API endpoint /search that allows users to search for restaurants
