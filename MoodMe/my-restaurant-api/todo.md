@@ -13,7 +13,7 @@
  *
  * Database Setup and Data Import
  *
- * 3. Set up a MongoDB database, either locally or using a cloud-based MongoDB database like MongoDB Atlas.
+ * 3. Set up a MongoDB database, either locally
  *    Write a script in Node.js that uses the Mongoose model to import the restaurants.json file into the MongoDB database.
  *    This script reads the JSON file, parses it into JavaScript objects, and inserts the data into the database.
  *
