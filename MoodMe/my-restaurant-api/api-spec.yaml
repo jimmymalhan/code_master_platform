@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: Restaurant API
+  version: 1.0.0
+paths:
+  /api/restaurants:
+    get:
+      summary: Get a list of restaurants
+      responses:
+        200:
+          description: A list of restaurants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    cuisine:
+                      type: string
+                    address:
+                      type: object
+                      properties:
+                        street:
+                          type: string
+                        building:
+                          type: string
