@@ -10,16 +10,20 @@ npm install
 
 Start the server:
 
-npm start
+node server.js
 
 
 ## API Endpoints
 
 ### Get List of Restaurants
 
-- **GET** `/api/restaurants`
+curl http://localhost:3000/
+curl http://localhost:3000/api/restaurants
+curl http://localhost:3000/api/search?name=Pizza
+curl http://localhost:3000/api/search?cuisine=Italian&page=1&limit=5
+curl "http://localhost:3000/api/search?address=Main+Street"
 
-Returns a list of restaurants.
+
 
 ## Usage
 
