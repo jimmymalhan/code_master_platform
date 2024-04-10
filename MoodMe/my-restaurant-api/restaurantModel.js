@@ -6,7 +6,7 @@ const restaurantSchema = new mongoose.Schema({
   address: {
     building: String,
     street: String,
-    zipcode: String, // If your data includes a zipcode, add this line. Otherwise, omit it.
+    // zipcode: String, // Include or omit based on your data structure and requirements.
   },
   cuisine: String,
   grades: [{
@@ -17,6 +17,9 @@ const restaurantSchema = new mongoose.Schema({
   name: String,
   restaurant_id: String
 });
+
+// Add indexes to optimize query performance for frequently searched fields
+restaurantSchema.index({ name: 'text', cuisine: 'text', 'address.street': 'text' });
 
 // Create the model from the schema
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
