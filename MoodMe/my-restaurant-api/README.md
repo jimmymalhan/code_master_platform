@@ -14,7 +14,7 @@ Welcome to the Restaurant API, a full-fledged Node.js application that provides 
 - **Deployment:** Application deployed to a cloud platform, accessible and fully functional in a production environment.
 - **Frontend Development:** A simple frontend developed to demonstrate API usage, showcasing real-time data interaction.
 
-![UI](ui.png)
+![UI](UI.png)
 
 ## Getting Started
 
