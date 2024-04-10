@@ -48,7 +48,7 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
-// Welcome route
+// Welcome route should now correctly display static files or the welcome message as a fallback
 app.get('/', (req, res) => {
   res.send('Welcome to the Restaurant API!');
 });
@@ -61,4 +61,4 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-module.exports = app; // Export the Express app
+module.exports = app; // Export the Express app for testing purposes
