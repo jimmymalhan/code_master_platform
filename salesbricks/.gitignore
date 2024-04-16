@@ -1,0 +1,21 @@
+# Ignore system-specific files
+.DS_Store
+logfile
+
+# Ignore Python specific files
+__pycache__/
+*.pyc
+
+# Ignore database files
+db/*.db
+
+# Ignore any compiled binaries or executables
+services/*.exe
+services/*.dll
+
+# Ignore any compiled binaries or executables
+services/*.exe
+services/*.dll
+
+# Ignore virtual environment
+salesbricks
