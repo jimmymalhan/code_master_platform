@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+
+# Editor directories and files
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# Operating System files
+.DS_Store
+
+# Build outputs
+dist/
+build/
+out/
+
+# TypeScript incremental compilation
+*.tsbuildinfo
+
+# Optional: log files
+*.log
+
+# Optional: ESLint cache
+.eslintcache
+
+# Optional: Coverage directory used by tools like nyc
+coverage/

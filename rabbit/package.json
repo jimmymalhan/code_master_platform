@@ -1,0 +1,28 @@
+{
+  "name": "rabbit",
+  "version": "1.0.0",
+  "description": "A project implementing memoizeAsync to cache results of expensive asynchronous operations.",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [
+    "memoization",
+    "async",
+    "typescript"
+  ],
+  "author": "Jimmy Malhan",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
