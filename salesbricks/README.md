@@ -6,26 +6,36 @@ SalesBricks is a Python-based Software as a Service (SaaS) application designed 
 
 ## Main Features
 
-### 1. Set Up Backend Infrastructure
+### 1. Define Data Models
+
+- Designed database schemas to capture subscriptions, orders, events, and users.
+- Ensure models reflect MRR calculations, subscription states, and event-driven changes.
+
+### 2. Set Up Backend Infrastructure
 
 - Selected a web framework: FastAPI
 - Decided on a real-time data handling mechanism: WebSocket for real-time updates
 - Chose a database: SQLite for its JSON handling and robustness
 
-### 2. Develop Event Handling System
+### 3. Develop Event Handling System
 
 - Implemented listeners for event types (ORDER_CLOSED_WON, ORDER_CLOSED_WON_REVENUE, etc.)
 - Processed and transformed these events into actionable data insights and real-time updates
 
-### 3. Create Data Visualization Interface
+### 4. Create Data Visualization Interface
 
 - Developed endpoints for fetching real-time data
 - Integrated a frontend library (e.g., Chart.js) to visualize data as required
 
-### 4. Implement Filtering Capability
+### 5. Implement Filtering Capability
 
 - Allowed data querying by date range, buyer, and product
 - Ensured this is optimized for performance to meet the requirement of fast load times
+
+### 6. Testing and Documentation
+
+- Wrote unit tests for each component.
+- Document the setup process and the API endpoints.
 
 ## Setup Instructions
 
